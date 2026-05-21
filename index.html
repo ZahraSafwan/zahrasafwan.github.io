@@ -170,9 +170,15 @@ section{position:relative;z-index:1;}
 .cv-box{background:var(--bg-card);border:.5px solid var(--accent-border);border-radius:16px;padding:3rem;text-align:center;max-width:540px;margin:0 auto;}
 .cv-box .s-label{justify-content:center;}
 .cv-box .s-label::before{display:none;}
-.cv-box .s-title{text-align:center;margin-bottom:.75rem;}
-.cv-box p{color:var(--text-secondary);margin-bottom:2rem;}
-.cv-btns{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;}
+.cv-box .s-title{text-align:center;margin-bottom:.5rem;}
+.cv-box p{color:var(--text-secondary);margin-bottom:0;}
+.cv-divider{width:40px;height:1px;background:var(--accent-border);margin:1.25rem auto;}
+.cv-desc{color:var(--text-secondary);font-size:14px;line-height:1.8;max-width:400px;margin:0 auto 1.75rem !important;}
+.cv-btns{display:flex;justify-content:center;align-items:center;gap:1rem;flex-wrap:wrap;}
+.cv-or{display:flex;align-items:center;gap:10px;color:var(--text-muted);font-family:'JetBrains Mono',monospace;font-size:11px;}
+.cv-or::before,.cv-or::after{content:'';width:20px;height:.5px;background:var(--border);}
+.btn-teal{background:transparent;border:1px solid var(--teal-border);color:var(--teal-light);}
+.btn-teal:hover{background:var(--teal-glow);transform:translateY(-2px);}
 .contact-inner{text-align:center;max-width:480px;margin:0 auto;}
 .contact-inner .s-label{justify-content:center;}
 .contact-inner .s-label::before{display:none;}
@@ -334,9 +340,9 @@ footer span{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ac
         3. data-title="اسم الشهادة"  ← يظهر أسفل الـ lightbox
       -->
 
-      <div class="cert-card reveal" onclick="openLightbox('assets/certs/CSAP.png','CompTIA CySA+')">
+      <div class="cert-card reveal" onclick="openLightbox('assets/certs/comptia-cysa.jpg','CompTIA CySA+')">
         <div class="cert-img-wrap">
-          <img src="assets/certs/CSAP.png" alt="CompTIA CySA+" onerror="this.parentElement.innerHTML='<div class=\'cert-img-placeholder\'><span>📄 CompTIA CySA+</span></div>'">
+          <img src="assets/certs/comptia-cysa.jpg" alt="CompTIA CySA+" onerror="this.parentElement.innerHTML='<div class=\'cert-img-placeholder\'><span>📄 CompTIA CySA+</span></div>'">
           <div class="cert-overlay">
             <button class="cert-view-btn">🔍 View Certificate</button>
           </div>
@@ -349,9 +355,9 @@ footer span{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ac
         </div>
       </div>
 
-      <div class="cert-card reveal" onclick="openLightbox('assets/certs/Security+.png','CompTIA Security+')">
+      <div class="cert-card reveal" onclick="openLightbox('assets/certs/comptia-secplus.jpg','CompTIA Security+')">
         <div class="cert-img-wrap">
-          <img src="assets/certs/Security+.png" alt="CompTIA Security+" onerror="this.parentElement.innerHTML='<div class=\'cert-img-placeholder\'><span>📄 CompTIA Security+</span></div>'">
+          <img src="assets/certs/comptia-secplus.jpg" alt="CompTIA Security+" onerror="this.parentElement.innerHTML='<div class=\'cert-img-placeholder\'><span>📄 CompTIA Security+</span></div>'">
           <div class="cert-overlay">
             <button class="cert-view-btn">🔍 View Certificate</button>
           </div>
@@ -364,9 +370,9 @@ footer span{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ac
         </div>
       </div>
 
-      <div class="cert-card reveal" onclick="openLightbox('assets/certs/GRCA.png','GRCA — OCEG')">
+      <div class="cert-card reveal" onclick="openLightbox('assets/certs/grca.jpg','GRCA — OCEG')">
         <div class="cert-img-wrap">
-          <img src="assets/certs/GRCA.png" alt="GRCA" onerror="this.parentElement.innerHTML='<div class=\'cert-img-placeholder\'><span>📄 GRCA</span></div>'">
+          <img src="assets/certs/grca.jpg" alt="GRCA" onerror="this.parentElement.innerHTML='<div class=\'cert-img-placeholder\'><span>📄 GRCA</span></div>'">
           <div class="cert-overlay">
             <button class="cert-view-btn">🔍 View Certificate</button>
           </div>
@@ -379,9 +385,9 @@ footer span{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ac
         </div>
       </div>
 
-      <div class="cert-card reveal" onclick="openLightbox('assets/certs/GRCP.png','GRCP — OCEG')">
+      <div class="cert-card reveal" onclick="openLightbox('assets/certs/grcp.jpg','GRCP — OCEG')">
         <div class="cert-img-wrap">
-          <img src="assets/certs/GRCP.png" alt="GRCP" onerror="this.parentElement.innerHTML='<div class=\'cert-img-placeholder\'><span>📄 GRCP</span></div>'">
+          <img src="assets/certs/grcp.jpg" alt="GRCP" onerror="this.parentElement.innerHTML='<div class=\'cert-img-placeholder\'><span>📄 GRCP</span></div>'">
           <div class="cert-overlay">
             <button class="cert-view-btn">🔍 View Certificate</button>
           </div>
@@ -394,9 +400,9 @@ footer span{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ac
         </div>
       </div>
 
-      <div class="cert-card reveal" onclick="openLightbox('assets/certs/AWS Certified AI Practitioner certificate.png','AWS Certified AI Practitioner')">
+      <div class="cert-card reveal" onclick="openLightbox('assets/certs/aws-ai.jpg','AWS Certified AI Practitioner')">
         <div class="cert-img-wrap">
-          <img src="assets/certs/AWS Certified AI Practitioner certificate.png" alt="AWS AI Practitioner" onerror="this.parentElement.innerHTML='<div class=\'cert-img-placeholder\'><span>📄 AWS AI Practitioner</span></div>'">
+          <img src="assets/certs/aws-ai.jpg" alt="AWS AI Practitioner" onerror="this.parentElement.innerHTML='<div class=\'cert-img-placeholder\'><span>📄 AWS AI Practitioner</span></div>'">
           <div class="cert-overlay">
             <button class="cert-view-btn">🔍 View Certificate</button>
           </div>
@@ -409,9 +415,9 @@ footer span{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ac
         </div>
       </div>
 
-      <div class="cert-card reveal" onclick="openLightbox('assets/certs/NSE 2 Network Security Associate.png','Fortinet NSE 1 & NSE 2')">
+      <div class="cert-card reveal" onclick="openLightbox('assets/certs/fortinet-nse.jpg','Fortinet NSE 1 & NSE 2')">
         <div class="cert-img-wrap">
-          <img src="assets/certs/NSE 2 Network Security Associate.png" alt="Fortinet NSE" onerror="this.parentElement.innerHTML='<div class=\'cert-img-placeholder\'><span>📄 Fortinet NSE 1 & 2</span></div>'">
+          <img src="assets/certs/fortinet-nse.jpg" alt="Fortinet NSE" onerror="this.parentElement.innerHTML='<div class=\'cert-img-placeholder\'><span>📄 Fortinet NSE 1 & 2</span></div>'">
           <div class="cert-overlay">
             <button class="cert-view-btn">🔍 View Certificate</button>
           </div>
@@ -487,12 +493,15 @@ footer span{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ac
 <section id="cv" class="sec-alt">
   <div class="wrap">
     <div class="cv-box reveal">
-      <span class="s-label">Resume</span>
-      <h2 class="s-title">Zahra Al Safwan — CV</h2>
-      <p>IT & Cybersecurity Auditor</p>
+      <span class="s-label">Let's Connect</span>
+      <h2 class="s-title">Zahra Al Safwan</h2>
+      <p>IT & Cybersecurity Auditor · Riyadh, Saudi Arabia</p>
+      <div class="cv-divider"></div>
+      <p class="cv-desc">Interested in collaborating, discussing GRC & AI governance, or exploring opportunities? Reach out on LinkedIn or book a time that works for you.</p>
       <div class="cv-btns">
-        <a href="assets/cv/Zahra Al Safwan CV IT and Cybersecurity Auditor.pdf" class="btn btn-fill" target="_blank">View CV</a>
-        <a href="assets/cv/Zahra Al Safwan CV IT and Cybersecurity Auditor.pdf" download class="btn btn-ghost">Download PDF</a>
+        <a href="https://linkedin.com/in/zahra-al-safwan" class="btn btn-fill" target="_blank">💼 Connect on LinkedIn</a>
+        <div class="cv-or"><span>or</span></div>
+        <a href="https://calendar.app.google/uBv2PsG8FEtJ99Ev5" class="btn btn-teal" target="_blank">📅 Book a Meeting</a>
       </div>
     </div>
   </div>
