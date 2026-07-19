@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zahra Al Safwan | IT & Cybersecurity Auditor</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet">
 <style>
 :root {
   --bg-primary:    #060e0a;
@@ -224,6 +225,81 @@ footer span{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ac
   .exp-card:hover,.proj-card:hover,.exp-group:hover{transform:none;}
   .lightbox-inner{max-width:95vw;}
 }
+
+/* ── Ask Zahra AI Chatbot ── */
+#n8n-chat{
+  position:relative;
+  z-index:900;
+}
+
+:root{
+  --chat--color--primary: var(--accent);
+  --chat--color--primary-shade-50: #008f46;
+  --chat--color--primary-shade-100: #007a3c;
+  --chat--color--secondary: var(--teal);
+  --chat--color-secondary-shade-50: #009b89;
+  --chat--color--white: #ffffff;
+  --chat--color--light: #f2f7f4;
+  --chat--color--light-shade-50: #e5eee9;
+  --chat--color--light-shade-100: #c7d8cf;
+  --chat--color--medium: #a7bbb0;
+  --chat--color--dark: var(--bg-secondary);
+  --chat--color--disabled: #83978c;
+  --chat--color--typing: var(--text-secondary);
+
+  --chat--font-family: 'Inter', sans-serif;
+  --chat--border-radius: 10px;
+  --chat--transition-duration: .18s;
+
+  --chat--window--width: 410px;
+  --chat--window--height: 650px;
+  --chat--window--bottom: 20px;
+  --chat--window--right: 20px;
+  --chat--window--z-index: 900;
+  --chat--window--border: 1px solid var(--accent-border);
+  --chat--window--border-radius: 14px;
+  --chat--window--margin-bottom: 12px;
+
+  --chat--header--background: var(--bg-secondary);
+  --chat--header--color: var(--text-primary);
+  --chat--header--padding: 18px;
+  --chat--header--border-bottom: 1px solid var(--border);
+  --chat--heading--font-size: 1.25rem;
+  --chat--subtitle--font-size: .82rem;
+  --chat--subtitle--line-height: 1.5;
+
+  --chat--message--font-size: .9rem;
+  --chat--message--padding: 12px 14px;
+  --chat--message--border-radius: 10px;
+
+  --chat--toggle--background: var(--accent);
+  --chat--toggle--hover--background: var(--accent-light);
+  --chat--toggle--active--background: #008f46;
+  --chat--toggle--color: #ffffff;
+  --chat--toggle--size: 58px;
+}
+
+/* Keep the chat widget aligned with the portfolio visual language */
+#n8n-chat .chat-window{
+  box-shadow:0 18px 60px rgba(0,0,0,.42);
+  overflow:hidden;
+}
+
+#n8n-chat .chat-header{
+  background:
+    radial-gradient(circle at 85% 10%, rgba(0,181,160,.12), transparent 35%),
+    var(--bg-secondary);
+}
+
+@media(max-width:600px){
+  :root{
+    --chat--window--width: calc(100vw - 24px);
+    --chat--window--height: 76vh;
+    --chat--window--right: 12px;
+    --chat--window--bottom: 12px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -611,5 +687,42 @@ document.querySelectorAll('.nav-links a').forEach(a => {
   a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
 });
 </script>
+
+<!-- ═════════════════════ ASK ZAHRA AI CHATBOT ═════════════════════ -->
+<div id="n8n-chat" aria-label="Ask Zahra AI assistant"></div>
+
+<script type="module">
+  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+  createChat({
+    webhookUrl: 'https://zahraibrahim.app.n8n.cloud/webhook/47ec1cee-bdaf-4f87-8ad3-9c4071a1e14d/chat',
+    target: '#n8n-chat',
+    mode: 'window',
+    chatInputKey: 'chatInput',
+    chatSessionKey: 'sessionId',
+    loadPreviousSession: true,
+    showWelcomeScreen: false,
+    defaultLanguage: 'en',
+    enableStreaming: false,
+    metadata: {
+      source: 'zahrasafwan.github.io',
+      assistant: 'Ask Zahra'
+    },
+    initialMessages: [
+      'مرحبًا، أنا المساعد الرقمي لزهراء آل صفوان. يمكنني مساعدتك في التعرف على خبراتها المهنية وشهاداتها ومشاريعها.',
+      'Hello, I’m Zahra Al Safwan’s digital assistant. Ask me about her experience, certifications, skills, or projects.'
+    ],
+    i18n: {
+      en: {
+        title: 'Ask Zahra',
+        subtitle: 'IT Audit • Cybersecurity • GRC • AI Governance',
+        footer: '',
+        getStarted: 'Start a conversation',
+        inputPlaceholder: 'Ask about Zahra’s experience...'
+      }
+    }
+  });
+</script>
+
 </body>
 </html>
