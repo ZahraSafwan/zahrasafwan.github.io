@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zahra Al Safwan | IT & Cybersecurity Auditor</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat@1.29.1/dist/style.css" rel="stylesheet">
 <style>
 :root {
   --bg-primary:    #060e0a;
@@ -277,6 +277,18 @@ footer span{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ac
   --chat--toggle--active--background: #008f46;
   --chat--toggle--color: #ffffff;
   --chat--toggle--size: 58px;
+
+  --chat--textarea--height: 52px;
+  --chat--textarea--max-height: 120px;
+  --chat--input--font-size: .92rem;
+  --chat--input--padding: 12px 14px;
+  --chat--input--background: #ffffff;
+  --chat--input--text-color: #101330;
+  --chat--input--placeholder--font-size: .9rem;
+  --chat--input--send--button--background: #ffffff;
+  --chat--input--send--button--color: var(--accent);
+  --chat--footer--background: #ffffff;
+  --chat--footer--color: #101330;
 }
 
 /* Keep the chat widget aligned with the portfolio visual language */
@@ -692,7 +704,7 @@ document.querySelectorAll('.nav-links a').forEach(a => {
 <div id="n8n-chat" aria-label="Ask Zahra AI assistant"></div>
 
 <script type="module">
-  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat@1.29.1/dist/chat.bundle.es.js';
 
   createChat({
     webhookUrl: 'https://zahraibrahim.app.n8n.cloud/webhook/47ec1cee-bdaf-4f87-8ad3-9c4071a1e14d/chat',
@@ -700,7 +712,7 @@ document.querySelectorAll('.nav-links a').forEach(a => {
     mode: 'window',
     chatInputKey: 'chatInput',
     chatSessionKey: 'sessionId',
-    loadPreviousSession: true,
+    loadPreviousSession: false,
     showWelcomeScreen: false,
     defaultLanguage: 'en',
     enableStreaming: false,
