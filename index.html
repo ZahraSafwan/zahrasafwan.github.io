@@ -341,7 +341,7 @@ footer span{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ac
       <p class="hero-role">💠 IT & Cybersecurity Auditor — GRC • AI Governance • Digital Trust</p>
       <p class="hero-desc">◈ Focused on Governance, Risk, Compliance (GRC), AI Governance, and cybersecurity-driven solutions that support secure and trusted digital environments.</p>
       <div class="hero-stats">
-        <div><div class="stat-n">7+</div><div class="stat-l">AI & Operational Workflow Projects</div></div>
+        <div><div class="stat-n">8+</div><div class="stat-l">AI & Operational Workflow Projects</div></div>
         <div><div class="stat-n">6+</div><div class="stat-l">Professional Certifications</div></div>
         <div><div class="stat-n">10+</div><div class="stat-l">Governance & Security Frameworks</div></div>
       </div>
@@ -359,12 +359,23 @@ footer span{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ac
     <h2 class="s-title">Projects & AI Initiatives</h2>
     <p class="s-sub">Selected projects and operational concepts focused on cybersecurity governance, audit workflows, compliance systems, and modern digital operations</p>
     <div class="proj-grid">
-         <div class="proj-card reveal">
-        <div class="proj-badge">● AI Portfolio Assistant</div>
+      <div class="proj-card reveal">
+        <div class="proj-badge">● Live AI Portfolio Assistant</div>
         <div class="proj-name">Ask Zahra</div>
         <div class="proj-desc">
-          AI-powered portfolio assistant integrated into Zahra Al Safwan’s website to answer questions about professional experience, skills, certifications, projects, and areas of expertise. Built using n8n AI Agent and a retrieval-based knowledge workflow, with strict grounding rules to prevent unsupported responses. Supports Arabic and English.</div>
-        <div class="proj-foot"><div class="proj-tags"><span class="tag">Compliance AI</span><span class="tag">Gemini API</span><span class="tag">Human-in-the-Loop</span></div><a href="✏️ https://your-project.com" class="proj-link" target="_blank">View Tool →</a></div>
+          Bilingual AI portfolio assistant integrated into Zahra Al Safwan’s website. It answers grounded questions about her professional experience, skills, certifications, projects, and areas of expertise using an n8n AI Agent and retrieval-based knowledge workflow, with strict rules to prevent unsupported responses.
+        </div>
+        <div class="proj-foot">
+          <div class="proj-tags">
+            <span class="tag">AI Chatbot</span>
+            <span class="tag">n8n</span>
+            <span class="tag">RAG</span>
+            <span class="tag">AI Agent</span>
+            <span class="tag">Knowledge Base</span>
+            <span class="tag">Arabic & English</span>
+          </div>
+          <a href="#" class="proj-link" id="ask-zahra-project-link" aria-label="Open Ask Zahra chatbot">Try Ask Zahra →</a>
+        </div>
       </div>
       <div class="proj-card reveal">
         <div class="proj-badge">● Compliance Evidence Analyzer</div>
@@ -377,7 +388,7 @@ analyzes all 23 controls simultaneously, and produces structured
 verdicts with evidence-based justifications and ready-to-send 
 client comments — with mandatory human approval before any output 
 is finalized.</div>
-        <div class="proj-foot"><div class="proj-tags"><span class="tag">AI Chatbot</span><span class="tag">n8n</span><span class="tag">RAG</span><span class="tag">AI Agent</span><span class="tag">Knowledge Base</span><span class="tag">Human-Centered AI</span></div><a href="✏️ https://your-project.com" class="proj-link" target="_blank">View Tool →</a></div>
+        <div class="proj-foot"><div class="proj-tags"><span class="tag">Compliance AI</span><span class="tag">Gemini API</span><span class="tag">Aramco CCC</span><span class="tag">Evidence Review</span><span class="tag">Human-in-the-Loop</span></div><a href="✏️ https://your-project.com" class="proj-link" target="_blank">View Tool →</a></div>
       </div>
       <div class="proj-card reveal">
         <div class="proj-badge">● AI Audit Workflow</div>
@@ -666,7 +677,7 @@ and subject to clinical review.</div>
 </section>
 <!-- ═══════════════════════════════ FOOTER ════════════════════════════ -->
 <footer>
-  <p>© 2025 Zahra Al Safwan. All rights reserved.</p>
+  <p>© 2026 Zahra Al Safwan. All rights reserved.</p>
   <span>Riyadh, Saudi Arabia</span>
 </footer>
 
@@ -705,6 +716,34 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 document.querySelectorAll('.nav-links a').forEach(a => {
   a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
 });
+
+/* ── Open Ask Zahra from the project card ── */
+function openAskZahra(event) {
+  if (event) event.preventDefault();
+
+  let attempts = 0;
+  const maxAttempts = 20;
+
+  const tryOpen = () => {
+    const toggle = document.querySelector(
+      '#n8n-chat .chat-window-toggle, #n8n-chat button.chat-window-toggle, #n8n-chat [class*="chat-window-toggle"]'
+    );
+
+    if (toggle) {
+      toggle.click();
+      return;
+    }
+
+    attempts += 1;
+    if (attempts < maxAttempts) {
+      setTimeout(tryOpen, 150);
+    }
+  };
+
+  tryOpen();
+}
+
+document.getElementById('ask-zahra-project-link')?.addEventListener('click', openAskZahra);
 </script>
 
 <!-- ═════════════════════ ASK ZAHRA AI CHATBOT ═════════════════════ -->
