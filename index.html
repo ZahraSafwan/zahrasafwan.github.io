@@ -312,6 +312,84 @@ footer span{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ac
   }
 }
 
+
+/* ── Custom Ask Zahra launcher ── */
+#n8n-chat .chat-window-toggle{
+  position:relative !important;
+  background:var(--bg-card) !important;
+  border:1px solid var(--accent-border) !important;
+  color:var(--accent-light) !important;
+  box-shadow:
+    0 10px 28px rgba(0,0,0,.36),
+    0 0 0 1px rgba(0,201,106,.04),
+    0 0 24px rgba(0,166,81,.10) !important;
+  transition:
+    transform .2s ease,
+    background .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease !important;
+}
+
+#n8n-chat .chat-window-toggle:hover{
+  background:var(--bg-card-hover) !important;
+  border-color:var(--accent) !important;
+  transform:translateY(-2px) scale(1.03);
+  box-shadow:
+    0 14px 34px rgba(0,0,0,.42),
+    0 0 28px rgba(0,166,81,.18) !important;
+}
+
+/* Hide the default speech-bubble icon */
+#n8n-chat .chat-window-toggle svg{
+  display:none !important;
+}
+
+/* Portfolio identity mark */
+#n8n-chat .chat-window-toggle::before{
+  content:'💠';
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  height:100%;
+  font-size:25px;
+  line-height:1;
+  filter:saturate(.9);
+}
+
+/* Small label shown on hover */
+#n8n-chat .chat-window-toggle::after{
+  content:'Ask Zahra AI';
+  position:absolute;
+  right:calc(100% + 12px);
+  top:50%;
+  transform:translateY(-50%) translateX(6px);
+  padding:7px 11px;
+  border-radius:7px;
+  border:.5px solid var(--accent-border);
+  background:rgba(9,21,16,.96);
+  color:var(--text-primary);
+  font-family:'Inter',sans-serif;
+  font-size:12px;
+  font-weight:600;
+  white-space:nowrap;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .18s ease, transform .18s ease;
+  box-shadow:0 8px 24px rgba(0,0,0,.28);
+}
+
+#n8n-chat .chat-window-toggle:hover::after{
+  opacity:1;
+  transform:translateY(-50%) translateX(0);
+}
+
+@media(max-width:600px){
+  #n8n-chat .chat-window-toggle::after{
+    display:none;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -341,7 +419,7 @@ footer span{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ac
       <p class="hero-role">💠 IT & Cybersecurity Auditor — GRC • AI Governance • Digital Trust</p>
       <p class="hero-desc">◈ Focused on Governance, Risk, Compliance (GRC), AI Governance, and cybersecurity-driven solutions that support secure and trusted digital environments.</p>
       <div class="hero-stats">
-        <div><div class="stat-n">8+</div><div class="stat-l">AI & Operational Workflow Projects</div></div>
+        <div><div class="stat-n">9+</div><div class="stat-l">AI & Operational Workflow Projects</div></div>
         <div><div class="stat-n">6+</div><div class="stat-l">Professional Certifications</div></div>
         <div><div class="stat-n">10+</div><div class="stat-l">Governance & Security Frameworks</div></div>
       </div>
@@ -375,6 +453,26 @@ footer span{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ac
             <span class="tag">Arabic & English</span>
           </div>
           <a href="#" class="proj-link" id="ask-zahra-project-link" aria-label="Open Ask Zahra chatbot">Try Ask Zahra →</a>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-badge">● AI Automation & Governance Venture</div>
+        <div class="proj-name">SABBARAH AI</div>
+        <div class="proj-desc">
+          Co-building a Saudi AI automation venture focused on practical AI agents and workflow automation for businesses, with cybersecurity, privacy, access controls, human oversight, and AI governance embedded by design. The initiative explores customer service agents, operational workflows, automated follow-ups, and intelligent digital experiences while considering relevant Saudi data protection, cybersecurity, and AI governance requirements from the start.
+        </div>
+        <div class="proj-foot">
+          <div class="proj-tags">
+            <span class="tag">AI Automation</span>
+            <span class="tag">AI Governance</span>
+            <span class="tag">Cybersecurity</span>
+            <span class="tag">n8n</span>
+            <span class="tag">AI Agents</span>
+            <span class="tag">Privacy by Design</span>
+            <span class="tag">Human-in-the-Loop</span>
+          </div>
+          <a href="https://sabbarahai.com" class="proj-link" target="_blank" rel="noopener noreferrer">Explore SABBARAH AI →</a>
         </div>
       </div>
       <div class="proj-card reveal">
