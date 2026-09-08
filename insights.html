@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Insights | Zahra Al Safwan</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --bg:#f8fbf9;--bg2:#f1f7f3;--card:#fff;--green:#138a52;--green2:#1fa463;
+  --teal:#168f83;--navy:#173126;--muted:#60746a;--line:#dce9e2;--mint:#e7f7ee;
+  --cream:#fff9e9;--rose:#fff1ef;--blue:#edf5ff;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--navy);font-family:'IBM Plex Sans Arabic','Inter',sans-serif;line-height:1.85}
+a{color:inherit}
+.site-nav{position:sticky;top:0;z-index:50;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(18px,5vw,64px);background:rgba(248,251,249,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);direction:ltr}
+.site-brand{font:700 13px 'JetBrains Mono',monospace;color:var(--green);text-decoration:none}
+.site-links{display:flex;gap:20px;align-items:center}
+.site-links a{font:600 12px Inter;text-decoration:none;color:#60746a}.site-links a.active{color:var(--green)}
+.wrap{width:min(1080px,calc(100% - 36px));margin:auto}
+.hero{padding:64px 0 30px;text-align:center}.eyebrow{font:700 10px Inter;color:var(--green);letter-spacing:.13em;text-transform:uppercase}
+.hero h1{font-size:clamp(34px,6vw,56px);line-height:1.25;margin:8px 0 12px}.hero p{max-width:680px;margin:auto;color:var(--muted);font-size:16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 17px;border-radius:9px;text-decoration:none;font-size:12px;font-weight:700;border:1px solid var(--line);background:#fff;color:var(--green)}
+.btn.primary{background:var(--green);border-color:var(--green);color:white}.btn:hover{transform:translateY(-1px)}
+.section{padding:27px 0}.section-head{margin-bottom:14px}.section-head h2{font-size:23px;margin:0}.section-head p{font-size:13px;color:var(--muted);margin:2px 0 0}
+.footer{border-top:1px solid var(--line);padding:22px 0 38px;margin-top:40px;display:flex;justify-content:space-between;gap:15px;color:#82948b;font:500 10px Inter;direction:ltr}
+.lock{display:inline-flex;align-items:center;justify-content:center;width:31px;height:31px;border-radius:50%;background:#eff3f1;border:1px solid var(--line)}
+@media(max-width:720px){.site-links a:not(.active){display:none}.footer{flex-direction:column}}
+
+.focus-note{max-width:690px;margin:21px auto 0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 15px;color:#62766b;font-size:12px}
+.start{display:grid;grid-template-columns:1.2fr .8fr;background:linear-gradient(135deg,#fff,#f1faf5);border:1px solid #cfe7d9;border-radius:19px;overflow:hidden}
+.start-copy{padding:30px}.pill{display:inline-block;background:var(--mint);color:var(--green);border-radius:999px;padding:4px 9px;font-size:10px;font-weight:700}
+.start h2{font-size:29px;line-height:1.45;margin:12px 0 8px}.start p{font-size:14px;color:var(--muted);margin-bottom:19px}
+.start-visual{min-height:250px;display:flex;justify-content:center;align-items:center;background:radial-gradient(circle,#dff6e8,#f9fcfa 72%)}
+.flow{display:flex;flex-direction:column;gap:6px;align-items:center}.node{background:#fff;border:1px solid var(--line);border-radius:9px;padding:7px 13px;min-width:150px;text-align:center;font-size:11px;font-weight:700}
+.node.agent{background:var(--green);color:#fff;border-color:var(--green);font-size:14px}.arrow{color:var(--teal);font-size:18px}
+.paths{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.path{background:#fff;border:1px solid var(--line);border-radius:15px;padding:19px}
+.path .ico{font-size:23px}.path h3{font-size:16px;margin:7px 0 3px}.path p{font-size:11px;color:var(--muted);margin:0}
+.articles{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.article{position:relative;background:#fff;border:1px solid var(--line);border-radius:15px;padding:19px;min-height:205px;display:flex;flex-direction:column}
+.article.open{border-top:3px solid var(--green)}.article.locked{opacity:.78;background:#fcfdfc}.meta{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.cat{font:700 9px Inter;padding:3px 7px;border-radius:999px;background:var(--mint);color:var(--green)}.cat.security{background:var(--rose);color:#a6544c}
+.article h3{font-size:17px;line-height:1.55;margin:13px 0 6px}.article p{font-size:12px;color:var(--muted);margin:0 0 14px}.article a{margin-top:auto;text-decoration:none;color:var(--green);font-size:11px;font-weight:700}
+.locked .lock{position:absolute;left:15px;top:49px}.locked-note{margin-top:auto;font-size:10px;color:#8d9c94;font-weight:700}
+.resources{display:grid;grid-template-columns:1fr 1fr;gap:12px}.resource{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;gap:13px;align-items:center}
+.ricon{width:47px;height:47px;border-radius:11px;background:var(--mint);display:flex;align-items:center;justify-content:center;font-size:21px;flex:0 0 auto}.resource h3{font-size:15px;margin:0 0 2px}.resource p{font-size:11px;color:var(--muted);margin:0 0 7px}.resource a{font:700 10px Inter;color:var(--green);text-decoration:none}
+@media(max-width:820px){.start{grid-template-columns:1fr}.paths,.articles,.resources{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <a class="site-brand" href="index.html">💠 zahraspace</a>
+  <div class="site-links"><a href="index.html">Portfolio</a><a class="active" href="insights.html">Insights</a><a href="index.html#cv">Contact</a></div>
+</nav>
+
+<main class="wrap">
+<section class="hero">
+  <div class="eyebrow">INSIGHTS · AI × AUDIT</div>
+  <h1>الذكاء الاصطناعي بعين المراجع</h1>
+  <p>محتوى مبسّط وعملي يساعد المراجع الداخلي على فهم الذكاء الاصطناعي ومخاطره وضوابطه، دون الحاجة إلى خلفية تقنية عميقة.</p>
+  <div class="focus-note">ابدأ بمقال واحد فقط، ثم انتقل إلى المسار المناسب. لا حاجة إلى تصفح جميع المحتويات دفعة واحدة.</div>
+</section>
+
+<section class="section">
+  <div class="section-head"><h2>ابدأ من هنا</h2><p>الدليل المتاح حاليًا.</p></div>
+  <div class="start">
+    <div class="start-copy">
+      <span class="pill">الدليل العملي الأول</span>
+      <h2>كيف تراجع وكيل الذكاء الاصطناعي (AI Agent)؟</h2>
+      <p>سيناريو مبسّط، الأدلة المطلوبة، ما الذي يراجعه المراجع ويختبره، أهم المخاطر، أمثلة للملاحظات، والتوصيات المحتملة.</p>
+      <a class="btn primary" href="ai-agent-audit.html">فتح الدليل ←</a>
+    </div>
+    <div class="start-visual">
+      <div class="flow">
+        <div class="node">طلب / عملية</div><div class="arrow">↓</div>
+        <div class="node agent">وكيل الذكاء الاصطناعي</div><div class="arrow">↓</div>
+        <div class="node">قرار</div><div class="arrow">↓</div>
+        <div class="node">موافقة حسب مستوى الخطر</div><div class="arrow">↓</div>
+        <div class="node">تنفيذ + سجلات</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head"><h2>المسارات التعليمية</h2><p>ثلاثة مسارات واضحة، ويمكن التوسع فيها تدريجيًا.</p></div>
+  <div class="paths">
+    <div class="path"><div class="ico">🧠</div><h3>AI للمراجع من الصفر</h3><p>المفاهيم التي يحتاجها أي مراجع قبل الدخول في التفاصيل التقنية.</p></div>
+    <div class="path"><div class="ico">📋</div><h3>مراجعة وضوابط AI</h3><p>الصلاحيات، الموافقات، جودة القرارات، السجلات، واختبار الضوابط.</p></div>
+    <div class="path"><div class="ico">🛡️</div><h3>AI Security والحوادث</h3><p>حوادث حقيقية، أسبابها، وما الذي تعنيه للمراجعة الداخلية.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head"><h2>المقالات</h2><p>المقالات غير المنشورة تبقى مقفلة حتى تصبح جاهزة.</p></div>
+  <div class="articles">
+    <article class="article open">
+      <div class="meta"><span class="cat">AI AUDIT</span><span style="font:600 9px Inter;color:#899991">متاح الآن</span></div>
+      <h3>كيف تراجع وكيل الذكاء الاصطناعي (AI Agent)؟</h3>
+      <p>دليل عملي من فهم العملية إلى كتابة الملاحظة والتوصية.</p>
+      <a href="ai-agent-audit.html">قراءة الدليل ←</a>
+    </article>
+    <article class="article locked">
+      <div class="meta"><span class="cat">AI AUDIT</span><span style="font:600 9px Inter;color:#899991">قريبًا</span></div><span class="lock">🔒</span>
+      <h3>هل الـSystem Prompt ضابط رقابي كافٍ؟</h3>
+      <p>الفرق بين التعليمات السلوكية والضوابط التقنية التي تفرض التنفيذ.</p><span class="locked-note">المقال قيد الإعداد</span>
+    </article>
+    <article class="article locked">
+      <div class="meta"><span class="cat security">AI SECURITY</span><span style="font:600 9px Inter;color:#899991">قريبًا</span></div><span class="lock">🔒</span>
+      <h3>وجود نظام مراقبة لا يعني أن الضابط فعّال</h3>
+      <p>دروس للمراجع من تغطية المراقبة والتنبيه والاستجابة.</p><span class="locked-note">المقال قيد الإعداد</span>
+    </article>
+    <article class="article locked">
+      <div class="meta"><span class="cat">AI AUDIT</span><span style="font:600 9px Inter;color:#899991">قريبًا</span></div><span class="lock">🔒</span>
+      <h3>كيف تراجع صلاحيات وكيل الذكاء الاصطناعي؟</h3>
+      <p>كيف تتحقق من أقل قدر من الصلاحيات وحدود الوصول.</p><span class="locked-note">المقال قيد الإعداد</span>
+    </article>
+    <article class="article locked">
+      <div class="meta"><span class="cat">AI AUDIT</span><span style="font:600 9px Inter;color:#899991">قريبًا</span></div><span class="lock">🔒</span>
+      <h3>إذا أخطأ الوكيل، هل تستطيع إعادة بناء ما حدث؟</h3>
+      <p>سجل التدقيق والـLogs المطلوبة لتتبع القرار والتنفيذ.</p><span class="locked-note">المقال قيد الإعداد</span>
+    </article>
+    <article class="article locked">
+      <div class="meta"><span class="cat security">AI SECURITY</span><span style="font:600 9px Inter;color:#899991">قريبًا</span></div><span class="lock">🔒</span>
+      <h3>Prompt Injection: لماذا يهم المراجع الداخلي؟</h3>
+      <p>كيف يؤثر التلاعب بالمدخلات على قرارات الوكيل وصلاحياته.</p><span class="locked-note">المقال قيد الإعداد</span>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head"><h2>أدوات جاهزة للمراجعة</h2><p>ملفان منفصلان، لكل واحد غرض واضح.</p></div>
+  <div class="resources">
+    <div class="resource"><div class="ricon">✓</div><div><h3>AI Agent Audit Checklist</h3><p>قائمة مراجعة عملية لاختبار الضوابط وتوثيق النتائج.</p><a href="downloads/Zahra_Al_Safwan_AI_Agent_Audit_Checklist_AR.xlsx" download>تحميل ملف Excel ↓</a></div></div>
+    <div class="resource"><div class="ricon">📎</div><div><h3>Audit Requirements / PBC List</h3><p>قائمة الأدلة والمتطلبات المطلوبة من الجهة محل المراجعة.</p><a href="downloads/Zahra_Al_Safwan_AI_Agent_Audit_Requirements_PBC_AR.xlsx" download>تحميل ملف Excel ↓</a></div></div>
+  </div>
+</section>
+
+<footer class="footer"><span>© 2026 Zahra Al Safwan</span><span>IT & Cybersecurity Audit · AI Agents · AI Governance & Security</span></footer>
+</main>
+</body>
+</html>

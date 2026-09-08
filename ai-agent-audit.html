@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>كيف تراجع وكيل الذكاء الاصطناعي؟ | Zahra Al Safwan</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f8fbf9;--bg2:#f1f7f3;--card:#fff;--green:#138a52;--green2:#1fa463;
+  --teal:#168f83;--navy:#173126;--muted:#60746a;--line:#dce9e2;--mint:#e7f7ee;
+  --cream:#fff9e9;--rose:#fff1ef;--blue:#edf5ff;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--navy);font-family:'IBM Plex Sans Arabic','Inter',sans-serif;line-height:1.85}
+a{color:inherit}
+.site-nav{position:sticky;top:0;z-index:50;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(18px,5vw,64px);background:rgba(248,251,249,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);direction:ltr}
+.site-brand{font:700 13px 'JetBrains Mono',monospace;color:var(--green);text-decoration:none}
+.site-links{display:flex;gap:20px;align-items:center}
+.site-links a{font:600 12px Inter;text-decoration:none;color:#60746a}.site-links a.active{color:var(--green)}
+.wrap{width:min(1080px,calc(100% - 36px));margin:auto}
+.hero{padding:64px 0 30px;text-align:center}.eyebrow{font:700 10px Inter;color:var(--green);letter-spacing:.13em;text-transform:uppercase}
+.hero h1{font-size:clamp(34px,6vw,56px);line-height:1.25;margin:8px 0 12px}.hero p{max-width:680px;margin:auto;color:var(--muted);font-size:16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 17px;border-radius:9px;text-decoration:none;font-size:12px;font-weight:700;border:1px solid var(--line);background:#fff;color:var(--green)}
+.btn.primary{background:var(--green);border-color:var(--green);color:white}.btn:hover{transform:translateY(-1px)}
+.section{padding:27px 0}.section-head{margin-bottom:14px}.section-head h2{font-size:23px;margin:0}.section-head p{font-size:13px;color:var(--muted);margin:2px 0 0}
+.footer{border-top:1px solid var(--line);padding:22px 0 38px;margin-top:40px;display:flex;justify-content:space-between;gap:15px;color:#82948b;font:500 10px Inter;direction:ltr}
+.lock{display:inline-flex;align-items:center;justify-content:center;width:31px;height:31px;border-radius:50%;background:#eff3f1;border:1px solid var(--line)}
+@media(max-width:720px){.site-links a:not(.active){display:none}.footer{flex-direction:column}}
+
+.article-hero{padding:52px 0 22px}.back{font-size:11px;color:var(--green);text-decoration:none;font-weight:700}
+.article-hero h1{font-size:clamp(34px,5vw,52px);line-height:1.35;margin:13px 0 10px}.lead{font-size:17px;color:var(--muted);max-width:800px}
+.article-shell{background:#fff;border:1px solid var(--line);border-radius:20px;padding:clamp(22px,5vw,46px);box-shadow:0 15px 42px rgba(19,138,82,.05)}
+.article-map{margin:24px auto 35px;max-width:820px}.article-map img{width:100%;display:block;border-radius:16px;border:1px solid var(--line)}
+.note{background:#eff8f3;border-right:4px solid var(--green);border-radius:12px;padding:15px 17px;color:#496157;font-size:13px}
+.scenario{margin:28px 0;background:linear-gradient(135deg,#f6fbf8,#fff);border:1px solid #cfe7d9;border-radius:16px;padding:21px}.scenario h2{font-size:20px;margin:0 0 7px}.scenario p{font-size:13px;color:var(--muted)}
+.mini-flow{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:7px;margin-top:16px}.mini-flow div{background:#fff;border:1px solid var(--line);border-radius:9px;padding:8px 10px;font-size:10px;font-weight:700}.mini-flow .agent{background:var(--green);color:#fff}.mini-flow .arr{border:0;background:transparent;color:var(--teal);font-size:17px}
+h2.sec-title{font-size:24px;margin:42px 0 6px}.intro{color:var(--muted);font-size:13px;margin:0 0 15px}
+.roadmap{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:16px}.step{border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center;background:#fff}.step b{display:block;font-size:12px}.step small{display:block;color:var(--muted);font-size:9px;line-height:1.6;margin-top:4px}.step span{display:flex;width:28px;height:28px;margin:0 auto 7px;border-radius:50%;align-items:center;justify-content:center;background:var(--mint);color:var(--green);font:800 10px Inter}
+.evidence-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.evidence{position:relative;border:1px solid var(--line);border-radius:12px;padding:14px 14px 14px 47px;background:#fff}.evidence .n{position:absolute;left:12px;top:12px;width:27px;height:27px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--mint);color:var(--green);font:800 9px Inter}.evidence b{font-size:12px;display:block}.evidence small{font-size:10px;color:var(--muted);display:block;margin-top:3px}
+.controls{display:flex;flex-direction:column;gap:9px}.control{display:grid;grid-template-columns:43px 1.2fr .8fr;gap:12px;border:1px solid var(--line);border-radius:13px;padding:12px}.control-no{width:35px;height:35px;border-radius:9px;background:var(--mint);color:var(--green);display:flex;align-items:center;justify-content:center;font:800 10px Inter}.control h3{font-size:14px;margin:0 0 3px}.control p{font-size:11px;color:var(--muted);margin:0}.test{background:#f6faf8;border-radius:9px;padding:9px 11px}.test b{font-size:10px;color:var(--teal);display:block}.test small{font-size:9px;color:var(--muted)}
+.risks{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.risk{border:1px solid var(--line);border-radius:12px;padding:13px;background:#fff}.risk.high{border-top:3px solid #d7766d}.risk.med{border-top:3px solid #dfb354}.risk.low{border-top:3px solid #65a98c}.risk span{font-size:8px;font-weight:800;border-radius:999px;padding:3px 6px;background:#f4f5f4}.risk h3{font-size:12px;margin:7px 0 3px}.risk p{font-size:10px;color:var(--muted);margin:0}
+.findings{border:1px solid var(--line);border-radius:13px;overflow:hidden}.fhead,.frow{display:grid;grid-template-columns:1fr 1fr 1fr}.fhead{background:var(--mint);font-size:10px;color:var(--green);font-weight:800}.fhead span,.frow span{padding:10px 11px;border-left:1px solid var(--line)}.frow{font-size:10px;color:var(--muted);border-top:1px solid var(--line)}.frow b{color:var(--navy)}
+.formula{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;gap:6px;align-items:center;border:1px solid var(--line);border-radius:13px;padding:13px;background:#f8fbf9}.formula .box{background:#fff;border:1px solid var(--line);border-radius:9px;padding:10px;text-align:center}.formula b{display:block;font-size:11px}.formula small{font-size:8px;color:var(--muted)}.formula .arr{color:var(--teal)}
+.example{margin-top:11px;border-right:4px solid var(--teal);background:#f0faf8;border-radius:11px;padding:14px}.example p{font-size:11px;color:#527268;margin:4px 0}
+.good{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}.good div{background:#f3faf6;border:1px solid #d8eadf;border-radius:9px;padding:9px 11px;font-size:10px;color:#426353}
+.download-box{margin-top:38px;background:linear-gradient(135deg,#f2faf5,#fff);border:1px solid #cfe7d9;border-radius:15px;padding:18px;display:flex;justify-content:space-between;gap:20px;align-items:center}.download-box h3{font-size:18px;margin:0 0 4px}.download-box p{font-size:11px;color:var(--muted);margin:0}.actions{display:flex;gap:7px;flex-wrap:wrap}
+.sources{margin-top:20px;background:#fbfcfb;border:1px solid var(--line);border-radius:12px;padding:15px}.sources h3{font-size:13px;margin:0 0 5px}.sources p,.sources small{font-size:9px;color:var(--muted)}.sources a{display:inline-block;text-decoration:none;color:var(--green);font-size:9px;border:1px solid var(--line);background:#fff;padding:5px 7px;border-radius:6px;margin:2px}
+@media(max-width:800px){.roadmap{grid-template-columns:1fr 1fr}.evidence-grid,.risks,.good{grid-template-columns:1fr}.control{grid-template-columns:38px 1fr}.test{grid-column:2}.formula{grid-template-columns:1fr}.formula .arr{transform:rotate(90deg);text-align:center}.fhead{display:none}.frow{grid-template-columns:1fr}.download-box{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <a class="site-brand" href="index.html">💠 zahraspace</a>
+  <div class="site-links"><a href="index.html">Portfolio</a><a class="active" href="insights.html">Insights</a><a href="index.html#cv">Contact</a></div>
+</nav>
+
+<main class="wrap">
+<section class="article-hero">
+  <a class="back" href="insights.html">← العودة إلى Insights</a>
+  <div class="eyebrow" style="margin-top:18px">AI AUDIT · PRACTICAL GUIDE</div>
+  <h1>كيف تراجع وكيل الذكاء الاصطناعي (AI Agent)؟</h1>
+  <p class="lead">دليل عملي بلغة مبسّطة للمراجع الداخلي: ماذا يطلب؟ ماذا يختبر؟ ما المخاطر؟ وما الملاحظات والتوصيات التي قد تظهر أثناء المراجعة؟</p>
+</section>
+
+<article class="article-shell">
+  <div class="note"><b>الفكرة الأساسية:</b> لا تبدأ بمراجعة النموذج نفسه. ابدأ بفهم ما الذي يفعله الوكيل داخل العملية، وما البيانات والأنظمة التي يصل إليها، وما القرارات أو الإجراءات التي يستطيع تنفيذها.</div>
+
+  <figure class="article-map">
+    <img src="assets/images/ai-agent-audit-map.png" alt="خريطة مبسطة لفهم رحلة وكيل الذكاء الاصطناعي قبل المراجعة">
+  </figure>
+
+  <section class="scenario">
+    <h2>🧩 سيناريو مبسّط: وكيل لمعالجة طلبات استرداد المبالغ</h2>
+    <p>تستخدم شركة وكيل ذكاء اصطناعي لمراجعة طلبات استرداد العملاء. يقرأ بيانات الطلب وسجل العميل، يقترح القرار، وقد ينفذ الاسترداد تلقائيًا إذا كانت العملية ضمن الحدود المسموح بها.</p>
+    <div class="mini-flow">
+      <div>طلب العميل</div><div class="arr">←</div><div>قراءة البيانات</div><div class="arr">←</div><div class="agent">وكيل الذكاء الاصطناعي</div><div class="arr">←</div><div>قرار</div><div class="arr">←</div><div>موافقة بشرية؟</div><div class="arr">←</div><div>تنفيذ + سجلات</div>
+    </div>
+  </section>
+
+  <h2 class="sec-title">خريطة المراجعة في خمس خطوات</h2>
+  <div class="roadmap">
+    <div class="step"><span>1</span><b>افهم العملية</b><small>حدد دور الوكيل وبداية ونهاية مسؤوليته.</small></div>
+    <div class="step"><span>2</span><b>اطلب الأدلة</b><small>السياسات، الإعدادات، الصلاحيات، السجلات والاختبارات.</small></div>
+    <div class="step"><span>3</span><b>اختبر الضوابط</b><small>لا تكتفِ بوجودها على الورق.</small></div>
+    <div class="step"><span>4</span><b>قيّم المخاطر</b><small>ما الذي قد يحدث عند الخطأ أو التلاعب؟</small></div>
+    <div class="step"><span>5</span><b>اكتب النتيجة</b><small>ملاحظة واضحة وتوصية قابلة للتنفيذ.</small></div>
+  </div>
+
+  <h2 class="sec-title">1. ماذا يطلب المراجع قبل بدء الاختبار؟</h2>
+  <p class="intro">ابدأ بما يساعدك على فهم الوكيل وحدوده وطريقة تشغيله.</p>
+  <div class="evidence-grid">
+    <div class="evidence"><span class="n">01</span><b>وصف الوكيل والغرض منه</b><small>المالك، الهدف، العمليات التي يدعمها، وما لا يُسمح له بفعله.</small></div>
+    <div class="evidence"><span class="n">02</span><b>مخطط سير العملية</b><small>من الإدخال إلى القرار والتنفيذ، مع الأنظمة والأطراف المتداخلة.</small></div>
+    <div class="evidence"><span class="n">03</span><b>قائمة الأنظمة والأدوات</b><small>CRM، البريد، قواعد البيانات، APIs وأي أدوات متصلة.</small></div>
+    <div class="evidence"><span class="n">04</span><b>مصفوفة الصلاحيات</b><small>ما الذي تستطيع هوية الوكيل قراءته أو تعديله أو حذفه؟</small></div>
+    <div class="evidence"><span class="n">05</span><b>قواعد الموافقة البشرية</b><small>ما العمليات التي تتطلب موافقة؟ وكيف يمنع النظام التنفيذ قبلها؟</small></div>
+    <div class="evidence"><span class="n">06</span><b>السجلات والتنبيهات</b><small>القرارات، Tool Calls، الموافقات، التنفيذ والتنبيهات الأمنية.</small></div>
+    <div class="evidence"><span class="n">07</span><b>إدارة التغييرات</b><small>تغييرات النموذج والـPrompts والأدوات والصلاحيات ونتائج اختبارها.</small></div>
+    <div class="evidence"><span class="n">08</span><b>الحوادث والاختبارات السابقة</b><small>المشكلات المعروفة، الاختبارات الأمنية، وخطط المعالجة.</small></div>
+  </div>
+
+  <h2 class="sec-title">2. ما أهم ما يراجعه المراجع؟</h2>
+  <div class="controls">
+    <div class="control"><div class="control-no">01</div><div><h3>النطاق والمسؤولية</h3><p>هل الغرض واضح؟ وهل يوجد مالك مسؤول وحدود لما يستطيع الوكيل فعله؟</p></div><div class="test"><b>اختبار عملي</b><small>قارن الوثائق بما يستطيع الوكيل فعله فعليًا داخل الأدوات المتصلة.</small></div></div>
+    <div class="control"><div class="control-no">02</div><div><h3>البيانات</h3><p>ما البيانات التي يدخل إليها؟ وهل يحتاجها؟ وهل تحتوي على بيانات حساسة أو شخصية؟</p></div><div class="test"><b>اختبار عملي</b><small>تتبّع عينة من البيانات من المصدر إلى الوكيل ثم إلى النتيجة أو السجل.</small></div></div>
+    <div class="control"><div class="control-no">03</div><div><h3>الصلاحيات والوصول</h3><p>هل يملك أقل قدر من الصلاحيات اللازمة، أم يستطيع استخدام أدوات أو إجراءات لا يحتاجها؟</p></div><div class="test"><b>اختبار عملي</b><small>راجع هوية الوكيل وصلاحياتها، واختبر في بيئة آمنة إجراءً خارج النطاق.</small></div></div>
+    <div class="control"><div class="control-no">04</div><div><h3>القرار</h3><p>هل يقدم توصية أم يتخذ القرار؟ وما البيانات أو القواعد التي يعتمد عليها؟</p></div><div class="test"><b>اختبار عملي</b><small>اختبر حالات عادية وحدودية واستثناءات، وقارن النتيجة بالقرار المتوقع.</small></div></div>
+    <div class="control"><div class="control-no">05</div><div><h3>الموافقة البشرية</h3><p>هل العمليات عالية الأثر تتوقف فعليًا، أم أن التوقف مجرد تعليمات داخل الـPrompt؟</p></div><div class="test"><b>اختبار عملي</b><small>حاول الوصول إلى التنفيذ دون موافقة وتأكد أن النظام يمنع العملية تقنيًا.</small></div></div>
+    <div class="control"><div class="control-no">06</div><div><h3>التنفيذ</h3><p>هل يستطيع تنفيذ عمليات حساسة أو غير قابلة للتراجع؟ وهل توجد حدود وإمكانية للإيقاف؟</p></div><div class="test"><b>اختبار عملي</b><small>راجع حدود التنفيذ، آلية الإيقاف، والاسترجاع أو التراجع عندما يكون ذلك ممكنًا.</small></div></div>
+    <div class="control"><div class="control-no">07</div><div><h3>السجلات والمراقبة</h3><p>هل تستطيع إعادة بناء المهمة والقرار والأدوات والموافقة والنتيجة؟</p></div><div class="test"><b>اختبار عملي</b><small>اختر عملية مكتملة وحاول إعادة بنائها من البداية إلى النهاية باستخدام السجلات فقط.</small></div></div>
+    <div class="control"><div class="control-no">08</div><div><h3>التغيير والاختبار الأمني</h3><p>ماذا يحدث بعد تحديث النموذج أو الـPrompt أو إضافة أداة جديدة؟</p></div><div class="test"><b>اختبار عملي</b><small>اختر تغييرًا حديثًا وتحقق من الموافقة والاختبار قبل الاستخدام الفعلي.</small></div></div>
+  </div>
+
+  <h2 class="sec-title">3. ما المخاطر التي تبحث عنها؟</h2>
+  <div class="risks">
+    <div class="risk high"><span>مرتفع</span><h3>تنفيذ إجراء غير مصرح به</h3><p>حذف أو تحويل أو إرسال أو تغيير صلاحيات دون موافقة مناسبة.</p></div>
+    <div class="risk high"><span>مرتفع</span><h3>وصول أوسع من الحاجة</h3><p>صلاحيات تسمح بالوصول إلى بيانات أو أدوات خارج نطاق المهمة.</p></div>
+    <div class="risk med"><span>متوسط</span><h3>قرار غير صحيح</h3><p>قرار خاطئ أو غير متسق يؤثر في العميل أو العملية.</p></div>
+    <div class="risk med"><span>متوسط</span><h3>ضعف التتبع</h3><p>سجلات غير كافية لإثبات كيف تم القرار أو التنفيذ.</p></div>
+    <div class="risk med"><span>متوسط</span><h3>تسرب البيانات</h3><p>ظهور بيانات حساسة في السياق أو السجلات أو خدمات خارجية.</p></div>
+    <div class="risk low"><span>راقب</span><h3>تغييرات غير مضبوطة</h3><p>تغيير Prompt أو أداة أو نموذج دون اختبار أو موافقة مناسبة.</p></div>
+  </div>
+
+  <h2 class="sec-title">4. أمثلة على ملاحظات قد يكتشفها المراجع</h2>
+  <div class="findings">
+    <div class="fhead"><span>ما لاحظه المراجع</span><span>لماذا يهم؟</span><span>التوصية المحتملة</span></div>
+    <div class="frow"><span><b>الموافقة البشرية موجودة في الـPrompt فقط.</b></span><span>قد يتم تجاوز التعليمات أو تفسيرها بطريقة غير متوقعة.</span><span>فرض Approval Gate تقني مستقل قبل العمليات عالية الأثر.</span></div>
+    <div class="frow"><span><b>الوكيل يملك صلاحية حذف رغم أن عمله يحتاج القراءة فقط.</b></span><span>يزداد أثر أي خطأ أو استغلال.</span><span>تطبيق أقل قدر من الصلاحيات وإزالة الوصول غير المطلوب.</span></div>
+    <div class="frow"><span><b>لا يمكن ربط القرار بالبيانات أو الأداة التي استخدمها الوكيل.</b></span><span>يصعب التحقيق في الخطأ أو إثبات فعالية الضابط.</span><span>توسيع سجل التدقيق ليشمل القرار والأدوات والموافقات والنتيجة.</span></div>
+    <div class="frow"><span><b>إضافة أداة جديدة دون إعادة اختبار.</b></span><span>قد تتوسع الصلاحيات أو يتغير مسار المخاطر.</span><span>إخضاع أدوات الوكيل لإدارة التغيير واختبار ما قبل الإنتاج.</span></div>
+    <div class="frow"><span><b>التنبيه يصل، لكن لا توجد آلية واضحة للتصعيد.</b></span><span>الاكتشاف دون استجابة قد لا يمنع الضرر.</span><span>تحديد المسؤول وزمن الاستجابة ومسار التصعيد واختباره دوريًا.</span></div>
+  </div>
+
+  <h2 class="sec-title">5. كيف تكتب ملاحظة واضحة؟</h2>
+  <div class="formula">
+    <div class="box"><b>الحالة</b><small>ماذا وجدت؟</small></div><div class="arr">←</div>
+    <div class="box"><b>الخطر / الأثر</b><small>ما الذي قد يحدث؟</small></div><div class="arr">←</div>
+    <div class="box"><b>السبب</b><small>لماذا حدث؟</small></div><div class="arr">←</div>
+    <div class="box"><b>التوصية</b><small>ما الإجراء المطلوب؟</small></div>
+  </div>
+  <div class="example">
+    <p><b>الحالة:</b> الوكيل يستطيع تنفيذ استرداد مالي مرتفع القيمة دون بوابة موافقة تقنية.</p>
+    <p><b>الخطر:</b> قد يؤدي قرار خاطئ أو تلاعب بالوكيل إلى تنفيذ عملية مالية غير مصرح بها.</p>
+    <p><b>التوصية:</b> تصنيف عمليات الاسترداد حسب مستوى الخطورة، وفرض موافقة بشرية تقنية على العمليات عالية الأثر قبل التنفيذ.</p>
+  </div>
+
+  <h2 class="sec-title">6. كيف تبدو البيئة الجيدة؟</h2>
+  <div class="good">
+    <div>✓ الغرض والمالك والنطاق موثقون</div><div>✓ صلاحيات الوكيل محدودة حسب الحاجة</div>
+    <div>✓ العمليات عالية الأثر لها موافقة بشرية حقيقية</div><div>✓ القرارات والإجراءات قابلة للتتبع</div>
+    <div>✓ توجد مراقبة وتنبيهات واستجابة</div><div>✓ التغييرات المهمة يعاد اختبارها قبل الإنتاج</div>
+    <div>✓ توجد آلية إيقاف أو سحب وصول</div><div>✓ يتم اختبار الحالات العادية والحدودية والسلبية</div>
+  </div>
+
+  <div class="download-box">
+    <div><h3>أدوات مرتبطة بهذا الدليل</h3><p>استخدمها كنقطة بداية، ثم عدّلها حسب نطاق المراجعة ومستوى المخاطر.</p></div>
+    <div class="actions">
+      <a class="btn primary" href="downloads/Zahra_Al_Safwan_AI_Agent_Audit_Checklist_AR.xlsx" download>تحميل قائمة المراجعة</a>
+      <a class="btn" href="downloads/Zahra_Al_Safwan_AI_Agent_Audit_Requirements_PBC_AR.xlsx" download>تحميل قائمة المتطلبات</a>
+    </div>
+  </div>
+
+  <div class="sources">
+    <h3>مراجع استرشادية</h3>
+    <p>الدليل مستقل ومبسّط، ويستفيد من مبادئ منشورة لدى جهات مهنية وتقنية معروفة.</p>
+    <a href="https://www.theiia.org/en/content/tools/professional/2023/the-iias-updated-ai-auditing-framework/" target="_blank">The IIA — AI Auditing Framework</a>
+    <a href="https://airc.nist.gov/airmf-resources/airmf/5-sec-core/" target="_blank">NIST AI RMF</a>
+    <a href="https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html" target="_blank">OWASP — AI Agent Security</a>
+    <a href="https://www.isaca.org/resources/news-and-trends/isaca-now-blog/2026/four-governance-questions-to-ask-before-an-ai-agent-goes-live" target="_blank">ISACA — AI Agent Governance</a>
+    <br><small>يتم تحديد نطاق الاختبارات والعينات وفق طبيعة المنشأة والعملية والمخاطر الفعلية.</small>
+  </div>
+</article>
+
+<footer class="footer"><span>© 2026 Zahra Al Safwan</span><span>linkedin.com/in/zahra-al-safwan</span></footer>
+</main>
+</body>
+</html>
