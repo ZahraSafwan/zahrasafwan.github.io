@@ -390,6 +390,22 @@ footer span{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ac
   }
 }
 
+
+/* ── Insights Preview on Portfolio Home ── */
+.insights-preview-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:1.25rem;align-items:stretch;}
+.insight-preview-main,.insight-preview-side{background:var(--bg-card);border:.5px solid var(--border);border-radius:14px;padding:1.75rem;}
+.insight-preview-main{border-top:3px solid var(--accent);}
+.insight-preview-eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:var(--accent);letter-spacing:.10em;text-transform:uppercase;margin-bottom:.7rem;}
+.insight-preview-main h3{font-size:20px;line-height:1.45;margin-bottom:.65rem;}
+.insight-preview-main p,.insight-preview-side p{font-size:13px;color:var(--text-secondary);line-height:1.8;}
+.insight-preview-actions{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.2rem;}
+.insight-preview-side{display:flex;flex-direction:column;justify-content:center;background:linear-gradient(135deg,var(--bg-card),var(--bg-secondary));}
+.insight-preview-side h4{font-size:15px;margin-bottom:.4rem;}
+.insight-preview-points{list-style:none;margin-top:.7rem;display:flex;flex-direction:column;gap:.5rem;}
+.insight-preview-points li{font-size:12px;color:var(--text-secondary);}
+.insight-preview-points li::before{content:'✓';color:var(--accent);font-weight:800;margin-right:7px;}
+@media(max-width:768px){.insights-preview-grid{grid-template-columns:1fr;}}
+
 </style>
 </head>
 <body>
@@ -402,6 +418,7 @@ footer span{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ac
     <li><a href="#experience">Experience</a></li>
     <li><a href="#certifications">Certifications</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="insights.html">Insights</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#cv">Contact</a></li>
   </ul>
@@ -543,7 +560,40 @@ and subject to clinical review.</div>
   </div>
 </section>
 
-  <!-- ═══════════════════════════════ SKILLS ════════════════════════════ -->
+  
+<!-- ═══════════════════════════════ INSIGHTS PREVIEW ════════════════════════ -->
+<section id="insights-preview" class="sec-pad">
+  <div class="wrap">
+    <span class="s-label">Insights</span>
+    <h2 class="s-title">AI Through an Auditor’s Lens</h2>
+    <p class="s-sub">Practical Arabic guides that connect artificial intelligence with internal audit, cybersecurity, controls, and real-world review procedures.</p>
+
+    <div class="insights-preview-grid">
+      <article class="insight-preview-main reveal">
+        <div class="insight-preview-eyebrow">LATEST PRACTICAL GUIDE</div>
+        <h3>كيف تراجع وكيل الذكاء الاصطناعي (AI Agent)؟</h3>
+        <p>دليل عملي للمراجع الداخلي: سيناريو مبسّط، الأدلة المطلوبة، ما الذي يجب اختباره، المخاطر، أمثلة الملاحظات، والتوصيات المحتملة.</p>
+        <div class="insight-preview-actions">
+          <a href="ai-agent-audit.html" class="btn btn-fill">Read the Guide</a>
+          <a href="insights.html" class="btn btn-ghost">View All Insights</a>
+        </div>
+      </article>
+
+      <aside class="insight-preview-side reveal">
+        <h4>Inside the Insights library</h4>
+        <p>Content is organized to be easy to scan and useful during an actual audit engagement.</p>
+        <ul class="insight-preview-points">
+          <li>AI basics for internal auditors</li>
+          <li>Audit procedures & control testing</li>
+          <li>AI security incidents through an audit lens</li>
+          <li>Downloadable audit tools and checklists</li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ SKILLS ════════════════════════════ -->
 <section id="skills" class="sec-pad">
   <div class="wrap">
     <span class="s-label">Expertise</span>
