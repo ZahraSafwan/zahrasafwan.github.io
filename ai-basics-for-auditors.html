@@ -2,368 +2,299 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AI للمراجع من الصفر | Zahra Al Safwan</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI للمراجع من الصفر: الفرق بين AI وGenerative AI وAI Agent | زهراء الصفوان</title>
+<meta name="description" content="قبل مراجعة المخاطر والضوابط، يحتاج المراجع إلى معرفة نوع النظام: تحليلي، توليدي، أم وكيل ينفّذ إجراءات فعلية.">
+<meta name="theme-color" content="#FAFAF6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Jost:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f8fbf9;--bg2:#f1f7f3;--card:#fff;--green:#138a52;--green2:#1fa463;
-  --teal:#168f83;--navy:#173126;--muted:#60746a;--line:#dce9e2;--mint:#e7f7ee;
-  --cream:#fff8e7;--rose:#fff1ef;--blue:#edf5ff;--blueText:#3f6fa8;
+  --cream:#FAFAF6;--paper:#FFFFFF;--mist:#EAF7F1;--mist-2:#DDF4EA;--mist-3:#CDEEE0;
+  --teal:#009581;--mint:#03C0A4;--teal-dk:#00654F;--navy:#0C2136;--ink:#20313F;
+  --slate:#54687A;--muted:#7D8E9B;--gold:#F5D147;--gold-dk:#96730A;--coral:#C0523D;
+  --line:rgba(12,33,54,.11);--line-2:rgba(12,33,54,.2);
+  --sh-s:0 1px 3px rgba(12,33,54,.07);
+  --sh:0 14px 32px -22px rgba(12,33,54,.55),0 1px 3px rgba(12,33,54,.05);
+  --sh-l:0 34px 70px -42px rgba(12,33,54,.6),0 2px 8px rgba(12,33,54,.06);
+  --f-ar:'Tajawal',system-ui,sans-serif;--f-lat:'Jost','Tajawal',system-ui,sans-serif;
+  --f-mono:'IBM Plex Mono',ui-monospace,monospace;
+  --pad:clamp(1.05rem,4vw,2.5rem);--maxw:1000px;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--navy);font-family:'IBM Plex Sans Arabic','Inter',sans-serif;line-height:1.85}
-a{color:inherit}
-.site-nav{position:sticky;top:0;z-index:50;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(18px,5vw,64px);background:rgba(248,251,249,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);direction:ltr}
-.site-brand{font:700 13px 'JetBrains Mono',monospace;color:var(--green);text-decoration:none}
-.site-links{display:flex;gap:20px;align-items:center}
-.site-links a{font:600 12px Inter;text-decoration:none;color:#60746a}
-.site-links a.active{color:var(--green)}
-.wrap{width:min(1040px,calc(100% - 36px));margin:auto}
-.hero{padding:50px 0 22px}
-.back{display:inline-flex;color:var(--green);text-decoration:none;font-size:11px;font-weight:700;margin-bottom:18px}
-.eyebrow{font:700 10px Inter;color:var(--blueText);letter-spacing:.12em;text-transform:uppercase}
-.hero h1{font-size:clamp(34px,5vw,52px);line-height:1.4;margin:10px 0 12px}
-.hero p{font-size:16px;color:var(--muted);max-width:820px;margin:0}
-.article-shell{background:#fff;border:1px solid var(--line);border-radius:20px;padding:clamp(22px,5vw,44px);box-shadow:0 15px 42px rgba(19,138,82,.05)}
-.note{background:var(--blue);border-right:4px solid #6d9bd3;border-radius:12px;padding:15px 17px;color:#4e6785;font-size:13px}
-.sec-title{font-size:24px;margin:42px 0 7px}
-.intro{font-size:13px;color:var(--muted);margin:0 0 15px}
-.scenario{margin:28px 0;background:linear-gradient(135deg,#fff,#f4faf7);border:1px solid #cfe7d9;border-radius:16px;padding:21px}
-.scenario-head{display:flex;align-items:center;gap:11px;margin-bottom:7px}
-.scenario-icon{font-size:27px}
-.scenario h2{font-size:20px;margin:0}
-.scenario p{font-size:13px;color:var(--muted);margin:7px 0 0}
-.scenario-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:17px}
-.scenario-card{border:1px solid var(--line);background:#fff;border-radius:12px;padding:14px;min-height:135px}
-.scenario-card .num{display:inline-flex;width:27px;height:27px;align-items:center;justify-content:center;border-radius:50%;font:800 10px Inter;margin-bottom:7px}
-.scenario-card:nth-child(1) .num{background:var(--cream);color:#8d6a17}
-.scenario-card:nth-child(2) .num{background:var(--blue);color:var(--blueText)}
-.scenario-card:nth-child(3) .num{background:var(--mint);color:var(--green)}
-.scenario-card b{display:block;font-size:13px;margin-bottom:4px}
-.scenario-card small{font-size:10px;color:var(--muted);display:block;line-height:1.7}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px;-webkit-text-size-adjust:100%}
+body{background:var(--cream);color:var(--ink);font-family:var(--f-ar);font-size:17px;line-height:1.95;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-align:inherit}
+:focus-visible{outline:3px solid var(--mint);outline-offset:2px;border-radius:6px}
+::selection{background:var(--mist-2)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad);position:relative;z-index:2}
+section{padding-block:clamp(2.2rem,5vw,3.6rem);position:relative;scroll-margin-top:92px}
+header{position:sticky;top:0;z-index:70;background:rgba(250,250,246,.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.prog{height:3px}
+.prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--mint),#3FE8C6)}
+.hd{max-width:var(--maxw);margin:0 auto;padding:.55rem var(--pad);display:flex;align-items:center;gap:.8rem}
+.mark b{font-family:var(--f-lat);font-weight:700;font-size:15px;letter-spacing:.14em;color:var(--teal);display:block;line-height:1.05}
+.mark b span{display:block;color:var(--navy);font-weight:500;font-size:11.5px;letter-spacing:.2em;margin-top:2px}
+.nav{display:flex;gap:.15rem;margin-inline:auto;list-style:none}
+.nav a{font-size:14px;font-weight:500;color:var(--slate);padding:.4rem .65rem;border-radius:9px;white-space:nowrap;transition:.18s}
+.nav a:hover{background:var(--mist);color:var(--navy)}
+.nav a.cur{background:var(--mist-2);color:var(--teal-dk);font-weight:700}
+.ib{display:inline-flex;align-items:center;gap:.4rem;padding:.42rem .7rem;border-radius:10px;
+  border:1px solid var(--line-2);color:var(--slate);font-size:13px;background:var(--paper);transition:.18s;flex:none}
+.ib:hover{border-color:var(--teal);color:var(--teal-dk)}
+.ib.on{background:var(--mist-2);border-color:var(--teal);color:var(--teal-dk)}
+@media(max-width:760px){.nav{display:none}.hd{justify-content:space-between}.ib .lbl{display:none}}
+.crumb{display:inline-flex;align-items:center;gap:.45rem;font-size:13.5px;font-weight:500;color:var(--teal-dk);
+  background:var(--mist);border:1px solid rgba(0,149,129,.2);border-radius:100px;padding:.3rem .85rem;margin-bottom:1.1rem}
+.crumb:hover{background:var(--mist-2)}
+.tagchip{display:inline-flex;align-items:center;gap:.5rem;font-weight:500;font-size:12.5px;color:var(--teal-dk);
+  background:var(--mist);border:1px solid rgba(0,149,129,.22);border-radius:100px;padding:.32rem .85rem;margin-bottom:1rem}
+.tagchip i{width:6px;height:6px;border-radius:50%;background:var(--mint);font-style:normal}
+h1.t{font-size:clamp(1.7rem,4.6vw,2.7rem);font-weight:800;color:var(--navy);line-height:1.45;margin-bottom:.7rem}
+.lede{color:var(--slate);font-size:clamp(1rem,2.1vw,1.12rem);max-width:66ch}
+h2.s{font-size:clamp(1.3rem,3vw,1.7rem);font-weight:800;color:var(--navy);line-height:1.5;position:relative;
+  padding-bottom:.35rem;margin-bottom:1rem;scroll-margin-top:100px}
+h2.s::after{content:'';position:absolute;inset-inline-start:0;bottom:0;height:4px;width:46px;border-radius:3px;
+  background:linear-gradient(90deg,var(--mint),#3FE8C6)}
+.gist{display:flex;gap:.6rem;align-items:flex-start;background:var(--mist);border:1px solid rgba(0,149,129,.18);
+  border-radius:12px;padding:.75rem 1rem;margin-block:1.1rem 1.4rem;font-size:15px;color:var(--teal-dk);font-weight:500;line-height:1.85}
+.gist b{flex:none;font-weight:700}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:1.15rem 1.25rem;
+  box-shadow:var(--sh-s);transition:.22s}
+.card:hover{border-color:rgba(0,149,129,.32);box-shadow:var(--sh)}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+@media(max-width:820px){.grid2,.grid3{grid-template-columns:1fr}}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.68rem 1.25rem;border-radius:11px;
+  font-size:14.5px;font-weight:700;border:1.5px solid transparent;transition:.18s}
+.btn-p{background:var(--teal);color:#fff;box-shadow:0 10px 24px -12px rgba(0,149,129,.9)}
+.btn-p:hover{background:var(--teal-dk);transform:translateY(-2px)}
+.btn-g{border-color:var(--line-2);color:var(--navy);background:var(--paper)}
+.btn-g:hover{border-color:var(--teal);color:var(--teal-dk);background:var(--mist)}
+.msteps{display:flex;align-items:flex-start;gap:.3rem;padding-block:.4rem;flex-wrap:nowrap;overflow-x:auto}
+.mstep{flex:1;text-align:center;min-width:76px}
+.mstep i{width:36px;height:36px;margin:0 auto;border-radius:11px;display:grid;place-items:center;
+  background:var(--paper);border:1.5px solid var(--line-2);color:var(--muted);font-size:14px;transition:.3s;font-style:normal}
+.mstep.on i{background:var(--mist-2);border-color:var(--teal);color:var(--teal-dk);transform:scale(1.08)}
+.mstep.gate.on i{background:#FBF3D6;border-color:var(--gold-dk);color:var(--gold-dk)}
+.mstep span{display:block;font-size:11px;color:var(--slate);margin-top:.35rem;line-height:1.45}
+.mlink{height:1.5px;background:var(--line-2);flex:.35;margin-top:18px;min-width:14px}
+.num{width:30px;height:30px;border-radius:10px;background:var(--mist-2);color:var(--teal-dk);
+  font-family:var(--f-mono);font-size:12px;font-weight:600;display:grid;place-items:center;flex:none}
+.sev{font-size:11.5px;font-weight:700;padding:.18rem .6rem;border-radius:100px;flex:none}
+.sev.hi{background:#F8DFDA;color:#A8412F;border:1px solid rgba(192,82,61,.3)}
+.sev.md{background:#FAEDC6;color:var(--gold-dk);border:1px solid rgba(150,115,10,.3)}
+.sev.lo{background:var(--mist-2);color:var(--teal-dk);border:1px solid rgba(0,149,129,.25)}
+.check{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:.45rem .9rem}
+@media(max-width:700px){.check{grid-template-columns:1fr}}
+.check li{display:flex;gap:.55rem;align-items:flex-start;font-size:14.5px;color:var(--ink);line-height:1.8;
+  background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:.55rem .8rem}
+.check li::before{content:'✓';color:var(--teal);font-weight:800;flex:none}
+footer{border-top:1px solid var(--line);padding-block:1.8rem;margin-top:2rem;position:relative;z-index:2}
+.foot{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;font-size:13px;color:var(--muted)}
+.foot .sp{margin-inline-start:auto}
+.tagline{font-family:var(--f-lat);font-size:11px;font-weight:500;letter-spacing:.2em;color:var(--muted);
+  border-top:2px solid var(--gold);padding-top:.4rem;direction:ltr}
+.orb{position:absolute;border-radius:50%;pointer-events:none;z-index:0}
+.orb.a{width:560px;height:560px;background:radial-gradient(circle at 42% 42%,var(--mist-2),var(--mist) 58%,rgba(234,247,241,0) 74%);top:-240px;inset-inline-start:-180px}
+.orb.b{width:480px;height:480px;background:radial-gradient(circle at 50% 45%,var(--mist-2),rgba(221,244,234,0) 72%);top:30%;inset-inline-end:-200px}
+.hdots{position:absolute;width:140px;height:110px;opacity:.5;pointer-events:none;z-index:0;
+  background-image:radial-gradient(var(--mint) 1.6px,transparent 1.6px);background-size:16px 16px}
+.rv{opacity:0;transform:translateY(18px)}
+.rv.seen{animation:rvin .55s cubic-bezier(.2,.8,.3,1) forwards}
+@keyframes rvin{to{opacity:1;transform:none}}
+body.calm .rv,.rv.seen{opacity:1;transform:none}
+body.calm *,body.calm *::before,body.calm *::after{animation:none!important;transition:none!important}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}.rv{opacity:1;transform:none}}
 
-.visual-map{margin:24px 0;background:#fbfdfc;border:1px solid var(--line);border-radius:16px;padding:20px}
-.visual-title{text-align:center;font-size:13px;font-weight:700;margin-bottom:16px}
-.ai-root{display:flex;justify-content:center;margin-bottom:12px}
-.root-box{background:var(--navy);color:white;border-radius:11px;padding:11px 22px;font-size:13px;font-weight:700;text-align:center}
-.connector{width:1px;height:20px;background:#b8cec3;margin:0 auto}
-.type-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.type-card{border:1px solid var(--line);border-radius:13px;padding:15px;background:#fff;text-align:center}
-.type-card .ico{font-size:24px;margin-bottom:5px}
-.type-card h3{font-size:13px;margin:0 0 3px}
-.type-card p{font-size:10px;color:var(--muted);margin:0;line-height:1.7}
-.type-card.predict{border-top:3px solid #e3b64f}
-.type-card.gen{border-top:3px solid #6d9bd3}
-.type-card.agent{border-top:3px solid var(--green)}
-
-.explain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}
-.explain{border:1px solid var(--line);border-radius:14px;padding:17px;background:#fff}
-.explain .tag{display:inline-block;font:700 9px Inter;padding:4px 7px;border-radius:999px;margin-bottom:9px}
-.explain:nth-child(1) .tag{background:var(--cream);color:#8a6718}
-.explain:nth-child(2) .tag{background:var(--blue);color:var(--blueText)}
-.explain:nth-child(3) .tag{background:var(--mint);color:var(--green)}
-.explain h3{font-size:15px;margin:0 0 6px}
-.explain p{font-size:11px;color:var(--muted);margin:0 0 11px}
-.audit-box{background:#f6faf8;border-radius:10px;padding:11px}
-.audit-box b{display:block;font-size:10px;color:var(--teal);margin-bottom:5px}
-.audit-box ul{margin:0;padding-right:16px}
-.audit-box li{font-size:10px;color:#60746a;margin:3px 0}
-
-.compare{border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.compare-row{display:grid;grid-template-columns:1.05fr 1.2fr 1.2fr 1.35fr}
-.compare-row.head{background:#eff8f3;color:var(--green);font-weight:800;font-size:10px}
-.compare-row>div{padding:11px;border-left:1px solid var(--line);border-top:1px solid var(--line);font-size:10px;color:var(--muted)}
-.compare-row.head>div{border-top:0;color:var(--green)}
-.compare-row>div:last-child{border-left:0}
-.compare-row b{color:var(--navy)}
-
-.auditor-box{margin-top:27px;background:linear-gradient(135deg,#eff8f3,#fff);border:1px solid #cfe7d9;border-radius:15px;padding:20px}
-.auditor-box h2{font-size:20px;margin:0 0 7px}
-.auditor-box p{font-size:12px;color:var(--muted);margin:0 0 13px}
-.question-list{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.question{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 11px;font-size:10px;color:#4f665b}
-.question span{color:var(--green);font-weight:800;margin-left:4px}
-
-.takeaway{margin-top:30px;border-right:4px solid var(--green);background:#f3faf6;border-radius:12px;padding:17px}
-.takeaway h3{font-size:14px;margin:0 0 5px}
-.takeaway p{font-size:11px;color:#4f685b;margin:0}
-.next-box{margin-top:24px;border:1px dashed #cfe0d7;border-radius:13px;padding:16px;background:#fbfdfc}
-.next-box b{font-size:12px}
-.next-box p{font-size:10px;color:var(--muted);margin:4px 0 0}
-.footer{border-top:1px solid var(--line);padding:22px 0 38px;margin-top:40px;display:flex;justify-content:space-between;gap:15px;color:#82948b;font:500 10px Inter;direction:ltr}
-
-@media(max-width:820px){
-  .scenario-grid,.type-grid,.explain-grid,.question-list{grid-template-columns:1fr}
-  .compare-row{grid-template-columns:1fr}
-  .compare-row.head{display:none}
-  .compare-row>div{border-left:0}
+.types{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+@media(max-width:820px){.types{grid-template-columns:1fr}}
+.type h4{font-size:15.5px;font-weight:700;color:var(--navy);line-height:1.55;margin-top:.5rem}
+.type p{font-size:13.5px;color:var(--slate);line-height:1.75}
+.type i{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-style:normal;font-size:17px;
+  background:var(--mist);border:1px solid rgba(0,149,129,.2)}
+.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin-top:1rem}
+@media(max-width:860px){.tri{grid-template-columns:1fr}}
+.tri .card{display:flex;flex-direction:column;gap:.3rem}
+.klabel{font-size:11.5px;font-weight:700;color:var(--teal-dk);background:var(--mist);border:1px solid rgba(0,149,129,.2);
+  border-radius:100px;padding:.12rem .6rem;width:fit-content}
+.tri h4{font-size:15px;font-weight:700;color:var(--navy);line-height:1.55}
+.tri p{font-size:13.5px;color:var(--slate);line-height:1.8}
+.tri ul{list-style:none;display:grid;gap:.25rem;margin-top:.3rem}
+.tri li{font-size:13.5px;color:var(--ink);display:flex;gap:.5rem;line-height:1.75}
+.tri li::before{content:'‣';color:var(--mint);font-weight:700}
+.cmp{border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--sh-s);background:var(--paper)}
+.cmp .row{display:grid;grid-template-columns:1.1fr 1fr 1fr 1.4fr;gap:0;border-top:1px solid var(--line);font-size:13.5px}
+.cmp .row:first-child{border-top:0;background:var(--mist);font-weight:700;color:var(--teal-dk);font-size:12.5px}
+.cmp .row>div{padding:.7rem .9rem;line-height:1.75}
+.cmp .row>div:first-child{font-weight:700;color:var(--navy)}
+@media(max-width:760px){
+  .cmp .row{grid-template-columns:1fr}
+  .cmp .row:first-child{display:none}
+  .cmp .row>div{border-top:1px dashed var(--line)}
+  .cmp .row>div:first-child{border-top:0;background:var(--mist)}
 }
-@media(max-width:720px){
-  .site-links a:not(.active){display:none}
-  .footer{flex-direction:column}
-}
+.q3{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem}
+@media(max-width:820px){.q3{grid-template-columns:1fr}}
+.q3 .card{display:flex;gap:.7rem;align-items:flex-start;font-size:14.5px;line-height:1.8;color:var(--ink)}
+
+.f5c{background:var(--paper);border:1px solid rgba(0,149,129,.3);border-inline-start:4px solid var(--teal);
+  border-radius:14px;padding:1.1rem 1.25rem;box-shadow:var(--sh-s)}
+.f5c p{font-size:14.5px;line-height:1.95;color:var(--ink)}
+.f5c b{color:var(--teal-dk)}
+.evrow{display:flex;gap:.8rem;align-items:flex-start}
 </style>
 </head>
 <body>
-<nav class="site-nav">
-  <a class="site-brand" href="index.html">💠 zahraspace</a>
-  <div class="site-links">
-    <a href="index.html">Portfolio</a>
-    <a class="active" href="insights.html">Insights</a>
-    <a href="index.html#cv">Contact</a>
+<header>
+  <div class="prog"><i id="prog"></i></div>
+  <div class="hd">
+    <a class="mark" href="index.html"><b>ZAHRA<span>AL SAFWAN</span></b></a>
+    <nav><ul class="nav">
+      <li><a href="index.html">البورتفوليو</a></li>
+      <li><a href="insights.html" class="cur">عين المراجع</a></li>
+      <li><a href="index.html#contact">تواصل</a></li>
+    </ul></nav>
+    <button class="ib" id="calm" type="button" aria-pressed="false">
+      <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M2 8h3l2.5-4 2 8L12 8h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="lbl">تهدئة</span>
+    </button>
   </div>
-</nav>
+</header>
 
-<main class="wrap">
-<section class="hero">
-  <a class="back" href="insights.html">← العودة إلى Insights</a>
-  <div class="eyebrow">AI للمراجع من الصفر · المقال 01</div>
-  <h1>ما الفرق بين الذكاء الاصطناعي (Artificial Intelligence - AI)، والذكاء الاصطناعي التوليدي (Generative AI)، ووكيل الذكاء الاصطناعي (AI Agent)؟</h1>
-  <p>قبل أن يراجع المراجع المخاطر والضوابط، يحتاج أولًا إلى معرفة نوع النظام الذي أمامه؛ لأن عبارة «نستخدم الذكاء الاصطناعي» لا تكفي لتحديد طريقة المراجعة.</p>
+<main>
+<section style="padding-bottom:1rem;overflow:hidden">
+  <span class="orb a"></span><span class="hdots" style="top:14%;inset-inline-end:5%"></span>
+  <div class="wrap">
+    <a class="crumb" href="insights.html">→ العودة إلى عين المراجع</a>
+    <span class="tagchip" style="display:flex;width:fit-content"><i></i>أساسيات · المقال ٠١ · ٨ دقائق قراءة</span>
+    <h1 class="t rv">ما الفرق بين الذكاء الاصطناعي، والذكاء الاصطناعي التوليدي، ووكيل الذكاء الاصطناعي؟</h1>
+    <p class="lede rv">قبل أن يراجع المراجع المخاطر والضوابط، يحتاج أولًا إلى معرفة نوع النظام الذي أمامه؛ لأن عبارة «نستخدم الذكاء الاصطناعي» لا تكفي لتحديد طريقة المراجعة.</p>
+    <div class="gist rv"><b>الفكرة في دقيقة:</b><span>ليست كل أنظمة الذكاء الاصطناعي متشابهة: بعضها يتنبأ، وبعضها ينشئ محتوى، وبعضها ينفّذ إجراءات فعلية داخل الأنظمة. وكلما زادت قدرة النظام على القرار والتنفيذ، تغيّرت المخاطر والضوابط التي يفحصها المراجع.</span></div>
+  </div>
 </section>
 
-<article class="article-shell">
-
-  <div class="note">
-    <b>الفكرة في دقيقة واحدة:</b>
-    ليست كل أنظمة الذكاء الاصطناعي متشابهة. قد يكون النظام مخصصًا للتنبؤ، أو لإنشاء محتوى، أو لتنفيذ إجراءات فعلية داخل الأنظمة. وكلما زادت قدرة النظام على اتخاذ القرار والتنفيذ، تغيّرت المخاطر والضوابط التي يحتاج المراجع إلى فحصها.
-  </div>
-
-  <section class="scenario">
-    <div class="scenario-head">
-      <span class="scenario-icon">🧩</span>
-      <h2>سيناريو سريع: ثلاث إدارات تقول لك «نستخدم الذكاء الاصطناعي»</h2>
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2 class="s rv">سيناريو سريع: ثلاث إدارات تقول لك «نستخدم الذكاء الاصطناعي»</h2>
+    <div class="grid3">
+      <div class="card evrow rv"><span class="num">1</span><div><h4 style="font-size:15px;color:var(--navy)">إدارة الائتمان</h4><p style="font-size:13.5px;color:var(--slate);line-height:1.75">نظام يتوقع احتمال تأخر العميل في السداد.</p></div></div>
+      <div class="card evrow rv"><span class="num">2</span><div><h4 style="font-size:15px;color:var(--navy)">إدارة العمليات</h4><p style="font-size:13.5px;color:var(--slate);line-height:1.75">أداة تلخص التقارير وتكتب مسودات للردود.</p></div></div>
+      <div class="card evrow rv"><span class="num">3</span><div><h4 style="font-size:15px;color:var(--navy)">خدمة العملاء</h4><p style="font-size:13.5px;color:var(--slate);line-height:1.75">وكيل يدخل إلى النظام، يقرأ الطلب، يحدّث البيانات، ثم يرسل النتيجة.</p></div></div>
     </div>
-    <p>لكن ما تستخدمه كل إدارة مختلف، وبالتالي فإن أسئلة المراجعة ليست واحدة.</p>
+    <div class="gist rv" style="margin-top:1rem"><b>لاحظ:</b><span>ما تستخدمه كل إدارة مختلف — وبالتالي أسئلة المراجعة ليست واحدة.</span></div>
 
-    <div class="scenario-grid">
-      <div class="scenario-card">
-        <span class="num">1</span>
-        <b>إدارة الائتمان</b>
-        <small>تستخدم نظامًا يتوقع احتمال تأخر العميل في السداد.</small>
-      </div>
-
-      <div class="scenario-card">
-        <span class="num">2</span>
-        <b>إدارة العمليات</b>
-        <small>تستخدم أداة تلخص التقارير وتكتب مسودات للردود.</small>
-      </div>
-
-      <div class="scenario-card">
-        <span class="num">3</span>
-        <b>خدمة العملاء</b>
-        <small>تستخدم وكيلًا يدخل إلى النظام، يقرأ الطلب، يحدّث البيانات، ثم يرسل النتيجة.</small>
-      </div>
-    </div>
-  </section>
-
-  <div class="visual-map">
-    <div class="visual-title">خريطة ذهنية مبسّطة</div>
-    <div class="ai-root">
-      <div class="root-box">الذكاء الاصطناعي<br><span style="font:500 10px Inter">(Artificial Intelligence - AI)</span></div>
-    </div>
-    <div class="connector"></div>
-    <div class="type-grid">
-      <div class="type-card predict">
-        <div class="ico">📊</div>
-        <h3>تحليل أو تنبؤ</h3>
-        <p>يحلل البيانات أو يتوقع نتيجة محتملة.</p>
-      </div>
-      <div class="type-card gen">
-        <div class="ico">✍️</div>
-        <h3>ذكاء اصطناعي توليدي<br><span style="font:500 9px Inter">(Generative AI)</span></h3>
-        <p>ينشئ محتوى جديدًا مثل النصوص أو الصور أو الأكواد.</p>
-      </div>
-      <div class="type-card agent">
-        <div class="ico">⚙️</div>
-        <h3>وكيل ذكاء اصطناعي<br><span style="font:500 9px Inter">(AI Agent)</span></h3>
-        <p>قد يستخدم أدوات، يتخذ قرارًا، وينفذ إجراءً داخل الأنظمة.</p>
-      </div>
-    </div>
-  </div>
-
-  <h2 class="sec-title">1. الذكاء الاصطناعي (Artificial Intelligence - AI)</h2>
-  <p class="intro">هو المصطلح الأشمل. قد يستخدم البيانات أو القواعد أو النماذج للتحليل أو التنبؤ أو دعم القرار.</p>
-
-  <div class="explain-grid">
-    <div class="explain">
-      <span class="tag">مثال</span>
-      <h3>توقع تعثر العميل</h3>
-      <p>يدخل النظام بيانات العميل ويخرج احتمالًا أو تصنيفًا.</p>
-      <div class="audit-box">
-        <b>لماذا يهم المراجع؟</b>
-        <ul>
-          <li>ما البيانات التي يعتمد عليها النظام؟</li>
-          <li>كيف يتم التحقق من دقة التوقع؟</li>
-          <li>ما أثر القرار الخاطئ على العملية؟</li>
-        </ul>
-      </div>
+    <h2 class="s rv" style="margin-top:2rem">خريطة ذهنية مبسّطة</h2>
+    <div class="types">
+      <div class="card type rv"><i>📊</i><h4>تحليل أو تنبؤ (AI)</h4><p>يحلل البيانات أو يتوقع نتيجة محتملة.</p></div>
+      <div class="card type rv"><i>✍️</i><h4>ذكاء اصطناعي توليدي (Generative AI)</h4><p>ينشئ محتوى جديدًا مثل النصوص أو الصور أو الأكواد.</p></div>
+      <div class="card type rv"><i>⚙️</i><h4>وكيل ذكاء اصطناعي (AI Agent)</h4><p>قد يستخدم أدوات، يتخذ قرارًا، وينفّذ إجراءً داخل الأنظمة.</p></div>
     </div>
 
-    <div class="explain">
-      <span class="tag">ملاحظة</span>
-      <h3>الذكاء الاصطناعي ليس نوعًا واحدًا</h3>
-      <p>معرفة أن المنشأة «تستخدم AI» لا تحدد وحدها المخاطر أو إجراءات المراجعة المطلوبة.</p>
-      <div class="audit-box">
-        <b>ما الذي يفعله المراجع؟</b>
-        <ul>
-          <li>يحدد الغرض من النظام.</li>
-          <li>يفهم نوع المخرجات.</li>
-          <li>يحدد أثر الخطأ.</li>
-        </ul>
-      </div>
+    <h2 class="s rv" style="margin-top:2.4rem">١ · الذكاء الاصطناعي (AI)</h2>
+    <p class="rv" style="color:var(--slate);font-size:15px;max-width:72ch">هو المصطلح الأشمل: قد يستخدم البيانات أو القواعد أو النماذج للتحليل أو التنبؤ أو دعم القرار.</p>
+    <div class="tri">
+      <div class="card rv"><span class="klabel">مثال</span><h4>توقّع تعثر العميل</h4><p>يُدخل النظام بيانات العميل ويُخرج احتمالًا أو تصنيفًا.</p>
+        <ul><li>ما البيانات التي يعتمد عليها؟</li><li>كيف يُتحقق من دقة التوقع؟</li><li>ما أثر القرار الخاطئ؟</li></ul></div>
+      <div class="card rv"><span class="klabel">ملاحظة</span><h4>الذكاء الاصطناعي ليس نوعًا واحدًا</h4><p>معرفة أن المنشأة «تستخدم AI» لا تحدد وحدها المخاطر أو إجراءات المراجعة.</p>
+        <ul><li>حدّد الغرض من النظام.</li><li>افهم نوع المخرجات.</li><li>حدّد أثر الخطأ.</li></ul></div>
+      <div class="card rv"><span class="klabel">سؤال</span><h4>هل النظام يقرر أم يساعد فقط؟</h4><p>هذه النقطة تغيّر مستوى الخطر ومسؤولية الإنسان داخل العملية.</p>
+        <ul><li>هل المخرج توصية أم قرار نهائي؟</li><li>من يعتمد النتيجة؟</li></ul></div>
     </div>
 
-    <div class="explain">
-      <span class="tag">سؤال</span>
-      <h3>هل النظام يقرر أم يساعد فقط؟</h3>
-      <p>هذه النقطة تغيّر مستوى الخطر ومسؤولية الإنسان داخل العملية.</p>
-      <div class="audit-box">
-        <b>اسأل صاحب العملية:</b>
-        <ul>
-          <li>هل المخرج توصية أم قرار نهائي؟</li>
-          <li>من يعتمد النتيجة؟</li>
-        </ul>
+    <h2 class="s rv" style="margin-top:2.4rem">٢ · الذكاء الاصطناعي التوليدي (Generative AI)</h2>
+    <p class="rv" style="color:var(--slate);font-size:15px;max-width:72ch">نوع من الذكاء الاصطناعي يستطيع إنشاء محتوى جديد، مثل النصوص والصور والتقارير والأكواد البرمجية.</p>
+    <div class="tri">
+      <div class="card rv"><span class="klabel">مثال</span><h4>تلخيص تقرير</h4><p>تقرير طويل ← ذكاء اصطناعي توليدي ← ملخص أو مسودة جديدة.</p>
+        <ul><li>قد ينتج معلومات غير صحيحة.</li><li>قد تدخل إليه بيانات حساسة.</li><li>قد يُعتمد على المخرجات دون مراجعة.</li></ul></div>
+      <div class="card rv"><span class="klabel">مصطلح مهم</span><h4>الهلوسة (Hallucination)</h4><p>قد يعطي النظام إجابة تبدو صحيحة ومقنعة، لكنها غير صحيحة أو غير مدعومة.</p>
+        <ul><li>ما آلية التحقق من المخرجات؟</li><li>متى تكون المراجعة البشرية مطلوبة؟</li></ul></div>
+      <div class="card rv"><span class="klabel">سؤال</span><h4>هل تُستخدم المخرجات في قرار مؤثر؟</h4><p>كلما زاد أثر المخرجات على قرار مالي أو تشغيلي، زادت أهمية التحقق قبل الاعتماد.</p>
+        <ul><li>من يراجع المخرجات قبل الاعتماد؟</li><li>هل توجد معايير لقبولها أو رفضها؟</li></ul></div>
+    </div>
+
+    <h2 class="s rv" style="margin-top:2.4rem">٣ · وكيل الذكاء الاصطناعي (AI Agent)</h2>
+    <p class="rv" style="color:var(--slate);font-size:15px;max-width:72ch">هنا ينتقل الذكاء الاصطناعي من إنشاء الإجابة إلى استخدام الأدوات وتنفيذ خطوات فعلية داخل العملية.</p>
+    <div class="card rv" style="margin-top:1rem">
+      <div class="msteps" id="agentFlow">
+        <div class="mstep"><i>✉</i><span>قراءة الطلب</span></div><span class="mlink"></span>
+        <div class="mstep"><i>🗂</i><span>الدخول إلى النظام</span></div><span class="mlink"></span>
+        <div class="mstep"><i>✎</i><span>تحديث السجل</span></div><span class="mlink"></span>
+        <div class="mstep"><i>📤</i><span>إرسال الرد</span></div>
       </div>
+    </div>
+    <div class="tri">
+      <div class="card rv"><span class="klabel">لماذا يهم المراجع؟</span><h4>أصبح للنظام وصول وصلاحيات</h4>
+        <ul><li>قد ينفّذ إجراءً خاطئًا أو غير مصرح به.</li><li>أثر الخطأ لم يعد نظريًا.</li></ul></div>
+      <div class="card rv"><span class="klabel">ضابط مهم</span><h4>الموافقة البشرية (Human-in-the-Loop)</h4><p>بعض العمليات تحتاج موافقة بشرية قبل تنفيذها، خصوصًا عالية الأثر.</p>
+        <ul><li>متى تكون الموافقة مطلوبة؟</li><li>هل يستطيع الوكيل تجاوزها؟</li></ul></div>
+      <div class="card rv"><span class="klabel">ضابط مهم</span><h4>أقل قدر من الصلاحيات (Least Privilege)</h4><p>يُمنح الوكيل فقط الصلاحيات التي يحتاجها لأداء مهمته.</p>
+        <ul><li>هل يحتاج فعلًا إلى التعديل أو الحذف؟</li><li>ما الأنظمة التي يصل إليها؟</li></ul></div>
+    </div>
+
+    <h2 class="s rv" style="margin-top:2.4rem">الفرق من منظور المراجع الداخلي</h2>
+    <div class="cmp rv">
+      <div class="row"><div>النوع</div><div>ماذا يفعل؟</div><div>مثال</div><div>ما الذي يهم المراجع؟</div></div>
+      <div class="row"><div>الذكاء الاصطناعي (AI)</div><div>يحلل أو يتنبأ أو يدعم القرار</div><div>توقع احتمال التعثر</div><div>جودة البيانات، دقة المخرجات، أثر الخطأ</div></div>
+      <div class="row"><div>التوليدي (Generative AI)</div><div>ينشئ محتوى جديدًا</div><div>تلخيص تقرير أو كتابة مسودة</div><div>صحة المخرجات، حماية البيانات، المراجعة البشرية</div></div>
+      <div class="row"><div>وكيل الذكاء الاصطناعي (AI Agent)</div><div>يستخدم أدوات وقد ينفّذ إجراءات</div><div>تحديث سجل أو تنفيذ طلب</div><div>الصلاحيات، الموافقات، حدود التنفيذ، سجل التدقيق</div></div>
+    </div>
+
+    <h2 class="s rv" style="margin-top:2.4rem">ماذا يفعل المراجع عندما يسمع: «نستخدم الذكاء الاصطناعي»؟</h2>
+    <div class="gist rv"><b>باختصار:</b><span>لا تبدأ بافتراض نوع النظام — ابدأ بثلاثة أسئلة بسيطة.</span></div>
+    <div class="q3">
+      <div class="card rv"><span class="num">1</span><span>هل النظام يحلل أو يتنبأ فقط؟</span></div>
+      <div class="card rv"><span class="num">2</span><span>هل ينشئ محتوى جديدًا؟</span></div>
+      <div class="card rv"><span class="num">3</span><span>هل يستطيع اتخاذ إجراء أو استخدام أدوات؟</span></div>
+    </div>
+
+    <div class="f5c rv" style="margin-top:2rem;border-inline-start-color:var(--gold);border-color:rgba(150,115,10,.35)">
+      <p style="margin-bottom:0"><b style="color:var(--gold-dk)">خلاصة المقال:</b> قبل مراجعة أي عملية تستخدم الذكاء الاصطناعي، حدّد نوع النظام ودوره داخل العملية. فكلما زادت قدرته على اتخاذ القرار والتنفيذ، زادت أهمية مراجعة الصلاحيات، والرقابة البشرية، وسجل التدقيق، وحدود التنفيذ.</p>
+    </div>
+
+    <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.6rem" class="rv">
+      <a class="btn btn-p" href="ai-agent-audit.html">الخطوة التالية: كيف تراجع وكيل الذكاء الاصطناعي؟</a>
+      <a class="btn btn-g" href="insights.html">العودة إلى عين المراجع</a>
     </div>
   </div>
-
-  <h2 class="sec-title">2. الذكاء الاصطناعي التوليدي (Generative AI)</h2>
-  <p class="intro">هو نوع من الذكاء الاصطناعي يستطيع إنشاء محتوى جديد، مثل النصوص والصور والتقارير والأكواد البرمجية.</p>
-
-  <div class="explain-grid">
-    <div class="explain">
-      <span class="tag">مثال</span>
-      <h3>تلخيص تقرير</h3>
-      <p>تقرير طويل ← ذكاء اصطناعي توليدي ← ملخص أو مسودة جديدة.</p>
-      <div class="audit-box">
-        <b>لماذا يهم المراجع؟</b>
-        <ul>
-          <li>قد ينتج معلومات غير صحيحة.</li>
-          <li>قد تدخل إليه بيانات حساسة.</li>
-          <li>قد يعتمد الموظف على المخرجات دون مراجعتها.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="explain">
-      <span class="tag">مصطلح مهم</span>
-      <h3>الهلوسة (Hallucination)</h3>
-      <p>قد يعطي النظام إجابة تبدو صحيحة ومقنعة، لكنها غير صحيحة أو غير مدعومة.</p>
-      <div class="audit-box">
-        <b>ما الذي يراجعه المراجع؟</b>
-        <ul>
-          <li>آلية التحقق من المخرجات.</li>
-          <li>متى تكون المراجعة البشرية مطلوبة؟</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="explain">
-      <span class="tag">سؤال</span>
-      <h3>هل تُستخدم مخرجات الذكاء الاصطناعي في اتخاذ قرار مؤثر؟</h3>
-      <p>كلما زاد تأثير مخرجات النظام على قرار مالي أو تشغيلي أو على العميل، زادت أهمية التحقق منها قبل الاعتماد عليها.</p>
-      <div class="audit-box">
-        <b>اسأل:</b>
-        <ul>
-          <li>من يراجع مخرجات الذكاء الاصطناعي قبل الاعتماد عليها؟</li>
-          <li>هل توجد معايير واضحة لقبول المخرجات أو رفضها؟</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <h2 class="sec-title">3. وكيل الذكاء الاصطناعي (AI Agent)</h2>
-  <p class="intro">هنا ينتقل الذكاء الاصطناعي من إنشاء الإجابة إلى استخدام الأدوات وتنفيذ خطوات فعلية داخل العملية.</p>
-
-  <div class="explain-grid">
-    <div class="explain">
-      <span class="tag">مثال</span>
-      <h3>تحديث طلب عميل</h3>
-      <p>يقرأ الوكيل الطلب، يدخل إلى نظام إدارة علاقات العملاء (Customer Relationship Management - CRM)، يحدّث السجل، ثم يرسل الرد.</p>
-      <div class="audit-box">
-        <b>لماذا يهم المراجع؟</b>
-        <ul>
-          <li>أصبح للذكاء الاصطناعي وصول وصلاحيات.</li>
-          <li>قد ينفذ إجراءً خاطئًا أو غير مصرح به.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="explain">
-      <span class="tag">ضابط مهم</span>
-      <h3>الموافقة البشرية (Human-in-the-Loop)</h3>
-      <p>بعض العمليات قد تحتاج تدخلًا أو موافقة بشرية قبل تنفيذها، خصوصًا عندما يكون الأثر مرتفعًا.</p>
-      <div class="audit-box">
-        <b>ما الذي يراجعه المراجع؟</b>
-        <ul>
-          <li>متى تكون الموافقة مطلوبة؟</li>
-          <li>هل يستطيع الوكيل تجاوزها؟</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="explain">
-      <span class="tag">ضابط مهم</span>
-      <h3>أقل قدر من الصلاحيات (Least Privilege)</h3>
-      <p>يُمنح الوكيل فقط الصلاحيات التي يحتاج إليها لأداء مهمته.</p>
-      <div class="audit-box">
-        <b>اسأل:</b>
-        <ul>
-          <li>هل يحتاج فعلًا إلى التعديل أو الحذف؟</li>
-          <li>ما الأنظمة التي يمكنه الوصول إليها؟</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <h2 class="sec-title">الفرق من منظور المراجع الداخلي</h2>
-  <div class="compare">
-    <div class="compare-row head">
-      <div>النوع</div><div>ماذا يفعل؟</div><div>مثال</div><div>ما الذي يهم المراجع؟</div>
-    </div>
-    <div class="compare-row">
-      <div><b>الذكاء الاصطناعي (AI)</b></div>
-      <div>يحلل أو يتنبأ أو يدعم القرار</div>
-      <div>توقع احتمال التعثر</div>
-      <div>جودة البيانات، دقة المخرجات، أثر الخطأ</div>
-    </div>
-    <div class="compare-row">
-      <div><b>الذكاء الاصطناعي التوليدي (Generative AI)</b></div>
-      <div>ينشئ محتوى جديدًا</div>
-      <div>تلخيص تقرير أو كتابة مسودة</div>
-      <div>صحة المخرجات، حماية البيانات، المراجعة البشرية</div>
-    </div>
-    <div class="compare-row">
-      <div><b>وكيل الذكاء الاصطناعي (AI Agent)</b></div>
-      <div>يستخدم أدوات وقد ينفذ إجراءات</div>
-      <div>تحديث سجل أو تنفيذ طلب</div>
-      <div>الصلاحيات، الموافقات، حدود التنفيذ، سجل التدقيق</div>
-    </div>
-  </div>
-
-  <section class="auditor-box">
-    <h2>📋 ماذا يفعل المراجع عندما يسمع: «نستخدم الذكاء الاصطناعي»؟</h2>
-    <p>لا تبدأ بافتراض نوع النظام. ابدأ بثلاثة أسئلة بسيطة:</p>
-    <div class="question-list">
-      <div class="question"><span>1.</span> هل النظام يحلل أو يتنبأ فقط؟</div>
-      <div class="question"><span>2.</span> هل ينشئ محتوى جديدًا؟</div>
-      <div class="question"><span>3.</span> هل يستطيع اتخاذ إجراء أو استخدام أدوات؟</div>
-    </div>
-  </section>
-
-  <div class="takeaway">
-    <h3>ماذا يخرج به المراجع من هذا الموضوع؟</h3>
-    <p>قبل مراجعة أي عملية تستخدم الذكاء الاصطناعي، حدّد نوع النظام ودوره داخل العملية. فكلما زادت قدرته على اتخاذ القرار والتنفيذ، زادت أهمية مراجعة الصلاحيات، والرقابة البشرية، وسجل التدقيق، وحدود التنفيذ.</p>
-  </div>
-</article>
-
-<footer class="footer">
-  <span>© 2026 Zahra Al Safwan</span>
-  <span>linkedin.com/in/zahra-al-safwan</span>
-</footer>
+</section>
 </main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 زهراء الصفوان</span>
+    <span>مراجعة تقنية وأمن سيبراني · حوكمة الذكاء الاصطناعي</span>
+    <span class="sp tagline">PEOPLE, TECHNOLOGY &amp; A SAFER TOMORROW</span>
+  </div>
+</footer>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+$('#calm').onclick=e=>{const on=document.body.classList.toggle('calm');
+  e.currentTarget.classList.toggle('on',on);e.currentTarget.setAttribute('aria-pressed',on);};
+addEventListener('scroll',()=>{const h=document.documentElement;
+  $('#prog').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+const rv=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('seen');rv.unobserve(e.target);}}),{threshold:.08});
+$$('.rv').forEach(n=>rv.observe(n));
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function lightSteps(sel){
+  const w=$(sel); if(!w)return;
+  const nodes=[...w.querySelectorAll('.mstep')];
+  const calm=()=>RM||document.body.classList.contains('calm');
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(!e.isIntersecting)return; io.disconnect();
+    if(calm()){nodes.forEach(n=>n.classList.add('on'));return;}
+    nodes.forEach((n,i)=>setTimeout(()=>{
+      nodes.forEach(x=>x.classList.remove('on'));n.classList.add('on');
+      if(i===nodes.length-1)nodes.forEach(x=>x.classList.add('on'));
+    },300+i*520));
+  }),{threshold:.4});
+  io.observe(w);
+}
+lightSteps('#agentFlow');
+</script>
 </body>
 </html>
