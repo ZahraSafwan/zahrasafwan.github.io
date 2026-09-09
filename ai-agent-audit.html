@@ -47,7 +47,15 @@ header{position:sticky;top:0;z-index:70;background:rgba(250,250,246,.93);backdro
   border:1px solid var(--line-2);color:var(--slate);font-size:13px;background:var(--paper);transition:.18s;flex:none}
 .ib:hover{border-color:var(--teal);color:var(--teal-dk)}
 .ib.on{background:var(--mist-2);border-color:var(--teal);color:var(--teal-dk)}
-@media(max-width:760px){.nav{display:none}.hd{justify-content:space-between}.ib .lbl{display:none}}
+@media(max-width:900px){
+  .hd{flex-wrap:wrap;row-gap:.15rem}
+  header nav{order:3;width:100%;min-width:0;overflow-x:auto;scrollbar-width:none}
+  header nav::-webkit-scrollbar{display:none}
+  .nav{width:max-content;margin-inline:0;flex-wrap:nowrap;padding-bottom:.25rem}
+  .nav a{white-space:nowrap;font-size:13.5px;padding:.32rem .6rem}
+  .ib .lbl{display:none}
+  .mark{margin-inline-end:auto}
+}
 .crumb{display:inline-flex;align-items:center;gap:.45rem;font-size:13.5px;font-weight:500;color:var(--teal-dk);
   background:var(--mist);border:1px solid rgba(0,149,129,.2);border-radius:100px;padding:.3rem .85rem;margin-bottom:1.1rem}
 .crumb:hover{background:var(--mist-2)}
@@ -104,6 +112,7 @@ footer{border-top:1px solid var(--line);padding-block:1.8rem;margin-top:2rem;pos
 .orb.b{width:480px;height:480px;background:radial-gradient(circle at 50% 45%,var(--mist-2),rgba(221,244,234,0) 72%);top:30%;inset-inline-end:-200px}
 .hdots{position:absolute;width:140px;height:110px;opacity:.5;pointer-events:none;z-index:0;
   background-image:radial-gradient(var(--mint) 1.6px,transparent 1.6px);background-size:16px 16px}
+@media(max-width:700px){.hdots{display:none}}
 .rv{opacity:0;transform:translateY(18px)}
 .rv.seen{animation:rvin .55s cubic-bezier(.2,.8,.3,1) forwards}
 @keyframes rvin{to{opacity:1;transform:none}}
@@ -167,7 +176,10 @@ body.calm *,body.calm *::before,body.calm *::after{animation:none!important;tran
   <div class="hd">
     <a class="mark" href="index.html"><b>ZAHRA<span>AL SAFWAN</span></b></a>
     <nav><ul class="nav">
-      <li><a href="index.html">البورتفوليو</a></li>
+      <li><a href="index.html">الملف المهني</a></li>
+      <li><a href="index.html#work">المشاريع</a></li>
+      <li><a href="index.html#experience">الخبرة</a></li>
+      <li><a href="index.html#certs">الشهادات</a></li>
       <li><a href="insights.html" class="cur">عين المراجع</a></li>
       <li><a href="index.html#contact">تواصل</a></li>
     </ul></nav>
