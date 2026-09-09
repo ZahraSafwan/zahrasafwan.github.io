@@ -1,269 +1,313 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Insights | Zahra Al Safwan</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>عين المراجع | زهراء الصفوان</title>
+<meta name="description" content="عين المراجع — محتوى عملي من منظور المراجع الداخلي: يبدأ بالذكاء الاصطناعي، ويتوسع إلى الأمن السيبراني والحوكمة والالتزام.">
+<meta name="theme-color" content="#FAFAF6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Jost:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 <style>
-
 :root{
-  --bg:#f8fbf9;--bg2:#f1f7f3;--card:#fff;--green:#138a52;--green2:#1fa463;
-  --teal:#168f83;--navy:#173126;--muted:#60746a;--line:#dce9e2;--mint:#e7f7ee;
-  --cream:#fff9e9;--rose:#fff1ef;--blue:#edf5ff;
+  --cream:#FAFAF6;--paper:#FFFFFF;--mist:#EAF7F1;--mist-2:#DDF4EA;--mist-3:#CDEEE0;
+  --teal:#009581;--mint:#03C0A4;--teal-dk:#00654F;--navy:#0C2136;--ink:#20313F;
+  --slate:#54687A;--muted:#7D8E9B;--gold:#F5D147;--gold-dk:#96730A;--coral:#C0523D;
+  --line:rgba(12,33,54,.11);--line-2:rgba(12,33,54,.2);
+  --sh-s:0 1px 3px rgba(12,33,54,.07);
+  --sh:0 14px 32px -22px rgba(12,33,54,.55),0 1px 3px rgba(12,33,54,.05);
+  --sh-l:0 34px 70px -42px rgba(12,33,54,.6),0 2px 8px rgba(12,33,54,.06);
+  --f-ar:'Tajawal',system-ui,sans-serif;--f-lat:'Jost','Tajawal',system-ui,sans-serif;
+  --f-mono:'IBM Plex Mono',ui-monospace,monospace;
+  --pad:clamp(1.05rem,4vw,2.5rem);--maxw:1000px;
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--navy);font-family:'IBM Plex Sans Arabic','Inter',sans-serif;line-height:1.85}
-a{color:inherit}
-.site-nav{position:sticky;top:0;z-index:50;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(18px,5vw,64px);background:rgba(248,251,249,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);direction:ltr}
-.site-brand{font:700 13px 'JetBrains Mono',monospace;color:var(--green);text-decoration:none}
-.site-links{display:flex;gap:20px;align-items:center}
-.site-links a{font:600 12px Inter;text-decoration:none;color:#60746a}.site-links a.active{color:var(--green)}
-.wrap{width:min(1080px,calc(100% - 36px));margin:auto}
-.hero{padding:64px 0 30px;text-align:center}.eyebrow{font:700 10px Inter;color:var(--green);letter-spacing:.13em;text-transform:uppercase}
-.hero h1{font-size:clamp(34px,6vw,56px);line-height:1.25;margin:8px 0 12px}.hero p{max-width:680px;margin:auto;color:var(--muted);font-size:16px}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 17px;border-radius:9px;text-decoration:none;font-size:12px;font-weight:700;border:1px solid var(--line);background:#fff;color:var(--green)}
-.btn.primary{background:var(--green);border-color:var(--green);color:white}.btn:hover{transform:translateY(-1px)}
-.section{padding:27px 0}.section-head{margin-bottom:14px}.section-head h2{font-size:23px;margin:0}.section-head p{font-size:13px;color:var(--muted);margin:2px 0 0}
-.footer{border-top:1px solid var(--line);padding:22px 0 38px;margin-top:40px;display:flex;justify-content:space-between;gap:15px;color:#82948b;font:500 10px Inter;direction:ltr}
-.lock{display:inline-flex;align-items:center;justify-content:center;width:31px;height:31px;border-radius:50%;background:#eff3f1;border:1px solid var(--line)}
-@media(max-width:720px){.site-links a:not(.active){display:none}.footer{flex-direction:column}}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px;-webkit-text-size-adjust:100%}
+body{background:var(--cream);color:var(--ink);font-family:var(--f-ar);font-size:17px;line-height:1.95;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-align:inherit}
+:focus-visible{outline:3px solid var(--mint);outline-offset:2px;border-radius:6px}
+::selection{background:var(--mist-2)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad);position:relative;z-index:2}
+section{padding-block:clamp(2.2rem,5vw,3.6rem);position:relative;scroll-margin-top:92px}
+header{position:sticky;top:0;z-index:70;background:rgba(250,250,246,.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.prog{height:3px}
+.prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--mint),#3FE8C6)}
+.hd{max-width:var(--maxw);margin:0 auto;padding:.55rem var(--pad);display:flex;align-items:center;gap:.8rem}
+.mark b{font-family:var(--f-lat);font-weight:700;font-size:15px;letter-spacing:.14em;color:var(--teal);display:block;line-height:1.05}
+.mark b span{display:block;color:var(--navy);font-weight:500;font-size:11.5px;letter-spacing:.2em;margin-top:2px}
+.nav{display:flex;gap:.15rem;margin-inline:auto;list-style:none}
+.nav a{font-size:14px;font-weight:500;color:var(--slate);padding:.4rem .65rem;border-radius:9px;white-space:nowrap;transition:.18s}
+.nav a:hover{background:var(--mist);color:var(--navy)}
+.nav a.cur{background:var(--mist-2);color:var(--teal-dk);font-weight:700}
+.ib{display:inline-flex;align-items:center;gap:.4rem;padding:.42rem .7rem;border-radius:10px;
+  border:1px solid var(--line-2);color:var(--slate);font-size:13px;background:var(--paper);transition:.18s;flex:none}
+.ib:hover{border-color:var(--teal);color:var(--teal-dk)}
+.ib.on{background:var(--mist-2);border-color:var(--teal);color:var(--teal-dk)}
+@media(max-width:760px){.nav{display:none}.hd{justify-content:space-between}.ib .lbl{display:none}}
+.crumb{display:inline-flex;align-items:center;gap:.45rem;font-size:13.5px;font-weight:500;color:var(--teal-dk);
+  background:var(--mist);border:1px solid rgba(0,149,129,.2);border-radius:100px;padding:.3rem .85rem;margin-bottom:1.1rem}
+.crumb:hover{background:var(--mist-2)}
+.tagchip{display:inline-flex;align-items:center;gap:.5rem;font-weight:500;font-size:12.5px;color:var(--teal-dk);
+  background:var(--mist);border:1px solid rgba(0,149,129,.22);border-radius:100px;padding:.32rem .85rem;margin-bottom:1rem}
+.tagchip i{width:6px;height:6px;border-radius:50%;background:var(--mint);font-style:normal}
+h1.t{font-size:clamp(1.7rem,4.6vw,2.7rem);font-weight:800;color:var(--navy);line-height:1.45;margin-bottom:.7rem}
+.lede{color:var(--slate);font-size:clamp(1rem,2.1vw,1.12rem);max-width:66ch}
+h2.s{font-size:clamp(1.3rem,3vw,1.7rem);font-weight:800;color:var(--navy);line-height:1.5;position:relative;
+  padding-bottom:.35rem;margin-bottom:1rem;scroll-margin-top:100px}
+h2.s::after{content:'';position:absolute;inset-inline-start:0;bottom:0;height:4px;width:46px;border-radius:3px;
+  background:linear-gradient(90deg,var(--mint),#3FE8C6)}
+.gist{display:flex;gap:.6rem;align-items:flex-start;background:var(--mist);border:1px solid rgba(0,149,129,.18);
+  border-radius:12px;padding:.75rem 1rem;margin-block:1.1rem 1.4rem;font-size:15px;color:var(--teal-dk);font-weight:500;line-height:1.85}
+.gist b{flex:none;font-weight:700}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:1.15rem 1.25rem;
+  box-shadow:var(--sh-s);transition:.22s}
+.card:hover{border-color:rgba(0,149,129,.32);box-shadow:var(--sh)}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+@media(max-width:820px){.grid2,.grid3{grid-template-columns:1fr}}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.68rem 1.25rem;border-radius:11px;
+  font-size:14.5px;font-weight:700;border:1.5px solid transparent;transition:.18s}
+.btn-p{background:var(--teal);color:#fff;box-shadow:0 10px 24px -12px rgba(0,149,129,.9)}
+.btn-p:hover{background:var(--teal-dk);transform:translateY(-2px)}
+.btn-g{border-color:var(--line-2);color:var(--navy);background:var(--paper)}
+.btn-g:hover{border-color:var(--teal);color:var(--teal-dk);background:var(--mist)}
+.msteps{display:flex;align-items:flex-start;gap:.3rem;padding-block:.4rem;flex-wrap:nowrap;overflow-x:auto}
+.mstep{flex:1;text-align:center;min-width:76px}
+.mstep i{width:36px;height:36px;margin:0 auto;border-radius:11px;display:grid;place-items:center;
+  background:var(--paper);border:1.5px solid var(--line-2);color:var(--muted);font-size:14px;transition:.3s;font-style:normal}
+.mstep.on i{background:var(--mist-2);border-color:var(--teal);color:var(--teal-dk);transform:scale(1.08)}
+.mstep.gate.on i{background:#FBF3D6;border-color:var(--gold-dk);color:var(--gold-dk)}
+.mstep span{display:block;font-size:11px;color:var(--slate);margin-top:.35rem;line-height:1.45}
+.mlink{height:1.5px;background:var(--line-2);flex:.35;margin-top:18px;min-width:14px}
+.num{width:30px;height:30px;border-radius:10px;background:var(--mist-2);color:var(--teal-dk);
+  font-family:var(--f-mono);font-size:12px;font-weight:600;display:grid;place-items:center;flex:none}
+.sev{font-size:11.5px;font-weight:700;padding:.18rem .6rem;border-radius:100px;flex:none}
+.sev.hi{background:#F8DFDA;color:#A8412F;border:1px solid rgba(192,82,61,.3)}
+.sev.md{background:#FAEDC6;color:var(--gold-dk);border:1px solid rgba(150,115,10,.3)}
+.sev.lo{background:var(--mist-2);color:var(--teal-dk);border:1px solid rgba(0,149,129,.25)}
+.check{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:.45rem .9rem}
+@media(max-width:700px){.check{grid-template-columns:1fr}}
+.check li{display:flex;gap:.55rem;align-items:flex-start;font-size:14.5px;color:var(--ink);line-height:1.8;
+  background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:.55rem .8rem}
+.check li::before{content:'✓';color:var(--teal);font-weight:800;flex:none}
+footer{border-top:1px solid var(--line);padding-block:1.8rem;margin-top:2rem;position:relative;z-index:2}
+.foot{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;font-size:13px;color:var(--muted)}
+.foot .sp{margin-inline-start:auto}
+.tagline{font-family:var(--f-lat);font-size:11px;font-weight:500;letter-spacing:.2em;color:var(--muted);
+  border-top:2px solid var(--gold);padding-top:.4rem;direction:ltr}
+.orb{position:absolute;border-radius:50%;pointer-events:none;z-index:0}
+.orb.a{width:560px;height:560px;background:radial-gradient(circle at 42% 42%,var(--mist-2),var(--mist) 58%,rgba(234,247,241,0) 74%);top:-240px;inset-inline-start:-180px}
+.orb.b{width:480px;height:480px;background:radial-gradient(circle at 50% 45%,var(--mist-2),rgba(221,244,234,0) 72%);top:30%;inset-inline-end:-200px}
+.hdots{position:absolute;width:140px;height:110px;opacity:.5;pointer-events:none;z-index:0;
+  background-image:radial-gradient(var(--mint) 1.6px,transparent 1.6px);background-size:16px 16px}
+.rv{opacity:0;transform:translateY(18px)}
+.rv.seen{animation:rvin .55s cubic-bezier(.2,.8,.3,1) forwards}
+@keyframes rvin{to{opacity:1;transform:none}}
+body.calm .rv,.rv.seen{opacity:1;transform:none}
+body.calm *,body.calm *::before,body.calm *::after{animation:none!important;transition:none!important}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}.rv{opacity:1;transform:none}}
 
-.focus-note{max-width:690px;margin:21px auto 0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 15px;color:#62766b;font-size:12px}
-.start{display:grid;grid-template-columns:1.2fr .8fr;background:linear-gradient(135deg,#fff,#f1faf5);border:1px solid #cfe7d9;border-radius:19px;overflow:hidden}
-.start-copy{padding:30px}.pill{display:inline-block;background:var(--mint);color:var(--green);border-radius:999px;padding:4px 9px;font-size:10px;font-weight:700}
-.start h2{font-size:29px;line-height:1.45;margin:12px 0 8px}.start p{font-size:14px;color:var(--muted);margin-bottom:19px}
-.start-visual{min-height:250px;display:flex;justify-content:center;align-items:center;background:radial-gradient(circle,#dff6e8,#f9fcfa 72%)}
-.flow{display:flex;flex-direction:column;gap:6px;align-items:center}.node{background:#fff;border:1px solid var(--line);border-radius:9px;padding:7px 13px;min-width:150px;text-align:center;font-size:11px;font-weight:700}
-.node.agent{background:var(--green);color:#fff;border-color:var(--green);font-size:14px}.arrow{color:var(--teal);font-size:18px}
-.paths{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.path{background:#fff;border:1px solid var(--line);border-radius:15px;padding:19px}
-.path .ico{font-size:23px}.path h3{font-size:16px;margin:7px 0 3px}.path p{font-size:11px;color:var(--muted);margin:0}
-.articles{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.article{position:relative;background:#fff;border:1px solid var(--line);border-radius:15px;padding:19px;min-height:205px;display:flex;flex-direction:column}
-.article.open{border-top:3px solid var(--green)}.article.locked{opacity:.78;background:#fcfdfc}.meta{display:flex;justify-content:space-between;align-items:center;gap:8px}
-.cat{font:700 9px Inter;padding:3px 7px;border-radius:999px;background:var(--mint);color:var(--green)}.cat.security{background:var(--rose);color:#a6544c}
-.article h3{font-size:17px;line-height:1.55;margin:13px 0 6px}.article p{font-size:12px;color:var(--muted);margin:0 0 14px}.article a{margin-top:auto;text-decoration:none;color:var(--green);font-size:11px;font-weight:700}
-.locked .lock{position:absolute;left:15px;top:49px}.locked-note{margin-top:auto;font-size:10px;color:#8d9c94;font-weight:700}
-.resources{display:grid;grid-template-columns:1fr 1fr;gap:12px}.resource{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;gap:13px;align-items:center}
-.ricon{width:47px;height:47px;border-radius:11px;background:var(--mint);display:flex;align-items:center;justify-content:center;font-size:21px;flex:0 0 auto}.resource h3{font-size:15px;margin:0 0 2px}.resource p{font-size:11px;color:var(--muted);margin:0 0 7px}.resource a{font:700 10px Inter;color:var(--green);text-decoration:none}
-@media(max-width:820px){.start{grid-template-columns:1fr}.paths,.articles,.resources{grid-template-columns:1fr}}
-
-/* ── Interactive learning-path filters ── */
-.paths{
-  grid-template-columns:repeat(4,1fr);
-}
-.path{
-  font-family:'IBM Plex Sans Arabic','Inter',sans-serif;
-  color:var(--navy);
-  text-align:right;
-  cursor:pointer;
-  appearance:none;
-  width:100%;
-  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease,background .18s ease;
-}
-.path:hover{
-  transform:translateY(-2px);
-  border-color:#b9ddc8;
-  box-shadow:0 8px 22px rgba(19,138,82,.07);
-}
-.path.active{
-  border-color:var(--green);
-  background:linear-gradient(135deg,#f2fbf6,#fff);
-  box-shadow:0 0 0 2px rgba(19,138,82,.07);
-}
-.path.active h3{color:var(--green)}
-.article{
-  transition:opacity .18s ease,transform .18s ease;
-}
-.article.filter-hide{
-  display:none !important;
-}
-.articles-empty{
-  margin-top:14px;
-  border:1px dashed #cfe2d7;
-  background:#fbfdfc;
-  border-radius:14px;
-  padding:28px;
-  text-align:center;
-}
-.articles-empty .empty-icon{font-size:26px;margin-bottom:6px}
-.articles-empty h3{font-size:15px;margin:0 0 4px}
-.articles-empty p{font-size:11px;color:var(--muted);margin:0}
-@media(max-width:980px){.paths{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:620px){.paths{grid-template-columns:1fr}}
-
+.hero{padding-block:clamp(2.2rem,5vw,3.6rem) clamp(1.6rem,3vw,2.4rem);overflow:hidden}
+.feat{background:linear-gradient(140deg,var(--mist-2),var(--paper) 62%);border:1px solid rgba(0,149,129,.22);
+  border-radius:20px;padding:clamp(1.3rem,3.5vw,2rem);box-shadow:var(--sh-l);display:grid;
+  grid-template-columns:1.1fr .9fr;gap:1.6rem;align-items:center}
+@media(max-width:860px){.feat{grid-template-columns:1fr}}
+.feat h3{font-size:clamp(1.2rem,2.8vw,1.55rem);font-weight:800;color:var(--navy);line-height:1.5;margin:.5rem 0}
+.feat p{color:var(--slate);font-size:15px;margin-bottom:1.1rem}
+.tracks{display:flex;gap:.45rem;flex-wrap:wrap;margin-bottom:1.2rem}
+.chip{font-size:13.5px;font-weight:500;padding:.4rem .9rem;border-radius:100px;border:1.5px solid var(--line);
+  color:var(--slate);background:var(--paper);transition:.18s}
+.chip:hover{border-color:var(--teal);color:var(--teal-dk)}
+.chip[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.arts{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem}
+@media(max-width:820px){.arts{grid-template-columns:1fr}}
+.art{display:flex;flex-direction:column;gap:.45rem;position:relative}
+.art .top{display:flex;gap:.45rem;align-items:center}
+.art .cat{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.03em;color:var(--teal-dk);
+  background:var(--mist);border:1px solid rgba(0,149,129,.2);padding:.14rem .55rem;border-radius:100px}
+.art .st{font-size:11.5px;font-weight:700;padding:.14rem .6rem;border-radius:100px}
+.art .st.ok{background:var(--mist-2);color:var(--teal-dk)}
+.art .st.soon{background:#F1F3F2;color:var(--muted)}
+.art h4{font-size:16.5px;font-weight:700;color:var(--navy);line-height:1.6}
+.art p{font-size:14px;color:var(--slate);line-height:1.75}
+.art .go{margin-top:auto;padding-top:.4rem;font-size:13.5px;font-weight:700;color:var(--teal)}
+.art.locked{opacity:.72}
+.art.locked:hover{transform:none;box-shadow:var(--sh-s);border-color:var(--line)}
+.art .lock{position:absolute;inset-inline-end:1rem;top:1rem;color:var(--muted)}
+.tools{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem}
+@media(max-width:760px){.tools{grid-template-columns:1fr}}
+.tool{display:flex;gap:.85rem;align-items:flex-start}
+.tool i{width:42px;height:42px;border-radius:13px;flex:none;display:grid;place-items:center;font-style:normal;
+  background:var(--mist);border:1px solid rgba(0,149,129,.2);color:var(--teal);font-size:17px}
+.tool h4{font-size:15.5px;font-weight:700;color:var(--navy)}
+.tool p{font-size:13.5px;color:var(--slate);margin:.15rem 0 .6rem;line-height:1.7}
+.feat .msteps{gap:.2rem}
+.feat .mstep{min-width:56px}
+.feat .mstep i{width:30px;height:30px;font-size:12px}
+.feat .mstep span{font-size:10px}
+.feat .mlink{min-width:8px;flex:.25;margin-top:15px}
 </style>
 </head>
 <body>
-<nav class="site-nav">
-  <a class="site-brand" href="index.html">💠 zahraspace</a>
-  <div class="site-links"><a href="index.html">Portfolio</a><a class="active" href="insights.html">Insights</a><a href="index.html#cv">Contact</a></div>
-</nav>
+<header>
+  <div class="prog"><i id="prog"></i></div>
+  <div class="hd">
+    <a class="mark" href="index.html"><b>ZAHRA<span>AL SAFWAN</span></b></a>
+    <nav><ul class="nav">
+      <li><a href="index.html">البورتفوليو</a></li>
+      <li><a href="insights.html" class="cur">عين المراجع</a></li>
+      <li><a href="index.html#contact">تواصل</a></li>
+    </ul></nav>
+    <button class="ib" id="calm" type="button" aria-pressed="false">
+      <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M2 8h3l2.5-4 2 8L12 8h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="lbl">تهدئة</span>
+    </button>
+  </div>
+</header>
 
-<main class="wrap">
+<main>
 <section class="hero">
-  <div class="eyebrow">INSIGHTS · AI × AUDIT</div>
-  <h1>الذكاء الاصطناعي بعين المراجع</h1>
-  <p>محتوى مبسّط وعملي يساعد المراجع الداخلي على فهم الذكاء الاصطناعي ومخاطره وضوابطه، دون الحاجة إلى خلفية تقنية عميقة.</p>
-  <div class="focus-note">ابدأ بمقال واحد فقط، ثم انتقل إلى المسار المناسب. لا حاجة إلى تصفح جميع المحتويات دفعة واحدة.</div>
+  <span class="orb a"></span><span class="orb b"></span>
+  <span class="hdots" style="top:16%;inset-inline-end:6%"></span>
+  <div class="wrap">
+    <span class="tagchip rv"><i></i>عين المراجع · محتوى من منظور المراجع الداخلي</span>
+    <h1 class="t rv">عين المراجع</h1>
+    <p class="lede rv">محتوى مبسّط وعملي من منظور المراجع الداخلي — يبدأ اليوم بالذكاء الاصطناعي، ويتوسع مستقبلًا إلى الأمن السيبراني والحوكمة والالتزام.</p>
+    <div class="gist rv" style="max-width:66ch"><b>باختصار:</b><span>ابدأ بمقال واحد فقط، ثم انتقل إلى المسار المناسب — لا حاجة إلى تصفح كل المحتوى دفعة واحدة.</span></div>
+  </div>
 </section>
 
-<section class="section">
-  <div class="section-head"><h2>ابدأ من هنا</h2><p>الدليل المتاح حاليًا.</p></div>
-  <div class="start">
-    <div class="start-copy">
-      <span class="pill">الدليل العملي الأول</span>
-      <h2>كيف تراجع وكيل الذكاء الاصطناعي (AI Agent)؟</h2>
-      <p>سيناريو مبسّط، الأدلة المطلوبة، ما الذي يراجعه المراجع ويختبره، أهم المخاطر، أمثلة للملاحظات، والتوصيات المحتملة.</p>
-      <a class="btn primary" href="ai-agent-audit.html">فتح الدليل ←</a>
-    </div>
-    <div class="start-visual">
-      <div class="flow">
-        <div class="node">طلب / عملية</div><div class="arrow">↓</div>
-        <div class="node agent">وكيل الذكاء الاصطناعي</div><div class="arrow">↓</div>
-        <div class="node">قرار</div><div class="arrow">↓</div>
-        <div class="node">موافقة حسب مستوى الخطر</div><div class="arrow">↓</div>
-        <div class="node">تنفيذ + سجلات</div>
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2 class="s rv">ابدأ من هنا</h2>
+    <div class="feat rv">
+      <div>
+        <span class="tagchip" style="margin-bottom:.2rem"><i></i>الدليل العملي الأول · ١٢ دقيقة قراءة</span>
+        <h3>كيف تراجع وكيل الذكاء الاصطناعي (AI Agent)؟</h3>
+        <p>سيناريو مبسّط، الأدلة المطلوبة، ما الذي يراجعه المراجع ويختبره، أهم المخاطر، أمثلة للملاحظات، والتوصيات المحتملة.</p>
+        <a class="btn btn-p" href="ai-agent-audit.html">افتح الدليل</a>
+      </div>
+      <div class="msteps" id="featFlow">
+        <div class="mstep"><i>✉</i><span>طلب / عملية</span></div><span class="mlink"></span>
+        <div class="mstep"><i>🤖</i><span>وكيل الذكاء الاصطناعي</span></div><span class="mlink"></span>
+        <div class="mstep"><i>⚖</i><span>قرار</span></div><span class="mlink"></span>
+        <div class="mstep gate"><i>👤</i><span>موافقة حسب الخطر</span></div><span class="mlink"></span>
+        <div class="mstep"><i>📄</i><span>تنفيذ + سجلات</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="section-head"><h2>المسارات التعليمية</h2><p>ثلاثة مسارات واضحة، ويمكن التوسع فيها تدريجيًا.</p></div>
-  <div class="paths" id="learningPaths">
-    <button class="path active" type="button" data-filter="all" aria-pressed="true">
-      <div class="ico">✨</div>
-      <h3>عرض جميع المقالات</h3>
-      <p>اعرض كل المحتوى المتاح والمقالات القادمة في مكان واحد.</p>
-    </button>
-
-    <button class="path" type="button" data-filter="basics" aria-pressed="false">
-      <div class="ico">🧠</div>
-      <h3>AI للمراجع من الصفر</h3>
-      <p>المفاهيم التي يحتاجها أي مراجع قبل الدخول في التفاصيل التقنية.</p>
-    </button>
-
-    <button class="path" type="button" data-filter="audit" aria-pressed="false">
-      <div class="ico">📋</div>
-      <h3>مراجعة وضوابط AI</h3>
-      <p>الصلاحيات، الموافقات، جودة القرارات، السجلات، واختبار الضوابط.</p>
-    </button>
-
-    <button class="path" type="button" data-filter="security" aria-pressed="false">
-      <div class="ico">🛡️</div>
-      <h3>AI Security والحوادث</h3>
-      <p>حوادث حقيقية، أسبابها، وما الذي تعنيه للمراجعة الداخلية.</p>
-    </button>
+<section>
+  <div class="wrap">
+    <h2 class="s rv">المقالات</h2>
+    <div class="gist rv"><b>باختصار:</b><span>اختر مسارًا لتصفية المقالات. المسارات الحالية تركز على الذكاء الاصطناعي، وستُضاف مسارات جديدة تباعًا.</span></div>
+    <div class="tracks rv" id="tracks"></div>
+    <div class="arts" id="arts"></div>
   </div>
 </section>
 
-<section class="section">
-  <div class="section-head"><h2>المقالات</h2><p>المقالات غير المنشورة تبقى مقفلة حتى تصبح جاهزة.</p></div>
-  <div class="articles">
-    <article class="article open" data-category="basics">
-      <div class="meta">
-        <span class="cat" style="background:var(--blue);color:#3f6fa8">AI BASICS</span>
-        <span style="font:600 9px Inter;color:#899991">متاح الآن</span>
-      </div>
-      <h3>ما الفرق بين الذكاء الاصطناعي، والذكاء الاصطناعي التوليدي، ووكيل الذكاء الاصطناعي؟</h3>
-      <p>افهم الفرق بين الأنواع الثلاثة، ولماذا يغيّر كل نوع طريقة المراجعة والمخاطر التي تبحث عنها.</p>
-      <a href="ai-basics-for-auditors.html">قراءة المقال ←</a>
-    </article>
-
-    <article class="article open" data-category="audit">
-      <div class="meta"><span class="cat">AI AUDIT</span><span style="font:600 9px Inter;color:#899991">متاح الآن</span></div>
-      <h3>كيف تراجع وكيل الذكاء الاصطناعي (AI Agent)؟</h3>
-      <p>دليل عملي من فهم العملية إلى كتابة الملاحظة والتوصية.</p>
-      <a href="ai-agent-audit.html">قراءة الدليل ←</a>
-    </article>
-    <article class="article locked" data-category="audit">
-      <div class="meta"><span class="cat">AI AUDIT</span><span style="font:600 9px Inter;color:#899991">قريبًا</span></div><span class="lock">🔒</span>
-      <h3>هل الـSystem Prompt ضابط رقابي كافٍ؟</h3>
-      <p>الفرق بين التعليمات السلوكية والضوابط التقنية التي تفرض التنفيذ.</p><span class="locked-note">المقال قيد الإعداد</span>
-    </article>
-    <article class="article locked" data-category="security">
-      <div class="meta"><span class="cat security">AI SECURITY</span><span style="font:600 9px Inter;color:#899991">قريبًا</span></div><span class="lock">🔒</span>
-      <h3>وجود نظام مراقبة لا يعني أن الضابط فعّال</h3>
-      <p>دروس للمراجع من تغطية المراقبة والتنبيه والاستجابة.</p><span class="locked-note">المقال قيد الإعداد</span>
-    </article>
-    <article class="article locked" data-category="audit">
-      <div class="meta"><span class="cat">AI AUDIT</span><span style="font:600 9px Inter;color:#899991">قريبًا</span></div><span class="lock">🔒</span>
-      <h3>كيف تراجع صلاحيات وكيل الذكاء الاصطناعي؟</h3>
-      <p>كيف تتحقق من أقل قدر من الصلاحيات وحدود الوصول.</p><span class="locked-note">المقال قيد الإعداد</span>
-    </article>
-    <article class="article locked" data-category="audit">
-      <div class="meta"><span class="cat">AI AUDIT</span><span style="font:600 9px Inter;color:#899991">قريبًا</span></div><span class="lock">🔒</span>
-      <h3>إذا أخطأ الوكيل، هل تستطيع إعادة بناء ما حدث؟</h3>
-      <p>سجل التدقيق والـLogs المطلوبة لتتبع القرار والتنفيذ.</p><span class="locked-note">المقال قيد الإعداد</span>
-    </article>
-    <article class="article locked" data-category="security">
-      <div class="meta"><span class="cat security">AI SECURITY</span><span style="font:600 9px Inter;color:#899991">قريبًا</span></div><span class="lock">🔒</span>
-      <h3>Prompt Injection: لماذا يهم المراجع الداخلي؟</h3>
-      <p>كيف يؤثر التلاعب بالمدخلات على قرارات الوكيل وصلاحياته.</p><span class="locked-note">المقال قيد الإعداد</span>
-    </article>
-  </div>
-
-  <div id="articlesEmptyState" class="articles-empty" hidden>
-    <div class="empty-icon">🔒</div>
-    <h3>لا توجد مقالات منشورة في هذا المسار حتى الآن</h3>
-    <p>سيظهر المحتوى هنا عند نشر أول مقال ضمن هذا المسار.</p>
+<section>
+  <div class="wrap">
+    <h2 class="s rv">أدوات جاهزة للمراجعة</h2>
+    <div class="gist rv"><b>باختصار:</b><span>ملفان منفصلان، لكل واحد غرض واضح — حمّلهما واستخدمهما كنقطة بداية.</span></div>
+    <div class="tools">
+      <div class="card tool rv"><i>✓</i><div>
+        <h4>قائمة مراجعة وكيل الذكاء الاصطناعي</h4>
+        <p>قائمة مراجعة عملية لاختبار الضوابط وتوثيق النتائج.</p>
+        <a class="btn btn-g" href="downloads/قائمة_مراجعة_وكيل_الذكاء_الاصطناعي_Zahra_Al_Safwan_v1.3_AR.xlsx">تحميل ملف Excel</a>
+      </div></div>
+      <div class="card tool rv"><i>📎</i><div>
+        <h4>قائمة طلبات أدلة المراجعة</h4>
+        <p>قائمة الأدلة والمتطلبات المطلوبة من الجهة محل المراجعة.</p>
+        <a class="btn btn-g" href="downloads/قائمة_طلبات_أدلة_مراجعة_وكيل_الذكاء_الاصطناعي_Zahra_Al_Safwan_v1.3_AR.xlsx">تحميل ملف Excel</a>
+      </div></div>
+    </div>
   </div>
 </section>
-
-<section class="section">
-  <div class="section-head"><h2>أدوات جاهزة للمراجعة</h2><p>ملفان منفصلان، لكل واحد غرض واضح.</p></div>
-  <div class="resources">
-    <div class="resource"><div class="ricon">✓</div><div><h3>قائمة مراجعة وكيل الذكاء الاصطناعي</h3><p>قائمة مراجعة عملية لاختبار الضوابط وتوثيق النتائج.</p><a href="downloads/قائمة_مراجعة_وكيل_الذكاء_الاصطناعي_Zahra_Al_Safwan_v1.3_AR.xlsx" download>تحميل ملف Excel ↓</a></div></div>
-    <div class="resource"><div class="ricon">📎</div><div><h3>قائمة طلبات أدلة المراجعة</h3><p>قائمة الأدلة والمتطلبات المطلوبة من الجهة محل المراجعة.</p><a href="downloads/قائمة_طلبات_أدلة_مراجعة_وكيل_الذكاء_الاصطناعي_Zahra_Al_Safwan_v1.3_AR.xlsx" download>تحميل ملف Excel ↓</a></div></div>
-  </div>
-</section>
-
-<footer class="footer"><span>© 2026 Zahra Al Safwan</span><span>IT & Cybersecurity Audit · AI Agents · AI Governance & Security</span></footer>
 </main>
 
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 زهراء الصفوان</span>
+    <span>مراجعة تقنية وأمن سيبراني · حوكمة الذكاء الاصطناعي</span>
+    <span class="sp tagline">PEOPLE, TECHNOLOGY &amp; A SAFER TOMORROW</span>
+  </div>
+</footer>
 <script>
-(function () {
-  const filterButtons = document.querySelectorAll('#learningPaths .path');
-  const articles = document.querySelectorAll('.articles .article');
-  const emptyState = document.getElementById('articlesEmptyState');
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+$('#calm').onclick=e=>{const on=document.body.classList.toggle('calm');
+  e.currentTarget.classList.toggle('on',on);e.currentTarget.setAttribute('aria-pressed',on);};
+addEventListener('scroll',()=>{const h=document.documentElement;
+  $('#prog').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+const rv=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('seen');rv.unobserve(e.target);}}),{threshold:.08});
+$$('.rv').forEach(n=>rv.observe(n));
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function lightSteps(sel){
+  const w=$(sel); if(!w)return;
+  const nodes=[...w.querySelectorAll('.mstep')];
+  const calm=()=>RM||document.body.classList.contains('calm');
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(!e.isIntersecting)return; io.disconnect();
+    if(calm()){nodes.forEach(n=>n.classList.add('on'));return;}
+    nodes.forEach((n,i)=>setTimeout(()=>{
+      nodes.forEach(x=>x.classList.remove('on'));n.classList.add('on');
+      if(i===nodes.length-1)nodes.forEach(x=>x.classList.add('on'));
+    },300+i*520));
+  }),{threshold:.4});
+  io.observe(w);
+}
 
-  function applyFilter(filter) {
-    let visibleCount = 0;
-
-    articles.forEach(article => {
-      const category = article.dataset.category || '';
-      const shouldShow = filter === 'all' || category === filter;
-
-      article.classList.toggle('filter-hide', !shouldShow);
-      if (shouldShow) visibleCount++;
-    });
-
-    if (emptyState) {
-      emptyState.hidden = visibleCount !== 0;
-    }
-  }
-
-  filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      filterButtons.forEach(item => {
-        item.classList.remove('active');
-        item.setAttribute('aria-pressed', 'false');
-      });
-
-      button.classList.add('active');
-      button.setAttribute('aria-pressed', 'true');
-
-      applyFilter(button.dataset.filter);
-
-      const articlesSection = document.querySelector('.articles');
-      if (articlesSection) {
-        articlesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
+const ARTS=[
+ {c:'أساسيات',cat:'AI BASICS',ok:1,url:'ai-basics-for-auditors.html',rt:'٨ د',
+  t:'ما الفرق بين الذكاء الاصطناعي، والتوليدي، ووكيل الذكاء الاصطناعي؟',
+  p:'افهم الفرق بين الأنواع الثلاثة، ولماذا يغيّر كل نوع طريقة المراجعة والمخاطر التي تبحث عنها.'},
+ {c:'مراجعة وضوابط',cat:'AI AUDIT',ok:1,url:'ai-agent-audit.html',rt:'١٢ د',
+  t:'كيف تراجع وكيل الذكاء الاصطناعي (AI Agent)؟',
+  p:'دليل عملي من فهم العملية إلى كتابة الملاحظة والتوصية.'},
+ {c:'مراجعة وضوابط',cat:'AI AUDIT',ok:0,t:'هل الـSystem Prompt ضابط رقابي كافٍ؟',
+  p:'الفرق بين التعليمات السلوكية والضوابط التقنية التي تفرض التنفيذ.'},
+ {c:'أمن وحوادث',cat:'AI SECURITY',ok:0,t:'وجود نظام مراقبة لا يعني أن الضابط فعّال',
+  p:'دروس للمراجع من تغطية المراقبة والتنبيه والاستجابة.'},
+ {c:'مراجعة وضوابط',cat:'AI AUDIT',ok:0,t:'كيف تراجع صلاحيات وكيل الذكاء الاصطناعي؟',
+  p:'كيف تتحقق من أقل قدر من الصلاحيات وحدود الوصول.'},
+ {c:'مراجعة وضوابط',cat:'AI AUDIT',ok:0,t:'إذا أخطأ الوكيل، هل تستطيع إعادة بناء ما حدث؟',
+  p:'سجل التدقيق والسجلات المطلوبة لتتبّع القرار والتنفيذ.'},
+ {c:'أمن وحوادث',cat:'AI SECURITY',ok:0,t:'Prompt Injection: لماذا يهم المراجع الداخلي؟',
+  p:'كيف يؤثر التلاعب بالمدخلات على قرارات الوكيل وصلاحياته.'}];
+const TRACKS=['الكل','أساسيات','مراجعة وضوابط','أمن وحوادث'];
+let tr='الكل';
+function el(t,c,x){const n=document.createElement(t);if(c)n.className=c;if(x!==undefined)n.innerHTML=x;return n;}
+function renderArts(){
+  const tb=$('#tracks');tb.innerHTML='';
+  TRACKS.forEach(x=>{
+    const n=x==='الكل'?ARTS.length:ARTS.filter(a=>a.c===x).length;
+    const b=el('button','chip',`${x} <span style="opacity:.6">${n}</span>`);
+    b.type='button';b.setAttribute('aria-pressed',tr===x);
+    b.onclick=()=>{tr=x;renderArts();};tb.appendChild(b);
   });
+  const box=$('#arts');box.innerHTML='';
+  ARTS.filter(a=>tr==='الكل'||a.c===tr).forEach(a=>{
+    if(a.ok){
+      const n=el('a','card art');n.href=a.url;
+      n.innerHTML=`<div class="top"><span class="cat">${a.cat}</span><span class="st ok">متاح الآن · ${a.rt}</span></div>
+        <h4>${a.t}</h4><p>${a.p}</p><span class="go">قراءة المقال ←</span>`;
+      box.appendChild(n);
+    }else{
+      const n=el('div','card art locked');
+      n.innerHTML=`<span class="lock">🔒</span><div class="top"><span class="cat">${a.cat}</span><span class="st soon">قريبًا</span></div>
+        <h4>${a.t}</h4><p>${a.p}</p><span class="go" style="color:var(--muted)">المقال قيد الإعداد</span>`;
+      box.appendChild(n);
+    }
+  });
+}
+renderArts();
+lightSteps('#featFlow');
 
-  applyFilter('all');
-})();
 </script>
-
 </body>
 </html>
