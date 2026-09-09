@@ -1,932 +1,1196 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
+<html lang="en" dir="ltr"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zahra Al Safwan | IT & Cybersecurity Auditor</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/@n8n/chat@1.29.1/dist/style.css" rel="stylesheet">
+<title>زهراء الصفوان — مراجعة تقنية وأمن سيبراني · حوكمة الذكاء الاصطناعي</title>
+<meta name="description" content="معرض شخصي: أربع سنوات في المراجعة التقنية والأمن السيبراني، مشاريع وشهادات موثّقة، ومكتبة مرجعية عربية عن المراجعة والذكاء الاصطناعي.">
+<meta name="theme-color" content="#06131F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Jost:wght@400;500;600;700&amp;family=Tajawal:wght@300;400;500;700;800&amp;display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg-primary:    #f8fbf9;
-  --bg-secondary:  #f1f7f3;
-  --bg-card:       #ffffff;
-  --bg-card-hover: #f5faf7;
-  --accent:        #138a52;
-  --accent-light:  #1fa463;
-  --accent-glow:   rgba(19,138,82,0.08);
-  --accent-border: rgba(19,138,82,0.22);
-  --teal:          #168f83;
-  --teal-light:    #1aa897;
-  --teal-glow:     rgba(22,143,131,0.08);
-  --teal-border:   rgba(22,143,131,0.22);
-  --text-primary:  #173126;
-  --text-secondary:#536a60;
-  --text-muted:    #8aa094;
-  --border:        rgba(23,49,38,0.10);
-  --tag-bg:        rgba(19,138,82,0.08);
-  --tag-color:     #177f4d;
-  --nav-h:         64px;
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{background:var(--bg-primary);color:var(--text-primary);font-family:'Inter',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden;}
-::-webkit-scrollbar{width:4px;}
-::-webkit-scrollbar-thumb{background:var(--accent);border-radius:2px;}
-
-/* ── Nav ── */
-nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(248,251,249,.92);backdrop-filter:blur(16px);border-bottom:.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.5rem,5vw,4rem);z-index:100;}
-.nav-brand{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;color:var(--accent);text-decoration:none;letter-spacing:.05em;}
-.nav-links{display:flex;gap:2rem;list-style:none;}
-.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s;}
-.nav-links a:hover,.nav-links a.active{color:var(--accent-light);}
-.nav-hamburger{display:none;background:none;border:none;color:var(--text-primary);cursor:pointer;font-size:22px;}
-
-/* ── Layout ── */
-section{position:relative;z-index:1;}
-.wrap{max-width:1100px;margin:0 auto;padding:0 clamp(1.5rem,5vw,3rem);}
-.sec-pad{padding:7rem 0;}
-.sec-alt{padding:7rem 0;background:var(--bg-secondary);}
-.s-label{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.75rem;}
-.s-label::before{content:'';width:24px;height:1px;background:var(--accent);}
-.s-title{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;margin-bottom:.5rem;}
-.s-sub{color:var(--text-secondary);font-size:15px;max-width:560px;margin-bottom:3rem;}
-.tag{display:inline-block;background:var(--tag-bg);color:var(--tag-color);border:.5px solid var(--accent-border);padding:2px 10px;border-radius:4px;font-size:11px;font-weight:600;font-family:'JetBrains Mono',monospace;}
-.tag.teal{background:var(--teal-glow);color:var(--teal-light);border-color:var(--teal-border);}
-
-/* ── Hero ── */
-#hero{min-height:100vh;display:flex;align-items:center;padding-top:var(--nav-h);overflow:hidden;}
-.glow1{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(19,138,82,.07) 0%,transparent 70%);top:5%;right:-150px;pointer-events:none;}
-.glow2{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(22,143,131,.05) 0%,transparent 70%);bottom:10%;left:-80px;pointer-events:none;}
-.hero-inner{padding:4rem 0;}
-.hero-hi{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent);letter-spacing:.1em;margin-bottom:1.25rem;display:flex;align-items:center;gap:10px;animation:up .5s ease both;}
-.hero-hi::after{content:'';width:60px;height:1px;background:var(--accent-border);}
-.hero-name{font-size:clamp(2.4rem,6vw,4rem);font-weight:800;line-height:1.1;margin-bottom:.5rem;background:linear-gradient(135deg,#173126,var(--accent-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:up .5s .1s ease both;}
-.hero-role{font-size:clamp(1rem,2.5vw,1.25rem);color:var(--text-secondary);margin-bottom:1.5rem;animation:up .5s .2s ease both;}
-.hero-desc{color:var(--text-secondary);font-size:15px;line-height:1.9;max-width:580px;margin-bottom:2.5rem;animation:up .5s .3s ease both;}
-.hero-stats{display:flex;gap:3rem;margin-bottom:2.5rem;flex-wrap:wrap;animation:up .5s .4s ease both;}
-.stat-n{font-size:2.2rem;font-weight:800;color:var(--accent);line-height:1;font-family:'JetBrains Mono',monospace;}
-.stat-l{font-size:11px;color:var(--text-muted);margin-top:4px;}
-.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:up .5s .5s ease both;}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 26px;border-radius:7px;font-size:14px;font-weight:600;text-decoration:none;transition:all .2s;cursor:pointer;border:none;}
-.btn-fill{background:var(--accent);color:#fff;}
-.btn-fill:hover{background:var(--accent-light);transform:translateY(-2px);}
-.btn-ghost{background:transparent;border:1px solid var(--accent-border);color:var(--accent-light);}
-.btn-ghost:hover{background:var(--accent-glow);}
-
-/* ── About ── */
-.hcards {
-    display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:2rem;
-    width:100%;
-    max-width:1200px;
-    margin:0 auto;
-}
-
-.about-text p{
-    color:var(--text-secondary);
-    font-size:17px;
-    line-height:2;
-    margin-bottom:1rem;
-}
-
-.hcard{background:var(--bg-card);border:.5px solid var(--border);border-radius:10px;padding:1.25rem;transition:all .2s;}
-.hcard:hover{border-color:var(--accent-border);background:var(--bg-card-hover);}
-.hcard-icon{font-size:1.4rem;margin-bottom:6px;}
-.hcard-title{font-size:14px;font-weight:700;margin-bottom:3px;}
-.hcard-desc{font-size:13px;color:var(--text-secondary);}
-
-@media (max-width:768px){
-    .hcards{
-        grid-template-columns:1fr;
-    }
-}
-
-/* ── Experience ── */
-.exp-list{display:flex;flex-direction:column;gap:1.25rem;}
-.exp-card{background:var(--bg-card);border:.5px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:1.75rem;transition:all .2s;}
-.exp-card:hover{border-color:var(--accent);background:var(--bg-card-hover);transform:translateX(3px);}
-.exp-head{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:4px;}
-.exp-role{font-size:16px;font-weight:700;}
-.exp-date{font-size:12px;color:var(--accent);font-family:'JetBrains Mono',monospace;background:var(--accent-glow);padding:3px 10px;border-radius:4px;}
-.exp-co{font-size:14px;color:var(--accent-light);font-weight:600;margin-bottom:10px;}
-.exp-desc{font-size:14px;color:var(--text-secondary);line-height:1.8;margin-bottom:12px;}
-.exp-tags{display:flex;flex-wrap:wrap;gap:6px;}
-.exp-group{background:var(--bg-card);border:.5px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:1.75rem;transition:all .2s;}
-.exp-group:hover{border-color:var(--accent);background:var(--bg-card-hover);}
-.exp-group-header{display:flex;align-items:center;gap:12px;margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:.5px solid var(--border);}
-.exp-group-logo{width:42px;height:42px;border-radius:8px;background:var(--accent-glow);border:.5px solid var(--accent-border);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
-.exp-group-co{font-size:17px;font-weight:700;color:var(--text-primary);}
-.exp-group-meta{font-size:12px;color:var(--text-secondary);margin-top:2px;}
-.exp-roles{display:flex;flex-direction:column;}
-.exp-role-item{position:relative;padding-left:1.5rem;padding-bottom:1.5rem;}
-.exp-role-item:last-child{padding-bottom:0;}
-.exp-role-item::before{content:'';position:absolute;left:5px;top:10px;bottom:0;width:1px;background:var(--accent-border);}
-.exp-role-item:last-child::before{display:none;}
-.exp-role-item::after{content:'';position:absolute;left:1px;top:8px;width:9px;height:9px;border-radius:50%;background:var(--accent);border:2px solid var(--bg-card);}
-.exp-role-title{font-size:14px;font-weight:700;margin-bottom:2px;}
-.exp-role-date{font-size:11px;color:var(--accent);font-family:'JetBrains Mono',monospace;margin-bottom:8px;display:inline-block;}
-.exp-role-desc{font-size:13px;color:var(--text-secondary);line-height:1.8;margin-bottom:8px;}
-.exp-role-tags{display:flex;flex-wrap:wrap;gap:5px;}
-
-/* ── Certifications ── */
-.certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;}
-.cert-card{background:var(--bg-card);border:.5px solid var(--border);border-radius:12px;overflow:hidden;transition:border-color .2s;cursor:pointer;}
-.cert-card:hover{border-color:var(--accent-border);}
-.cert-img-wrap{position:relative;height:170px;overflow:hidden;background:#eef5f0;}
-.cert-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .35s;}
-.cert-card:hover .cert-img-wrap img{transform:scale(1.04);}
-.cert-img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--bg-card);}
-.cert-img-placeholder span{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-muted);}
-/* Overlay زر View Certificate */
-.cert-overlay{position:absolute;inset:0;background:rgba(248,251,249,0.86);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .25s;}
-.cert-card:hover .cert-overlay{opacity:1;}
-.cert-view-btn{background:linear-gradient(135deg,#00a651 0%,#00b5a0 100%);color:#fff;border:none;padding:10px 22px;border-radius:20px;font-size:13px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:7px;letter-spacing:.02em;transition:opacity .2s;}
-.cert-view-btn:hover{opacity:.88;}
-/* معلومات البطاقة */
-.cert-body{padding:1rem 1.1rem 1.1rem;}
-.cert-year-badge{display:inline-block;background:var(--accent-glow);color:var(--accent-light);border:.5px solid var(--accent-border);padding:2px 9px;border-radius:4px;font-size:10px;font-weight:700;font-family:'JetBrains Mono',monospace;margin-bottom:8px;}
-.cert-year-badge.teal{background:var(--teal-glow);color:var(--teal-light);border-color:var(--teal-border);}
-.cert-name{font-size:13px;font-weight:700;margin-bottom:3px;color:var(--text-primary);}
-.cert-issuer{font-size:12px;color:var(--text-secondary);margin-bottom:8px;}
-.cert-tags-row{display:flex;flex-wrap:wrap;gap:5px;}
-
-/* ── Lightbox ── */
-.lightbox{display:none;position:fixed;inset:0;z-index:999;background:rgba(241,247,243,0.96);align-items:center;justify-content:center;padding:20px;}
-.lightbox.open{display:flex;}
-.lightbox-inner{position:relative;max-width:700px;width:100%;animation:lb-in .25s ease;}
-.lightbox-inner img{width:100%;border-radius:12px;display:block;}
-.lightbox-title{text-align:center;margin-top:16px;font-size:14px;font-weight:700;color:var(--text-primary);}
-.lightbox-close{position:absolute;top:-14px;right:-14px;width:36px;height:36px;border-radius:50%;background:#ffffff;border:.5px solid var(--accent-border);color:var(--text-primary);font-size:16px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;}
-.lightbox-close:hover{background:var(--bg-card-hover);}
-@keyframes lb-in{from{opacity:0;transform:scale(.95);}to{opacity:1;transform:scale(1);}}
-
-/* ── Projects ── */
-.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.25rem;}
-.proj-card{background:var(--bg-card);border:.5px solid var(--border);border-radius:12px;padding:1.75rem;display:flex;flex-direction:column;transition:all .25s;}
-.proj-card:hover{border-color:var(--accent-border);background:var(--bg-card-hover);transform:translateY(-4px);}
-.proj-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(19,138,82,.08);color:#177f4d;border:.5px solid rgba(19,138,82,.22);padding:3px 10px;border-radius:4px;font-size:11px;font-weight:700;margin-bottom:1rem;width:fit-content;}
-.proj-badge.research{background:rgba(22,143,131,.08);color:var(--teal);border-color:rgba(22,143,131,.22);}
-.proj-name{font-size:18px;font-weight:700;margin-bottom:.75rem;}
-.proj-desc{font-size:14px;color:var(--text-secondary);line-height:1.8;flex:1;margin-bottom:1.25rem;}
-.proj-foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
-.proj-tags{display:flex;flex-wrap:wrap;gap:5px;}
-.proj-link{font-size:13px;color:var(--accent-light);text-decoration:none;display:flex;align-items:center;gap:4px;border:.5px solid var(--accent-border);padding:5px 12px;border-radius:5px;transition:all .2s;font-weight:600;white-space:nowrap;}
-.proj-link:hover{background:var(--accent-glow);}
-
-/* ── Skills ── */
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;}
-.skill-cat{background:var(--bg-card);border:.5px solid var(--border);border-radius:12px;padding:1.5rem;transition:all .2s;}
-.skill-cat:hover{border-color:var(--accent-border);}
-.skill-head{display:flex;align-items:center;gap:10px;margin-bottom:1rem;}
-.skill-icon{font-size:1.3rem;}
-.skill-title{font-size:15px;font-weight:700;}
-.skill-items{list-style:none;display:flex;flex-direction:column;gap:7px;}
-.skill-items li{font-size:13px;color:var(--text-secondary);display:flex;align-items:center;gap:8px;}
-.skill-items li::before{content:'▸';color:var(--accent);font-size:10px;flex-shrink:0;}
-
-/* ── CV / Contact ── */
-.cv-box{background:var(--bg-card);border:.5px solid var(--accent-border);border-radius:16px;padding:3rem;text-align:center;max-width:540px;margin:0 auto;}
-.cv-box .s-label{justify-content:center;}
-.cv-box .s-label::before{display:none;}
-.cv-box .s-title{text-align:center;margin-bottom:.5rem;}
-.cv-box p{color:var(--text-secondary);margin-bottom:0;}
-.cv-divider{width:40px;height:1px;background:var(--accent-border);margin:1.25rem auto;}
-.cv-desc{color:var(--text-secondary);font-size:14px;line-height:1.8;max-width:400px;margin:0 auto 1.75rem !important;}
-.cv-btns{display:flex;justify-content:center;align-items:center;gap:.75rem;flex-wrap:nowrap;}
-.cv-or{flex-shrink:0;display:flex;align-items:center;color:var(--text-muted);font-family:'JetBrains Mono',monospace;font-size:11px;padding:0 4px;}
-.btn-teal{background:transparent;border:1px solid var(--teal-border);color:var(--teal-light);}
-.btn-teal:hover{background:var(--teal-glow);transform:translateY(-2px);}
-@media(max-width:520px){.cv-btns{flex-direction:column;}.cv-or{flex-direction:row;gap:8px;}.cv-or::before,.cv-or::after{content:'';width:30px;height:.5px;background:var(--border);}}
-.contact-inner{text-align:center;max-width:480px;margin:0 auto;}
-.contact-inner .s-label{justify-content:center;}
-.contact-inner .s-label::before{display:none;}
-.contact-inner .s-title{text-align:center;}
-.contact-inner p{color:var(--text-secondary);margin-bottom:2rem;}
-
-/* ── Footer ── */
-footer{border-top:.5px solid var(--border);padding:2rem clamp(1.5rem,5vw,4rem);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-footer p{font-size:13px;color:var(--text-muted);}
-footer span{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);}
-
-/* ── Reveal / Animations ── */
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
-.reveal.show{opacity:1;transform:translateY(0);}
-@keyframes up{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
-
-/* ── Mobile ── */
-@media(max-width:768px){
-  .nav-links{display:none;flex-direction:column;position:absolute;top:var(--nav-h);right:0;left:0;background:rgba(248,251,249,.98);padding:1rem 2rem;border-bottom:.5px solid var(--border);backdrop-filter:blur(16px);z-index:99;}
-  .nav-links.open{display:flex;}
-  .nav-hamburger{display:block;}
-  .about-grid{grid-template-columns:1fr;gap:2rem;}
-  .hero-stats{gap:1.5rem;}
-  .exp-card:hover,.proj-card:hover,.exp-group:hover{transform:none;}
-  .lightbox-inner{max-width:95vw;}
-}
-
-/* ── Ask Zahra AI Chatbot ── */
-#n8n-chat{
-  position:relative;
-  z-index:900;
-}
-
 :root{
-  --chat--color--primary: var(--accent);
-  --chat--color--primary-shade-50: #107a48;
-  --chat--color--primary-shade-100: #0d673d;
-  --chat--color--secondary: var(--teal);
-  --chat--color-secondary-shade-50: #127b70;
-  --chat--color--white: #ffffff;
-  --chat--color--light: #f7faf8;
-  --chat--color--light-shade-50: #edf4ef;
-  --chat--color--light-shade-100: #d9e7df;
-  --chat--color--medium: #9aafa4;
-  --chat--color--dark: var(--bg-secondary);
-  --chat--color--disabled: #8ca096;
-  --chat--color--typing: var(--text-secondary);
-
-  --chat--font-family: 'Inter', sans-serif;
-  --chat--border-radius: 10px;
-  --chat--transition-duration: .18s;
-
-  --chat--window--width: 410px;
-  --chat--window--height: 650px;
-  --chat--window--bottom: 20px;
-  --chat--window--right: 20px;
-  --chat--window--z-index: 900;
-  --chat--window--border: 1px solid var(--accent-border);
-  --chat--window--border-radius: 14px;
-  --chat--window--margin-bottom: 12px;
-
-  --chat--header--background: var(--bg-secondary);
-  --chat--header--color: var(--text-primary);
-  --chat--header--padding: 18px;
-  --chat--header--border-bottom: 1px solid var(--border);
-  --chat--heading--font-size: 1.25rem;
-  --chat--subtitle--font-size: .82rem;
-  --chat--subtitle--line-height: 1.5;
-
-  --chat--message--font-size: .9rem;
-  --chat--message--padding: 12px 14px;
-  --chat--message--border-radius: 10px;
-
-  --chat--toggle--background: var(--accent);
-  --chat--toggle--hover--background: var(--accent-light);
-  --chat--toggle--active--background: #107a48;
-  --chat--toggle--color: #ffffff;
-  --chat--toggle--size: 58px;
-
-  --chat--textarea--height: 52px;
-  --chat--textarea--max-height: 120px;
-  --chat--input--font-size: .92rem;
-  --chat--input--padding: 12px 14px;
-  --chat--input--background: #ffffff;
-  --chat--input--text-color: #173126;
-  --chat--input--placeholder--font-size: .9rem;
-  --chat--input--send--button--background: #ffffff;
-  --chat--input--send--button--color: var(--accent);
-  --chat--footer--background: #ffffff;
-  --chat--footer--color: #173126;
+  --navy-9:#06131F; --navy-8:#0A1E30; --navy-7:#0F2A40; --navy:#0C2136;
+  --cream:#FAFAF6; --paper:#FFFFFF;
+  --mist:#EAF7F1; --mist-2:#DDF4EA; --mist-3:#CDEEE0;
+  --teal:#009581; --mint:#03C0A4; --glow:#3FE8C6; --teal-dk:#00654F;
+  --ink:#20313F; --slate:#54687A; --muted:#7D8E9B;
+  --gold:#F5D147; --gold-dk:#96730A; --coral:#C0523D;
+  --line:rgba(12,33,54,.11); --line-2:rgba(12,33,54,.2);
+  --wline:rgba(255,255,255,.1); --wline-2:rgba(255,255,255,.2);
+  --sh-s:0 1px 3px rgba(12,33,54,.07);
+  --sh:0 14px 32px -22px rgba(12,33,54,.55),0 1px 3px rgba(12,33,54,.05);
+  --sh-l:0 34px 70px -42px rgba(12,33,54,.6),0 2px 8px rgba(12,33,54,.06);
+  --grad:linear-gradient(90deg,var(--mint),var(--glow));
+  --f-ar:'Tajawal',system-ui,sans-serif;
+  --f-lat:'Jost','Tajawal',system-ui,sans-serif;
+  --f-mono:'IBM Plex Mono',ui-monospace,monospace;
+  --f-body:var(--f-ar);
+  --pad:clamp(1.05rem,4vw,2.5rem);
+  --maxw:1150px; --r:16px;
 }
+html[dir="ltr"]{--f-body:var(--f-lat)}
+html[dir="rtl"] .mono-ar{font-family:var(--f-ar);letter-spacing:0}
 
-/* Keep the chat widget aligned with the portfolio visual language */
-#n8n-chat .chat-window{
-  box-shadow:0 18px 60px rgba(23,49,38,.14);
-  overflow:hidden;
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:92px;-webkit-text-size-adjust:100%}
+body{background:var(--cream);color:var(--ink);font-family:var(--f-body);
+  font-size:17px;line-height:1.85;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+html[dir="ltr"] body{line-height:1.62}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-align:inherit}
+:focus-visible{outline:3px solid var(--mint);outline-offset:2px;border-radius:6px}
+::selection{background:var(--mist-2)}
+summary::-webkit-details-marker{display:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad);position:relative;z-index:2}
+section{padding-block:clamp(2.8rem,6vw,4.6rem);position:relative;scroll-margin-top:88px}
+
+/* ═ header ═ */
+header{position:sticky;top:0;z-index:70;background:rgba(250,250,246,.92);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line)}
+.prog{height:3px}
+.prog i{display:block;height:100%;width:0;background:var(--grad);box-shadow:0 0 12px rgba(3,192,164,.6)}
+.hd{max-width:var(--maxw);margin:0 auto;padding:.55rem var(--pad);display:flex;align-items:center;gap:.7rem}
+.mark b{font-family:var(--f-lat);font-weight:700;font-size:15px;letter-spacing:.14em;color:var(--teal);display:block;line-height:1.05}
+.mark b span{display:block;color:var(--navy);font-weight:500;font-size:11.5px;letter-spacing:.2em;margin-top:2px}
+.nav{display:flex;gap:.1rem;margin-inline:auto;list-style:none}
+.nav a{font-size:14px;font-weight:500;color:var(--slate);padding:.4rem .6rem;border-radius:9px;white-space:nowrap;transition:.18s}
+.nav a:hover{background:var(--mist);color:var(--navy)}
+.nav a[aria-current="true"]{background:var(--mist-2);color:var(--teal-dk);font-weight:700}
+.hact{display:flex;gap:.4rem;align-items:center;flex:none}
+.ib{display:inline-flex;align-items:center;gap:.4rem;padding:.42rem .7rem;border-radius:10px;
+  border:1px solid var(--line-2);color:var(--slate);font-size:13px;background:var(--paper);transition:.18s}
+.ib:hover{border-color:var(--teal);color:var(--teal-dk)}
+.ib.on{background:var(--mist-2);border-color:var(--teal);color:var(--teal-dk)}
+.kbd{direction:ltr;display:inline-block;font-family:var(--f-mono);font-size:10.5px;border:1px solid currentColor;
+  opacity:.65;padding:.05rem .3rem;border-radius:5px}
+.burger{display:none}
+@media(max-width:1080px){
+  .nav{display:none;position:absolute;inset-inline:0;top:100%;flex-direction:column;gap:0;background:var(--paper);
+    border-bottom:1px solid var(--line);padding:.5rem var(--pad) .9rem;box-shadow:var(--sh)}
+  .nav.on{display:flex}
+  .nav a{color:var(--slate)!important;padding-block:.7rem;border-radius:0;border-bottom:1px solid var(--line)}
+  .burger{display:inline-flex}
+  .hact{margin-inline-start:auto}
 }
+@media(max-width:560px){.mark b span{display:none}.ib .lbl{display:none}}
 
-#n8n-chat .chat-header{
-  background:
-    radial-gradient(circle at 85% 10%, rgba(22,143,131,.10), transparent 35%),
-    var(--bg-secondary);
+/* ═ HERO (navy, alive) ═ */
+#top{background:var(--cream);color:var(--ink);padding-block:clamp(2.6rem,6vw,4.6rem) 0;overflow:hidden}
+.orb{position:absolute;border-radius:50%;pointer-events:none}
+.orb.a{width:680px;height:680px;background:radial-gradient(circle at 42% 42%,var(--mist-2),var(--mist) 58%,rgba(234,247,241,0) 74%);top:-280px;inset-inline-start:-200px}
+.orb.b{width:600px;height:600px;background:radial-gradient(circle at 50% 45%,var(--mist-2),rgba(221,244,234,0) 72%);bottom:-260px;inset-inline-end:-160px}
+.hcurve{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+html[dir="rtl"] .hcurve{transform:scaleX(-1)}
+@media(prefers-reduced-motion:no-preference){
+  body:not(.calm) .orb.a{animation:drift 16s ease-in-out infinite alternate}
+  body:not(.calm) .orb.b{animation:drift 19s ease-in-out infinite alternate-reverse}
 }
+@keyframes drift{from{transform:translate(0,0)}to{transform:translate(60px,40px)}}
+.hdots{position:absolute;width:170px;height:130px;opacity:.5;pointer-events:none;
+  background-image:radial-gradient(var(--mint) 1.6px,transparent 1.6px);background-size:16px 16px;
+  top:14%;inset-inline-end:6%}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.6rem,4vw,3.4rem);align-items:center;padding-bottom:clamp(2rem,4vw,3rem)}
+@media(max-width:960px){.hero{grid-template-columns:1fr}}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-weight:500;font-size:12.5px;color:var(--teal-dk);
+  background:var(--mist);border:1px solid rgba(0,149,129,.22);border-radius:100px;padding:.34rem .85rem;margin-bottom:1.2rem}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--mint)}
+.h1{font-size:clamp(2.3rem,6.4vw,4rem);font-weight:800;line-height:1.25;letter-spacing:-.015em;color:var(--navy);margin-bottom:.35rem}
+html[dir="ltr"] .h1{line-height:1.04;letter-spacing:-.035em}
+.h1 .grad{color:var(--teal);position:relative;display:inline-block}
+.h1 .grad::after{content:'';position:absolute;inset-inline:2px;bottom:.05em;height:.11em;background:var(--gold);border-radius:2px}
+.hrole{font-size:clamp(1.05rem,2.4vw,1.3rem);font-weight:500;color:var(--slate);margin-bottom:1.1rem}
+.hrole b{color:var(--teal-dk);font-weight:700}
+.meta{display:flex;gap:.45rem;flex-wrap:wrap;margin-bottom:1.4rem}
+.meta span{display:inline-flex;align-items:center;gap:.4rem;font-size:13px;color:var(--slate);
+  background:var(--paper);border:1px solid var(--line);padding:.26rem .7rem;border-radius:100px;box-shadow:var(--sh-s)}
+.meta .avail{background:var(--mist-2);border-color:rgba(0,149,129,.3);color:var(--teal-dk);font-weight:700}
+.meta .avail::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--teal)}
+.acts{display:flex;gap:.6rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.4rem;border-radius:12px;
+  font-size:15px;font-weight:700;border:1.5px solid transparent;transition:.2s cubic-bezier(.2,.7,.3,1);position:relative}
+.btn-p{background:var(--teal);color:#fff;box-shadow:0 12px 26px -14px rgba(0,149,129,.9)}
+.btn-p:hover{background:var(--teal-dk);transform:translateY(-2px);box-shadow:0 18px 34px -14px rgba(0,149,129,.85)}
+.btn-w{border-color:var(--line-2);color:var(--navy);background:var(--paper)}
+.btn-w:hover{border-color:var(--teal);color:var(--teal-dk);background:var(--mist)}
+.btn-g{border-color:var(--line-2);color:var(--navy);background:var(--paper)}
+.btn-g:hover{border-color:var(--teal);color:var(--teal-dk);background:var(--mist)}
+.btn svg{width:17px;height:17px;flex:none}
+/* stats */
+.hstats{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin-top:1.6rem}
+@media(max-width:640px){.hstats{grid-template-columns:repeat(2,1fr)}}
+.hstat{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:.9rem 1rem;transition:.2s;box-shadow:var(--sh-s)}
+.hstat:hover{border-color:rgba(0,149,129,.4);box-shadow:var(--sh);transform:translateY(-2px)}
+.hstat b{font-family:var(--f-mono);font-size:1.7rem;font-weight:600;color:var(--navy);line-height:1;display:block}
+.hstat b em{font-style:normal;color:var(--teal);font-size:.6em;vertical-align:.35em}
+.hstat span{font-size:12px;color:var(--slate);display:block;margin-top:.35rem;line-height:1.5}
+/* 60-sec glass card */
+.tldr{background:var(--paper);border:1px solid var(--line);border-radius:20px;
+  padding:1.4rem;box-shadow:var(--sh-l)}
+.tldr h3{font-size:13px;font-weight:700;color:var(--muted);margin-bottom:.9rem;display:flex;align-items:center;gap:.5rem}
+.tldr h3::before{content:'';width:18px;height:2.5px;background:var(--gold);border-radius:2px}
+.tl-i{display:flex;gap:.65rem;align-items:flex-start;font-size:14.5px;line-height:1.7;color:var(--ink);padding-block:.42rem}
+.tl-i+.tl-i{border-top:1px dashed var(--line)}
+.tl-i b{flex:none;width:22px;height:22px;border-radius:7px;background:var(--mist-2);color:var(--teal-dk);
+  font-family:var(--f-mono);font-size:11px;display:grid;place-items:center;margin-top:.25rem}
+.tl-i em{font-style:normal;font-weight:700;color:var(--navy)}
+/* section heads */
+.sh{margin-bottom:.4rem;display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.sh h2{font-size:clamp(1.5rem,3.4vw,2.15rem);font-weight:800;color:var(--navy);line-height:1.4;position:relative;padding-bottom:.35rem}
+.sh h2::after{content:'';position:absolute;inset-inline-start:0;bottom:0;height:4px;width:52px;border-radius:3px;background:var(--grad)}
+.sh .cnt{font-family:var(--f-mono);font-size:12.5px;color:var(--muted);border:1px solid var(--line);border-radius:100px;padding:.05rem .55rem}
+.gist{display:flex;gap:.6rem;align-items:flex-start;background:var(--mist);border:1px solid rgba(0,149,129,.18);
+  border-radius:12px;padding:.7rem .95rem;margin:1rem 0 1.6rem;font-size:14.5px;color:var(--teal-dk);max-width:74ch;font-weight:500}
+.gist b{flex:none;font-weight:700}
 
-@media(max-width:600px){
-  :root{
-    --chat--window--width: calc(100vw - 24px);
-    --chat--window--height: 76vh;
-    --chat--window--right: 12px;
-    --chat--window--bottom: 12px;
-  }
+/* quick paths */
+.paths{display:grid;grid-template-columns:repeat(3,1fr);gap:.85rem}
+@media(max-width:840px){.paths{grid-template-columns:1fr}}
+.path{background:var(--paper);border:1.5px solid var(--line);border-radius:18px;padding:1.3rem;
+  display:flex;flex-direction:column;gap:.4rem;transition:.25s cubic-bezier(.2,.8,.3,1);box-shadow:var(--sh-s);
+  position:relative;overflow:hidden}
+.path::before{content:'';position:absolute;inset-inline:0;top:0;height:3.5px;background:var(--grad);
+  transform:scaleX(0);transform-origin:inline-start;transition:transform .3s}
+.path:hover{border-color:rgba(0,149,129,.4);box-shadow:var(--sh);transform:translateY(-4px)}
+.path:hover::before{transform:scaleX(1)}
+.path i{width:38px;height:38px;border-radius:12px;background:var(--mist);display:grid;place-items:center;color:var(--teal);margin-bottom:.35rem}
+.path b{font-size:17px;color:var(--navy);font-weight:700}
+.path span{font-size:14px;color:var(--slate);line-height:1.65}
+.path em{font-style:normal;margin-top:.5rem;font-size:13.5px;font-weight:700;color:var(--teal-dk)}
+
+/* filters + work */
+.filters{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1.1rem}
+.chip{font-size:13.5px;font-weight:500;padding:.36rem .85rem;border-radius:100px;border:1.5px solid var(--line);
+  color:var(--slate);background:var(--paper);transition:.18s}
+.chip:hover{border-color:var(--teal);color:var(--teal-dk)}
+.chip[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.item{background:var(--paper);border:1px solid var(--line);border-radius:16px;margin-bottom:.6rem;
+  box-shadow:var(--sh-s);overflow:hidden;transition:.22s}
+.item:hover{border-color:rgba(0,149,129,.35)}
+.item[open]{border-color:rgba(0,149,129,.45);box-shadow:var(--sh)}
+.item>summary{list-style:none;cursor:pointer;padding:1.05rem 1.2rem;display:grid;grid-template-columns:auto 1fr auto;gap:.9rem;align-items:center}
+.item>summary:hover{background:var(--mist)}
+.it-i{width:36px;height:36px;border-radius:11px;background:linear-gradient(140deg,var(--mist-2),var(--mist));
+  display:grid;place-items:center;color:var(--teal-dk);font-family:var(--f-mono);font-size:11px;font-weight:600}
+.it-t{display:block;font-size:16.5px;font-weight:700;color:var(--navy);line-height:1.45}
+.it-s{display:block;font-size:14px;color:var(--slate);line-height:1.55}
+.it-x{width:27px;height:27px;border-radius:50%;border:1.5px solid var(--line-2);display:grid;place-items:center;
+  color:var(--muted);font-size:15px;transition:.25s;flex:none}
+.item[open] .it-x{background:var(--teal);border-color:var(--teal);color:#fff;transform:rotate(45deg)}
+.it-b{padding:0 1.2rem 1.2rem;border-top:1px solid var(--line);padding-top:1rem}
+.pac{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin-bottom:.9rem}
+@media(max-width:760px){.pac{grid-template-columns:1fr}}
+.pac div{background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:.85rem .95rem}
+.pac dt{font-size:11.5px;font-weight:700;color:var(--muted);margin-bottom:.3rem}
+.pac dd{font-size:14.5px;color:var(--ink);line-height:1.7}
+.pac div.res{background:var(--mist);border-color:rgba(0,149,129,.22)}
+.pac div.res dt{color:var(--teal-dk)}
+.tags{display:flex;gap:.35rem;flex-wrap:wrap}
+.tags span{font-family:var(--f-mono);font-size:11px;color:var(--slate);border:1px solid var(--line);
+  padding:.14rem .5rem;border-radius:6px;background:var(--cream)}
+
+/* experience */
+.job{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:1.2rem 1.3rem;
+  margin-bottom:.6rem;box-shadow:var(--sh-s);display:grid;grid-template-columns:116px 1fr;gap:1rem;transition:.2s}
+.job:hover{border-color:rgba(0,149,129,.3);box-shadow:var(--sh)}
+@media(max-width:640px){.job{grid-template-columns:1fr;gap:.35rem}}
+.job .yr{font-family:var(--f-mono);font-size:12.5px;color:var(--teal-dk);font-weight:600;padding-top:.2rem}
+.job h4{font-size:16.5px;font-weight:700;color:var(--navy);line-height:1.45}
+.job .co{font-size:13.5px;color:var(--muted);margin-bottom:.5rem}
+.job ul{list-style:none;display:grid;gap:.32rem}
+.job li{font-size:14.5px;color:var(--ink);display:flex;gap:.5rem;align-items:flex-start;line-height:1.7}
+.job li::before{content:'';width:6px;height:6px;border-radius:2px;background:var(--gold);flex:none;margin-top:.63rem}
+.job li b{color:var(--teal-dk);font-weight:700}
+
+/* core competencies */
+.comp{display:grid;grid-template-columns:repeat(2,1fr);gap:.9rem}
+@media(max-width:840px){.comp{grid-template-columns:1fr}}
+.cc{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:1.35rem 1.4rem;
+  box-shadow:var(--sh-s);transition:.25s;position:relative;overflow:hidden}
+.cc::before{content:'';position:absolute;inset-inline-start:0;top:0;bottom:0;width:4px;background:var(--grad);
+  transform:scaleY(0);transform-origin:top;transition:transform .35s}
+.cc:hover{border-color:rgba(0,149,129,.35);box-shadow:var(--sh);transform:translateY(-3px)}
+.cc:hover::before{transform:scaleY(1)}
+.cc-h{display:flex;align-items:center;gap:.7rem;margin-bottom:.85rem}
+.cc-h i{width:42px;height:42px;border-radius:13px;flex:none;display:grid;place-items:center;
+  background:linear-gradient(140deg,var(--mist-2),var(--mist));border:1px solid rgba(0,149,129,.2);color:var(--teal)}
+.cc-h h3{font-size:16.5px;font-weight:700;color:var(--navy);line-height:1.4}
+.cc ul{list-style:none;display:grid;gap:.3rem}
+.cc li{font-size:14.5px;color:var(--ink);display:flex;gap:.55rem;align-items:flex-start;line-height:1.7}
+.cc li::before{content:'‣';color:var(--mint);font-weight:700;margin-top:-1px}
+
+/* certifications with thumbnails */
+.certs{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem}
+@media(max-width:960px){.certs{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.certs{grid-template-columns:1fr}}
+.cert{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;
+  box-shadow:var(--sh-s);transition:.28s cubic-bezier(.2,.8,.3,1);display:flex;flex-direction:column}
+.cert:hover{border-color:rgba(0,149,129,.4);transform:translateY(-5px);box-shadow:var(--sh-l)}
+.cimg{height:172px;position:relative;overflow:hidden;background:#F2F3F1;direction:ltr;flex:none}
+.cimg .doc{position:absolute;inset:10px 12px -6px;background:#fff;border-radius:8px 8px 0 0;
+  box-shadow:0 6px 20px -10px rgba(12,33,54,.4);overflow:hidden;font-family:var(--f-lat)}
+.cert:hover .cimg .doc{transform:translateY(-3px)}
+.cimg .doc{transition:transform .3s}
+.d-bar{height:34px;display:flex;align-items:center;justify-content:flex-end;padding-inline:12px;
+  font-weight:700;font-size:12px;color:#fff;letter-spacing:.02em}
+.d-name{font-family:Georgia,'Times New Roman',serif;font-size:12.5px;letter-spacing:.08em;color:#1F2C38;
+  text-align:center;margin-top:12px;white-space:nowrap}
+.d-sub{font-size:8.5px;color:#8B98A3;text-align:center;margin-top:4px;line-height:1.5;padding-inline:14px}
+.d-big{font-size:11px;color:#33424F;text-align:center;margin-top:5px;font-weight:600}
+.d-seal{position:absolute;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;
+  font-size:8px;font-weight:700;letter-spacing:.04em;text-align:center;line-height:1.1}
+.frame{position:absolute;inset:10px 12px -6px;border-radius:8px 8px 0 0;padding:9px;overflow:hidden;transition:transform .3s}
+.cert:hover .frame{transform:translateY(-3px)}
+.frame .fin{background:#fff;height:calc(100% + 20px);padding-top:10px}
+.f-logos{display:flex;justify-content:space-between;align-items:center;padding-inline:12px;
+  font-weight:700;font-size:11px;color:#2A3947;font-family:var(--f-lat)}
+.f-logos .grc{letter-spacing:.02em}
+.f-logos .grc b{color:#1F2C38}
+.f-title{font-size:9px;color:#54687A;text-align:center;margin-top:8px;font-weight:600}
+.cert-body{padding:1rem 1.15rem 1.15rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+.cy{display:flex;gap:.4rem;align-items:center}
+.cy b{font-family:var(--f-mono);font-size:11.5px;color:var(--teal-dk);background:var(--mist);
+  border:1px solid rgba(0,149,129,.22);padding:.14rem .55rem;border-radius:7px;font-weight:600}
+.cy span{font-family:var(--f-mono);font-size:10.5px;color:var(--muted);border:1px solid var(--line);
+  padding:.14rem .55rem;border-radius:7px}
+.cert h4{font-size:16px;font-weight:700;color:var(--navy);line-height:1.4}
+.cert .iss{font-size:13px;color:var(--muted)}
+.cert .vf{margin-top:auto;padding-top:.55rem;font-size:13px;font-weight:700;color:var(--teal);display:inline-flex;gap:.35rem;align-items:center}
+.cert .vf:hover{color:var(--teal-dk)}
+
+/* library */
+.lib{display:grid;grid-template-columns:1.15fr .85fr;gap:1rem;align-items:start}
+@media(max-width:900px){.lib{grid-template-columns:1fr}}
+.art{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:1rem 1.15rem;
+  margin-bottom:.55rem;display:grid;grid-template-columns:1fr auto;gap:.8rem;align-items:center;box-shadow:var(--sh-s);transition:.2s}
+.art:hover{border-color:var(--teal);transform:translateX(-4px);box-shadow:var(--sh)}
+html[dir="ltr"] .art:hover{transform:translateX(4px)}
+.art h4{font-size:16px;font-weight:700;color:var(--navy);line-height:1.45}
+.art p{font-size:14px;color:var(--slate);line-height:1.6;margin-top:.15rem}
+.art .rt{font-family:var(--f-mono);font-size:11px;color:var(--teal-dk);background:var(--mist);
+  border:1px solid rgba(0,149,129,.2);padding:.2rem .55rem;border-radius:100px;white-space:nowrap;flex:none}
+.gloss{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:1.25rem;box-shadow:var(--sh-s)}
+.gloss>h3{font-size:15.5px;font-weight:700;color:var(--navy);margin-bottom:.25rem}
+.gloss>p{font-size:13.5px;color:var(--slate);margin-bottom:.85rem}
+.term{border-top:1px solid var(--line)}
+.term:first-of-type{border-top:0}
+.term>summary{list-style:none;cursor:pointer;padding:.62rem 0;display:flex;gap:.6rem;align-items:center;
+  font-size:15px;font-weight:700;color:var(--navy)}
+.term>summary:hover{color:var(--teal-dk)}
+.term>summary::before{content:'+';font-family:var(--f-mono);color:var(--mint);width:18px;flex:none;font-size:15px}
+.term[open]>summary::before{content:'–'}
+.term p{font-size:14.5px;color:var(--slate);padding:0 0 .8rem;padding-inline-start:1.15rem;line-height:1.8}
+
+/* contact */
+.cta{background:linear-gradient(140deg,var(--mist-2),var(--paper) 62%);color:var(--ink);border:1px solid rgba(0,149,129,.22);
+  border-radius:22px;padding:clamp(1.8rem,4.5vw,2.8rem);
+  box-shadow:var(--sh-l);display:grid;grid-template-columns:1fr auto;gap:1.4rem;align-items:center;
+  position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;width:150px;height:120px;opacity:.5;
+  background-image:radial-gradient(var(--mint) 1.6px,transparent 1.6px);background-size:16px 16px;
+  top:14px;inset-inline-end:18px}
+@media(max-width:780px){.cta{grid-template-columns:1fr}}
+.cta h2{font-size:clamp(1.4rem,3.2vw,1.9rem);font-weight:800;color:var(--navy);line-height:1.45;margin-bottom:.4rem}
+.cta p{color:var(--slate);font-size:15px;max-width:52ch}
+footer{border-top:1px solid var(--line);padding-block:1.8rem;position:relative;z-index:2}
+.foot{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;font-size:13px;color:var(--muted)}
+.foot .sp{margin-inline-start:auto}
+.tagline{font-family:var(--f-lat);font-size:11px;font-weight:500;letter-spacing:.2em;color:var(--muted);
+  border-top:2px solid var(--gold);padding-top:.4rem}
+
+/* ═ Ask Zahra ═ */
+.fab{position:fixed;inset-block-end:1.05rem;inset-inline-end:1.05rem;z-index:90;display:inline-flex;align-items:center;
+  gap:.55rem;padding:.78rem 1.25rem;border-radius:100px;font-size:14.5px;font-weight:700;
+  background:var(--teal);color:#fff;box-shadow:0 16px 34px -14px rgba(0,149,129,.9);transition:.2s}
+.fab:hover{background:var(--teal-dk);transform:translateY(-2px)}
+.fab i{width:8px;height:8px;border-radius:50%;background:var(--gold)}
+@media(prefers-reduced-motion:no-preference){body:not(.calm) .fab i{animation:blip 1.8s infinite}}
+@keyframes blip{0%,100%{opacity:1}50%{opacity:.3}}
+.panel{position:fixed;inset-block-end:1.05rem;inset-inline-end:1.05rem;z-index:91;width:min(392px,calc(100vw - 1.6rem));
+  background:var(--paper);border:1px solid var(--line);border-radius:20px;display:none;flex-direction:column;
+  box-shadow:0 40px 90px -36px rgba(6,19,31,.7);overflow:hidden}
+.panel.on{display:flex}
+@media(prefers-reduced-motion:no-preference){body:not(.calm) .panel.on{animation:pop .28s cubic-bezier(.2,.9,.3,1.2) both}}
+@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+.p-h{display:flex;align-items:center;gap:.65rem;padding:.9rem 1rem;border-bottom:1px solid var(--line);
+  background:linear-gradient(90deg,var(--mist),var(--paper));color:var(--navy)}
+.p-av{width:34px;height:34px;border-radius:11px;flex:none;display:grid;place-items:center;background:var(--teal);
+  font-family:var(--f-lat);font-size:11px;font-weight:700;color:#fff;letter-spacing:.06em}
+.p-h b{font-size:14.5px;display:block}
+.p-h span{font-size:11px;color:var(--muted)}
+.p-x{margin-inline-start:auto;font-size:20px;line-height:1;color:var(--muted);padding:.15rem .35rem}
+.p-x:hover{color:var(--navy)}
+.p-b{padding:1rem;display:flex;flex-direction:column;gap:.6rem;max-height:min(46vh,330px);overflow-y:auto}
+.msg{font-size:14px;padding:.65rem .9rem;border-radius:14px;max-width:88%;line-height:1.8}
+.msg.bot{background:var(--cream);border:1px solid var(--line);align-self:flex-start;border-start-start-radius:4px;color:var(--ink)}
+.msg.me{background:var(--teal);color:#fff;align-self:flex-end;border-end-end-radius:4px}
+.msg .src{display:block;font-family:var(--f-mono);font-size:10px;color:var(--muted);margin-top:.45rem}
+.dots-t{display:flex;gap:4px;padding:.75rem .9rem;background:var(--cream);border:1px solid var(--line);
+  border-radius:14px;align-self:flex-start;width:fit-content}
+.dots-t i{width:6px;height:6px;border-radius:50%;background:var(--muted)}
+@media(prefers-reduced-motion:no-preference){
+  body:not(.calm) .dots-t i{animation:bnc 1.2s infinite}
+  .dots-t i:nth-child(2){animation-delay:.15s}.dots-t i:nth-child(3){animation-delay:.3s}
 }
+@keyframes bnc{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-5px);opacity:1}}
+.p-s{padding:0 1rem .8rem;display:flex;gap:.4rem;flex-wrap:wrap}
+.p-s button{font-size:12.5px;padding:.35rem .75rem;border:1px solid var(--line-2);border-radius:100px;color:var(--slate)}
+.p-s button:hover{border-color:var(--teal);color:var(--teal-dk);background:var(--mist)}
+.p-f{padding:.65rem;border-top:1px solid var(--line);display:flex;gap:.4rem;background:var(--cream)}
+.p-f input{flex:1;min-width:0;font:inherit;font-size:14px;padding:.55rem .8rem;border-radius:11px;
+  border:1px solid var(--line-2);background:var(--paper);color:var(--ink)}
+.p-f input::placeholder{color:var(--muted)}
+.p-f button{padding:.55rem .95rem;border-radius:11px;background:var(--teal);color:#fff;font-weight:700;font-size:13.5px}
+.p-f button:hover{background:var(--teal-dk)}
 
+/* palette */
+.pal-bd{position:fixed;inset:0;z-index:100;background:rgba(6,19,31,.45);backdrop-filter:blur(4px);
+  display:none;align-items:flex-start;justify-content:center;padding:clamp(1rem,8vh,5rem) 1rem}
+.pal-bd.on{display:flex}
+.pal{background:var(--paper);border:1px solid var(--line-2);border-radius:18px;width:min(620px,100%);
+  box-shadow:0 40px 90px -30px rgba(6,19,31,.7);overflow:hidden;max-height:min(70vh,600px);display:flex;flex-direction:column}
+.pal-in{display:flex;align-items:center;gap:.6rem;padding:.85rem 1.1rem;border-bottom:1px solid var(--line)}
+.pal-in svg{color:var(--muted);flex:none}
+.pal-in input{flex:1;min-width:0;font:inherit;font-size:16.5px;border:0;background:none;color:var(--navy);outline:none}
+.pal-b{overflow-y:auto;padding:.5rem}
+.pal-h{font-size:11.5px;font-weight:700;color:var(--muted);padding:.6rem .75rem .3rem}
+.pal-r{display:grid;grid-template-columns:auto 1fr auto;gap:.7rem;align-items:center;padding:.6rem .75rem;border-radius:11px;cursor:pointer;width:100%}
+.pal-r:hover,.pal-r.sel{background:var(--mist)}
+.pal-r i{width:28px;height:28px;border-radius:9px;background:var(--mist-2);display:grid;place-items:center;
+  color:var(--teal-dk);font-family:var(--f-mono);font-size:10px;font-style:normal;flex:none}
+.pal-r b{font-size:15px;font-weight:600;color:var(--navy);display:block;line-height:1.45}
+.pal-r span{font-size:12.5px;color:var(--slate);display:block;line-height:1.45}
+.pal-r em{font-style:normal;font-family:var(--f-mono);font-size:10.5px;color:var(--muted);flex:none}
+.pal-f{border-top:1px solid var(--line);padding:.55rem 1.1rem;font-size:11.5px;color:var(--muted);
+  display:flex;gap:.9rem;flex-wrap:wrap;background:var(--cream)}
+.pal-none{padding:1.4rem .9rem;text-align:center;color:var(--slate);font-size:14.5px}
+@keyframes flash{0%{box-shadow:0 0 0 0 rgba(3,192,164,.5)}100%{box-shadow:0 0 0 16px rgba(3,192,164,0)}}
+.flash{animation:flash 1.1s ease-out 1}
 
-/* ── Custom Ask Zahra launcher ── */
-#n8n-chat .chat-window-toggle{
-  position:relative !important;
-  background:var(--bg-card) !important;
-  border:1px solid var(--accent-border) !important;
-  color:var(--accent-light) !important;
-  box-shadow:
-    0 10px 28px rgba(23,49,38,.14),
-    0 0 0 1px rgba(19,138,82,.04),
-    0 0 24px rgba(19,138,82,.10) !important;
-  transition:
-    transform .2s ease,
-    background .2s ease,
-    border-color .2s ease,
-    box-shadow .2s ease !important;
+/* mini project demos */
+.demo{background:var(--cream);border:1px solid var(--line);border-radius:13px;padding:.9rem;margin-bottom:.95rem}
+.demo-h{display:flex;align-items:center;gap:.45rem;font-size:11.5px;color:var(--muted);
+  padding-bottom:.5rem;border-bottom:1px solid var(--line);margin-bottom:.65rem}
+.demo-h i{width:6px;height:6px;border-radius:50%;background:var(--mint)}
+@media(prefers-reduced-motion:no-preference){body:not(.calm) .demo-h i{animation:blip 1.6s infinite}}
+@keyframes blip{0%,100%{opacity:1}50%{opacity:.3}}
+.chips{display:grid;grid-template-columns:repeat(12,1fr);gap:3px;max-width:420px}
+.chips i{aspect-ratio:1;border-radius:5px;background:#E7EBED;font-family:var(--f-mono);font-size:8.5px;
+  display:grid;place-items:center;color:var(--muted);font-style:normal;transition:.3s}
+.chips i.p{background:var(--mist-3);color:var(--teal-dk)}
+.chips i.w{background:#FAEDC6;color:var(--gold-dk)}
+.chips i.f{background:#F8DFDA;color:#A8412F}
+.dline{font-size:12.5px;color:var(--ink);display:flex;gap:.45rem;align-items:baseline;margin-bottom:.3rem;line-height:1.7}
+.dline b{color:var(--teal-dk);font-family:var(--f-mono);font-size:10.5px;flex:none}
+html[dir="rtl"] .dline b{font-family:var(--f-ar)}
+.type::after{content:'▍';color:var(--teal)}
+@media(prefers-reduced-motion:no-preference){body:not(.calm) .type::after{animation:blip 1s steps(1) infinite}}
+.brow{display:grid;grid-template-columns:6.4rem 1fr auto;gap:.55rem;align-items:center;font-size:11.5px;
+  color:var(--slate);margin-bottom:.35rem;max-width:440px}
+.brow em{font-style:normal;font-family:var(--f-mono);color:var(--navy);min-width:2.4rem;text-align:end}
+.bar{height:6px;border-radius:6px;background:#E7EBED;overflow:hidden}
+.bar span{display:block;height:100%;border-radius:6px;background:var(--teal);width:0;transition:width 1s cubic-bezier(.2,.8,.3,1)}
+.mbars{display:flex;gap:6px;align-items:flex-end;height:74px;max-width:340px}
+.mbars i{flex:1;background:var(--mist-3);border-radius:4px 4px 0 0;height:8%;transition:height .7s cubic-bezier(.2,.8,.3,1)}
+.mbars i.bad{background:var(--coral)}
+.mnote{font-size:11.5px;color:var(--coral);margin-top:.4rem;font-weight:500;opacity:0;transition:.4s}
+.mnote.in{opacity:1}
+.msteps{display:flex;align-items:flex-start;gap:.35rem;padding-block:.35rem;max-width:480px}
+.mstep{flex:1;text-align:center;min-width:0}
+.mstep i{width:32px;height:32px;margin:0 auto;border-radius:10px;display:grid;place-items:center;
+  background:var(--paper);border:1.5px solid var(--line-2);color:var(--muted);font-size:13px;transition:.3s;font-style:normal}
+.mstep.on i{background:var(--mist-2);border-color:var(--teal);color:var(--teal-dk);transform:scale(1.08)}
+.mstep.gate.on i{background:#FBF3D6;border-color:var(--gold-dk);color:var(--gold-dk)}
+.mstep span{display:block;font-size:10.5px;color:var(--slate);margin-top:.3rem;line-height:1.4}
+.mlink{height:1.5px;background:var(--line-2);flex:.4;margin-top:16px}
+.dmsg{font-size:12.5px;padding:.42rem .65rem;border-radius:10px;max-width:86%;margin-bottom:.32rem;
+  opacity:0;transform:translateY(5px);transition:.35s;width:fit-content}
+.dmsg.in{opacity:1;transform:none}
+.dmsg.bot{background:var(--paper);border:1px solid var(--line);color:var(--ink)}
+.dmsg.me{background:var(--teal);color:#fff;margin-inline-start:auto}
+.gatec{display:inline-flex;align-items:center;gap:.4rem;font-size:11.5px;border:1px dashed rgba(150,115,10,.5);
+  color:var(--gold-dk);background:#FDFAF0;border-radius:9px;padding:.35rem .6rem;transition:.35s;margin-top:.45rem}
+.gatec.ok{border-style:solid;border-color:rgba(0,149,129,.4);color:var(--teal-dk);background:var(--mist)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(20px)}
+.rv.seen{animation:rvin .6s cubic-bezier(.2,.8,.3,1) forwards}
+@keyframes rvin{to{opacity:1;transform:none}}
+body.calm .rv,.rv.seen{opacity:1;transform:none}
+body.calm *,body.calm *::before,body.calm *::after{animation:none!important;transition:none!important}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+  .rv{opacity:1;transform:none}
 }
-
-#n8n-chat .chat-window-toggle:hover{
-  background:var(--bg-card-hover) !important;
-  border-color:var(--accent) !important;
-  transform:translateY(-2px) scale(1.03);
-  box-shadow:
-    0 14px 34px rgba(23,49,38,.16),
-    0 0 28px rgba(19,138,82,.16) !important;
-}
-
-/* Hide the default speech-bubble icon */
-#n8n-chat .chat-window-toggle svg{
-  display:none !important;
-}
-
-/* Portfolio identity mark */
-#n8n-chat .chat-window-toggle::before{
-  content:'💠';
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  width:100%;
-  height:100%;
-  font-size:25px;
-  line-height:1;
-  filter:saturate(.9);
-}
-
-/* Small label shown on hover */
-#n8n-chat .chat-window-toggle::after{
-  content:'Ask Zahra AI';
-  position:absolute;
-  right:calc(100% + 12px);
-  top:50%;
-  transform:translateY(-50%) translateX(6px);
-  padding:7px 11px;
-  border-radius:7px;
-  border:.5px solid var(--accent-border);
-  background:rgba(255,255,255,.98);
-  color:var(--text-primary);
-  font-family:'Inter',sans-serif;
-  font-size:12px;
-  font-weight:600;
-  white-space:nowrap;
-  opacity:0;
-  pointer-events:none;
-  transition:opacity .18s ease, transform .18s ease;
-  box-shadow:0 8px 24px rgba(23,49,38,.12);
-}
-
-#n8n-chat .chat-window-toggle:hover::after{
-  opacity:1;
-  transform:translateY(-50%) translateX(0);
-}
-
-@media(max-width:600px){
-  #n8n-chat .chat-window-toggle::after{
-    display:none;
-  }
-}
-
-
-/* ── Insights Preview on Portfolio Home ── */
-.insights-preview-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:1.25rem;align-items:stretch;}
-.insight-preview-main,.insight-preview-side{background:var(--bg-card);border:.5px solid var(--border);border-radius:14px;padding:1.75rem;}
-.insight-preview-main{border-top:3px solid var(--accent);}
-.insight-preview-eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:var(--accent);letter-spacing:.10em;text-transform:uppercase;margin-bottom:.7rem;}
-.insight-preview-main h3{font-size:20px;line-height:1.45;margin-bottom:.65rem;}
-.insight-preview-main p,.insight-preview-side p{font-size:13px;color:var(--text-secondary);line-height:1.8;}
-.insight-preview-actions{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.2rem;}
-.insight-preview-side{display:flex;flex-direction:column;justify-content:center;background:linear-gradient(135deg,var(--bg-card),var(--bg-secondary));}
-.insight-preview-side h4{font-size:15px;margin-bottom:.4rem;}
-.insight-preview-points{list-style:none;margin-top:.7rem;display:flex;flex-direction:column;gap:.5rem;}
-.insight-preview-points li{font-size:12px;color:var(--text-secondary);}
-.insight-preview-points li::before{content:'✓';color:var(--accent);font-weight:800;margin-right:7px;}
-@media(max-width:768px){.insights-preview-grid{grid-template-columns:1fr;}}
-
 </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════ NAV ═══════════════════════════════ -->
-<nav>
-  <a href="#" class="nav-brand">💠 zahraspace</a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#certifications">Certifications</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="insights.html">Insights</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#cv">Contact</a></li>
-  </ul>
-  <button class="nav-hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
-</nav>
+<a class="skip" href="#main" style="position:absolute;inset-inline-start:-9999px" data-en="Skip to content" data-ar="تخطَّ إلى المحتوى">Skip to content</a>
 
-<!-- ═══════════════════════════════ HERO ══════════════════════════════ -->
-<section id="hero">
-  <div class="glow1"></div>
-  <div class="glow2"></div>
-  <div class="wrap">
-    <div class="hero-inner">
-      <div class="hero-hi">Hi, I'm</div>
-      <h1 class="hero-name">ZAHRA AL SAFWAN</h1>
-      <p class="hero-role">💠 IT & Cybersecurity Auditor — GRC • AI Governance • Digital Trust</p>
-      <p class="hero-desc">◈ Focused on Governance, Risk, Compliance (GRC), AI Governance, and cybersecurity-driven solutions that support secure and trusted digital environments.</p>
-      <div class="hero-stats">
-        <div><div class="stat-n">9+</div><div class="stat-l">AI & Operational Workflow Projects</div></div>
-        <div><div class="stat-n">6+</div><div class="stat-l">Professional Certifications</div></div>
-        <div><div class="stat-n">10+</div><div class="stat-l">Governance & Security Frameworks</div></div>
-      </div>
-      <div class="hero-btns">
-        <a href="https://linkedin.com/in/zahra-al-safwan" class="btn btn-fill" target="_blank">Connect on LinkedIn</a>
-        <a href="#projects" class="btn btn-ghost">View Projects</a>
-      </div>
+<header id="hdr">
+  <div class="prog"><i id="prog"></i></div>
+  <div class="hd">
+    <a class="mark" href="#top"><b>ZAHRA<span>AL SAFWAN</span></b></a>
+    <nav><ul class="nav" id="nav">
+      <li><a href="#work" data-en="Projects" data-ar="المشاريع">Projects</a></li>
+      <li><a href="#experience" data-en="Experience" data-ar="الخبرة">Experience</a></li>
+      <li><a href="#comp" data-en="Competencies" data-ar="الكفاءات">Competencies</a></li>
+      <li><a href="#certs" data-en="Certifications" data-ar="الشهادات">Certifications</a></li>
+      <li><a href="#library" data-en="Auditor's Eye" data-ar="عين المراجع">Auditor's Eye</a></li>
+      <li><a href="#contact" data-en="Contact" data-ar="تواصل">Contact</a></li>
+    </ul></nav>
+    <div class="hact">
+      <button class="ib" id="openPal" type="button">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="4.6" stroke="currentColor" stroke-width="1.5"></circle><path d="m10.6 10.6 3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+        <span class="lbl" data-en="Search" data-ar="بحث">Search</span><span class="kbd">⌘K</span>
+      </button>
+      <button class="ib" id="calm" type="button" aria-pressed="false">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M2 8h3l2.5-4 2 8L12 8h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        <span class="lbl" data-en="Calm" data-ar="تهدئة">Calm</span>
+      </button>
+      <button class="ib" id="lang" type="button">ع</button>
+      <button class="ib burger" id="burger" type="button" aria-expanded="false" aria-controls="nav">☰</button>
     </div>
   </div>
-</section>
-<!-- ═══════════════════════════════ PROJECTS ══════════════════════════ -->
-<section id="projects" class="sec-alt">
-  <div class="wrap">
-    <span class="s-label">Innovation</span>
-    <h2 class="s-title">Projects & AI Initiatives</h2>
-    <p class="s-sub">Selected projects and operational concepts focused on cybersecurity governance, audit workflows, compliance systems, and modern digital operations</p>
-    <div class="proj-grid">
-      <div class="proj-card reveal">
-        <div class="proj-badge">● Live AI Portfolio Assistant</div>
-        <div class="proj-name">Ask Zahra</div>
-        <div class="proj-desc">
-          Bilingual AI portfolio assistant integrated into Zahra Al Safwan’s website. It answers grounded questions about her professional experience, skills, certifications, projects, and areas of expertise using an AI Agent and retrieval-based knowledge workflow, with strict rules to prevent unsupported responses.
-        </div>
-        <div class="proj-foot">
-          <div class="proj-tags">
-            <span class="tag">AI Chatbot</span>
-            <span class="tag">RAG</span>
-            <span class="tag">AI Agent</span>
-            <span class="tag">Knowledge Base</span>
-            <span class="tag">Arabic & English</span>
-          </div>
-          <a href="#" class="proj-link" id="ask-zahra-project-link" aria-label="Open Ask Zahra chatbot">Try Ask Zahra →</a>
-        </div>
-      </div>
+</header>
 
-      <div class="proj-card reveal">
-        <div class="proj-badge">● AI Automation & Governance Venture</div>
-        <div class="proj-name">SABBARAH AI</div>
-        <div class="proj-desc">
-          Co-building a Saudi AI automation venture focused on practical AI agents and workflow automation for businesses, with cybersecurity, privacy, access controls, human oversight, and AI governance embedded by design. The initiative explores customer service agents, operational workflows, automated follow-ups, and intelligent digital experiences while considering relevant Saudi data protection, cybersecurity, and AI governance requirements from the start.
-        </div>
-        <div class="proj-foot">
-          <div class="proj-tags">
-            <span class="tag">AI Automation</span>
-            <span class="tag">AI Governance</span>
-            <span class="tag">Cybersecurity</span>
-            <span class="tag">AI Agents</span>
-            <span class="tag">Privacy by Design</span>
-            <span class="tag">Human-in-the-Loop</span>
-          </div>
-          <a href="https://sabbarahai.com" class="proj-link" target="_blank" rel="noopener noreferrer">Explore SABBARAH AI →</a>
-        </div>
+<main id="main">
+
+<!-- ═══ HERO ═══ -->
+<section id="top">
+  <span class="orb a"></span><span class="orb b"></span><span class="hdots"></span>
+  <svg class="hcurve" viewBox="0 0 1200 560" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M-40,460 C250,458 430,330 650,262 S1060,120 1250,64" fill="none" stroke="#03C0A4" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="0.1 11" opacity=".55"></path>
+    <path d="M-40,505 C280,503 490,392 700,322 S1090,205 1250,158" fill="none" stroke="#A9DECD" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="0.1 10" opacity=".55"></path>
+    <circle cx="836" cy="196" r="9" fill="#03C0A4"></circle>
+    <rect x="676" y="248" width="13" height="13" fill="#FDD03C"></rect>
+  </svg>
+  <div class="wrap hero">
+    <div>
+      <h1 class="h1"><span data-en="Zahra" data-ar="زهراء">Zahra</span> <span class="grad" data-en="Al Safwan" data-ar="الصفوان">Al Safwan</span></h1>
+      <div class="hrole" data-en="IT &amp; Cybersecurity Auditor | AI Agents &amp; Automation | AI Governance &amp; Security" data-ar="مراجِعة تقنية وأمن سيبراني | وكلاء ذكاء اصطناعي وأتمتة | حوكمة وأمن الذكاء الاصطناعي">IT &amp; Cybersecurity Auditor | AI Agents &amp; Automation | AI Governance &amp; Security</div>
+      <div class="meta">
+        <span class="avail" data-en="Open to opportunities" data-ar="متاحة لفرص عمل">Open to opportunities</span>
+        <span data-en="Al Khobar, Saudi Arabia" data-ar="الخبر، السعودية">Al Khobar, Saudi Arabia</span>
+        <span data-en="Arabic · English" data-ar="عربي · إنجليزي">Arabic · English</span>
       </div>
-      <div class="proj-card reveal">
-        <div class="proj-badge">● Compliance Evidence Analyzer</div>
-        <div class="proj-name">Cybersecurity Compliance Assistant</div>
-        <div class="proj-desc">
-          AI-powered compliance evidence analyzer built for GRC analysts 
-reviewing third-party cybersecurity controls against Saudi Aramco 
-CCC requirements (TPC-1 to TPC-23). Uploads client Word documents, 
-analyzes all 23 controls simultaneously, and produces structured 
-verdicts with evidence-based justifications and ready-to-send 
-client comments — with mandatory human approval before any output 
-is finalized.</div>
-        <div class="proj-foot"><div class="proj-tags"><span class="tag">Compliance AI</span><span class="tag">Gemini API</span><span class="tag">Aramco CCC</span><span class="tag">Evidence Review</span><span class="tag">Human-in-the-Loop</span></div></div>
+      <div class="acts">
+        <a class="btn btn-p" href="https://calendar.app.google/uBv2PsG8FEtJ99Ev5">
+          <svg viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="11" rx="2" stroke="currentColor" stroke-width="1.5"></rect><path d="M2 6.5h12M5.5 1.8v2.4M10.5 1.8v2.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+          <span data-en="Book an appointment" data-ar="احجز موعدًا">Book an appointment</span></a>
+        <a class="btn btn-w" href="https://linkedin.com/in/zahra-al-safwan" data-en="LinkedIn" data-ar="لينكدإن">LinkedIn</a>
+        <button class="btn btn-w" id="heroAsk" type="button" data-en="Ask Zahra 💬" data-ar="اسأل زهراء 💬">Ask Zahra 💬</button>
       </div>
-      <div class="proj-card reveal">
-        <div class="proj-badge">● AI Audit Workflow</div>
-        <div class="proj-name">AI Audit Report Assistant</div>
-        <div class="proj-desc">
-          AI-assisted audit workflow tool that transforms raw observations 
-into structured findings using the 5C framework — Criteria, 
-Condition, Cause, Consequence, and Corrective Action. Maps each 
-finding to the relevant control across 13 Saudi regulatory 
-frameworks including NCA ECC, SDAIA, SAMA, and Aramco TPCC. 
-Supports Arabic and English with full RTL layout.</div>
-        <div class="proj-foot"><div class="proj-tags"><span class="tag">Audit AI</span><span class="tag">GRC</span><span class="tag">5C Framework</span><span class="tag">NCA</span><span class="tag">SDAIA</span><span class="tag">SAMA</span></div></div>
+      <div class="hstats" id="hstats">
+        <div class="hstat"><b data-n="200" data-suf="+">0</b><span data-en="compliance assessments" data-ar="تقييم التزام سيبراني">compliance assessments</span></div>
+        <div class="hstat"><b data-n="4" data-suf="+">0</b><span data-en="years in audit" data-ar="سنوات في المراجعة">years in audit</span></div>
+        <div class="hstat"><b data-n="3">0</b><span data-en="promotions in 4 years" data-ar="ترقيات في ٤ سنوات">promotions in 4 years</span></div>
+        <div class="hstat"><b data-n="6">0</b><span data-en="certifications" data-ar="شهادات مهنية">certifications</span></div>
       </div>
-      <div class="proj-card reveal">
-        <div class="proj-badge">● AI Governance Platform</div>
-        <div class="proj-name">AI Governance Assistant</div>
-        <div class="proj-desc">Intelligent governance assessment platform that evaluates AI 
-systems against SDAIA AI Governance Framework, UNESCO AI Ethics, 
-NIST AI RMF, and EU AI Act. Scores systems across 6 governance 
-principles, identifies compliance gaps, and generates actionable 
-remediation roadmaps. Supports Arabic and English — built and 
-tested by applying it to audit its own sibling projects.</div>
-         <div class="proj-foot"><div class="proj-tags"><span class="tag">AI Governance</span><span class="tag">Responsible AI</span><span class="tag">SDAIA</span><span class="tag">NIST AI RMF</span><span class="tag">EU AI Act</span></div></div>
-      </div>
-           <div class="proj-card reveal">
-                   <div class="proj-badge">● Clinical AI Workflow</div>
-        <div class="proj-name">ICU Physician Assistant</div>
-        <div class="proj-desc">AI-powered clinical documentation tool designed for ICU 
-specialists to reduce documentation load. Generates structured 
-progress notes, shift handovers, and family explanation summaries 
-from raw patient data — using synthetic mock data only. Built with 
-AI Governance principles: physician approval required before every 
-output, with a clear disclaimer that all results are AI-assisted 
-and subject to clinical review.</div>
-         <div class="proj-foot"><div class="proj-tags"><span class="tag">Clinical AI</span><span class="tag">ICU Workflow</span><span class="tag">Generative AI</span><span class="tag">Human-in-the-Loop</span></div></div>
-      </div>
-                 <div class="proj-card reveal">
-                      <div class="proj-badge">● Audit Analytics Project</div>
-        <div class="proj-name">Smart Auditor</div>
-        <div class="proj-desc">Power BI-driven audit analytics project focused on identifying cybersecurity and IT audit risk indicators including access anomalies, segregation-of-duties conflicts, and configuration risks.</div>
-         <div class="proj-foot"><div class="proj-tags"><span class="tag">Power BI</span><span class="tag">Audit Analytics</span><span class="tag">IT Audit</span><span class="tag">Risk Indicators</span></div></div>
-      </div>
-                    <div class="proj-card reveal">
-                       <div class="proj-badge">● Governance & Compliance Framework</div>
-        <div class="proj-name">SwiftTech GRC Project</div>
-        <div class="proj-desc">Governance, risk, and compliance framework project focused on cybersecurity governance, risk assessment, control design, and enterprise compliance operations.</div>
-         <div class="proj-foot"><div class="proj-tags"><span class="tag">GRC</span><span class="tag">Governance</span><span class="tag">Risk Assessment</span><span class="tag">Compliance</span></div></div>
-      </div>
-         <div class="proj-card reveal">
-                       <div class="proj-badge">● Risk-Based Audit Operations</div>
-        <div class="proj-name">IT & Cybersecurity Audit Engagements</div>
-        <div class="proj-desc">Participated in IT and cybersecurity audit engagements conducted using risk-based auditing methodologies aligned with IIA standards, focusing on governance review, compliance testing, control evaluation, and evidence-based audit activities.</div>
-         <div class="proj-foot"><div class="proj-tags"><span class="tag">IIA Standards</span><span class="tag">IT Audit</span><span class="tag">Cybersecurity Audit</span><span class="tag">Risk-Based Auditing</span></div></div>
-      </div>
+    </div>
+
+    <div class="tldr rv">
+      <h3 data-en="The 60-second version" data-ar="الخلاصة في ٦٠ ثانية">The 60-second version</h3>
+      <div class="tl-i"><b>1</b><span data-en="&lt;em&gt;Four years&lt;/em&gt; at RSM Saudi Arabia — analyst to auditor, three promotions." data-ar="أربع سنوات في &lt;em&gt;RSM السعودية&lt;/em&gt; — من محللة إلى مراجِعة، بثلاث ترقيات."><em>Four years</em> at RSM Saudi Arabia — analyst to auditor, three promotions.</span></div>
+      <div class="tl-i"><b>2</b><span data-en="&lt;em&gt;200+&lt;/em&gt; compliance assessments for Saudi Aramco vendors." data-ar="أكثر من &lt;em&gt;٢٠٠ تقييم&lt;/em&gt; التزام لموردي أرامكو السعودية."><em>200+</em> compliance assessments for Saudi Aramco vendors.</span></div>
+      <div class="tl-i"><b>3</b><span data-en="Audits against &lt;em&gt;NCA, SAMA, ISO 27001&lt;/em&gt; and Aramco requirements." data-ar="مراجعات مقابل &lt;em&gt;NCA وSAMA وISO 27001&lt;/em&gt; ومتطلبات أرامكو.">Audits against <em>NCA, SAMA, ISO 27001</em> and Aramco requirements.</span></div>
+      <div class="tl-i"><b>4</b><span data-en="Current focus: &lt;em&gt;AI governance&lt;/em&gt; — auditing systems entering production." data-ar="التركيز الحالي: &lt;em&gt;حوكمة الذكاء الاصطناعي&lt;/em&gt; — مراجعة الأنظمة وهي تدخل التشغيل.">Current focus: <em>AI governance</em> — auditing systems entering production.</span></div>
+      <div class="tl-i"><b>5</b><span data-en="I write &lt;em&gt;Auditor's Eye&lt;/em&gt; — free Arabic content on auditing AI, below." data-ar="أكتب &lt;em&gt;«عين المراجع»&lt;/em&gt; — محتوى عربيًا مجانيًا عن مراجعة الذكاء الاصطناعي، بالأسفل.">I write <em>Auditor's Eye</em> — free Arabic content on auditing AI, below.</span></div>
     </div>
   </div>
 </section>
 
-  
-<!-- ═══════════════════════════════ INSIGHTS PREVIEW ════════════════════════ -->
-<section id="insights-preview" class="sec-pad">
+<!-- ═══ PATHS ═══ -->
+<section id="paths" style="padding-bottom:1rem">
   <div class="wrap">
-    <span class="s-label">Insights</span>
-    <h2 class="s-title">AI Through an Auditor’s Lens</h2>
-    <p class="s-sub">Practical Arabic guides that connect artificial intelligence with internal audit, cybersecurity, controls, and real-world review procedures.</p>
-
-    <div class="insights-preview-grid">
-      <article class="insight-preview-main reveal">
-        <div class="insight-preview-eyebrow">LATEST PRACTICAL GUIDE</div>
-        <h3>كيف تراجع وكيل الذكاء الاصطناعي (AI Agent)؟</h3>
-        <p>دليل عملي للمراجع الداخلي: سيناريو مبسّط، الأدلة المطلوبة، ما الذي يجب اختباره، المخاطر، أمثلة الملاحظات، والتوصيات المحتملة.</p>
-        <div class="insight-preview-actions">
-          <a href="ai-agent-audit.html" class="btn btn-fill">Read the Guide</a>
-          <a href="insights.html" class="btn btn-ghost">View All Insights</a>
-        </div>
-      </article>
-
-      <aside class="insight-preview-side reveal">
-        <h4>Inside the Insights library</h4>
-        <p>Content is organized to be easy to scan and useful during an actual audit engagement.</p>
-        <ul class="insight-preview-points">
-          <li>AI basics for internal auditors</li>
-          <li>Audit procedures & control testing</li>
-          <li>AI security incidents through an audit lens</li>
-          <li>Downloadable audit tools and checklists</li>
-        </ul>
-      </aside>
+    <div class="sh rv"><h2 data-en="Where do you want to start?" data-ar="من أين تودّ أن تبدأ؟">Where do you want to start?</h2></div>
+    <div class="paths" style="margin-top:1.4rem">
+      <a class="path rv" href="#experience">
+        <i><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 6.5h14v10H3v-10ZM7 6.5V4.5h6v2" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg></i>
+        <b data-en="For recruiters" data-ar="لمسؤولي التوظيف">For recruiters</b>
+        <span data-en="Roles, dates, outcomes and verified certifications — with direct contact options." data-ar="الأدوار والتواريخ والنتائج والشهادات الموثّقة — مع طرق تواصل مباشرة.">Roles, dates, outcomes and verified certifications — with direct contact options.</span>
+        <em data-en="Experience &amp; certifications →" data-ar="الخبرة والشهادات ←">Experience &amp; certifications →</em>
+      </a>
+      <a class="path rv" href="#work">
+        <i><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 3h8l4 4v10H4V3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M12 3v4h4" stroke="currentColor" stroke-width="1.5"></path></svg></i>
+        <b data-en="Browse the projects" data-ar="لاستعراض المشاريع">Browse the projects</b>
+        <span data-en="Eight projects — each opens with a small moving demo of its idea." data-ar="ثمانية مشاريع — كل مشروع يُفتح على عرض متحرك مصغّر لفكرته.">Eight projects — each opens with a small moving demo of its idea.</span>
+        <em data-en="Selected work →" data-ar="الأعمال ←">Selected work →</em>
+      </a>
+      <a class="path rv" href="#library">
+        <i><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M3 4.5h6a2 2 0 0 1 2 2v9a2 2 0 0 0-2-2H3v-9ZM17 4.5h-6a2 2 0 0 0-2 2v9a2 2 0 0 1 2-2h6v-9Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"></path></svg></i>
+        <b data-en="To learn the field" data-ar="للتعلّم عن المجال">To learn the field</b>
+        <span data-en="Auditor's Eye: Arabic guides on auditing AI, plus a plain-language glossary." data-ar="«عين المراجع»: أدلة عربية عن مراجعة الذكاء الاصطناعي، ومعجم مصطلحات مبسّط.">Auditor's Eye: Arabic guides on auditing AI, plus a plain-language glossary.</span>
+        <em data-en="Auditor's Eye →" data-ar="عين المراجع ←">Auditor's Eye →</em>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════ SKILLS ════════════════════════════ -->
-<section id="skills" class="sec-pad">
+<!-- ═══ WORK ═══ -->
+<section id="work">
   <div class="wrap">
-    <span class="s-label">Expertise</span>
-    <h2 class="s-title">Core Competencies</h2>
-    <p class="s-sub">Specialized expertise across cybersecurity, governance, audit, and AI-driven operational systems</p>
-    <div class="skills-grid">
-      <div class="skill-cat reveal"><div class="skill-head"><span class="skill-icon">💠</span><span class="skill-title">Cybersecurity Governance & Compliance</span></div><ul class="skill-items"><li>Governance, Risk & Compliance (GRC)</li><li>NCA & SAMA CSF</li><li>ISO 27001 & NIST Frameworks</li><li>Cybersecurity Compliance Assessment</li><li>Risk & Control Evaluation</li><li>Regulatory Compliance</li></ul></div>
-      <div class="skill-cat reveal"><div class="skill-head"><span class="skill-icon">📋</span><span class="skill-title">IT & Cybersecurity Audit</span></div><ul class="skill-items"><li>Risk-Based Internal Auditing</li><li>IIA Standards & Audit Methodologies</li><li>IT General Controls (ITGC)</li><li>Compliance Testing</li><li>Evidence Review & Gap Analysis</li><li>Audit Documentation & Reporting</li></ul></div>
-      <div class="skill-cat reveal"><div class="skill-head"><span class="skill-icon">🧠</span><span class="skill-title">AI Governance & Security</span></div><ul class="skill-items"><li>AI Governance Concepts</li><li>Responsible AI Principles</li><li>AI Risk & Oversight</li><li>AI Security Fundamentals</li><li>SADAIA AI Governance Awareness</li><li>AI Compliance Workflows</li></ul></div>
-      <div class="skill-cat reveal"><div class="skill-head"><span class="skill-icon">⚙️</span><span class="skill-title">AI-Driven Systems & Automation</span></div><ul class="skill-items"><li>AI Workflow Automation</li><li>Human-in-the-Loop Systems</li><li>Retrieval-Augmented Generation (RAG)</li><li>Prompt Engineering</li><li>Semantic Search Concepts</li><li>AI-Assisted Compliance Review</li></ul></div>
-    </div>
+    <div class="sh rv"><h2 data-en="Projects" data-ar="المشاريع">Projects</h2><span class="cnt" id="workCnt">8</span></div>
+    <div class="gist rv"><b data-en="In short:" data-ar="باختصار:">In short:</b><span data-en="Click any project: a small moving demo of the idea, then problem, approach and result." data-ar="انقر على أي مشروع: عرض متحرك مصغّر للفكرة، ثم المشكلة والمعالجة والنتيجة.">Click any project: a small moving demo of the idea, then problem, approach and result.</span></div>
+    <div class="filters" id="workFilters"></div>
+    <div id="workList"></div>
   </div>
 </section>
 
-  
-<!-- ═══════════════════════════════ EXPERIENCE ════════════════════════ -->
-<section id="experience" class="sec-alt">
+<!-- ═══ EXPERIENCE ═══ -->
+<section id="experience">
   <div class="wrap">
-    <span class="s-label">Career</span>
-    <h2 class="s-title">Professional Experience</h2>
-    <p class="s-sub">4+ years across cybersecurity auditing, GRC, and risk advisory</p>
-    <div class="exp-list">
-
-      <div class="exp-group reveal">
-        <div class="exp-group-header">
-          <div class="exp-group-logo">🏢</div>
-          <div>
-            <div class="exp-group-co">RSM Saudi Arabia</div>
-            <div class="exp-group-meta">Riyadh, Saudi Arabia · 2021 – 2025 · 3 Promotions</div>
-          </div>
-        </div>
-        <div class="exp-roles">
-          <div class="exp-role-item">
-            <div class="exp-role-title">IT and Cybersecurity Auditor</div>
-            <div class="exp-role-date">2023 – 2025</div>
-            <div class="exp-role-desc">Oversaw adherence to cybersecurity and compliance frameworks (NCA, SAMA, ISO 27001). Conducted IT internal audits across Finance, Operations, Payroll, HR, IT, and Cybersecurity. Reviewed Oracle system integrations and prepared audit reports following the 5Cs framework.</div>
-            <div class="exp-role-tags"><span class="tag">NCA</span><span class="tag">SAMA</span><span class="tag">ISO 27001</span><span class="tag">IT Audit</span><span class="tag">5Cs Framework</span></div>
-          </div>
-          <div class="exp-role-item">
-            <div class="exp-role-title">Senior Cybersecurity Analyst</div>
-            <div class="exp-role-date">2022 – 2023</div>
-            <div class="exp-role-desc">Conducted cybersecurity assessments and audits for Saudi Aramco vendors and private, governmental, and semi-governmental organizations. Ensured compliance with NCA and ISO 27001, including post-incident re-assessments.</div>
-            <div class="exp-role-tags"><span class="tag">Aramco Vendors</span><span class="tag">NCA</span><span class="tag">ISO 27001</span><span class="tag">GRC</span></div>
-          </div>
-          <div class="exp-role-item">
-            <div class="exp-role-title">Cybersecurity Analyst</div>
-            <div class="exp-role-date">2021 – 2022</div>
-            <div class="exp-role-desc">Conducted 200+ cybersecurity compliance assessments on behalf of Saudi Aramco, ensuring vendors' adherence to corporate and regulatory cybersecurity requirements.</div>
-            <div class="exp-role-tags"><span class="tag">200+ Assessments</span><span class="tag">Compliance</span><span class="tag">Saudi Aramco</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="exp-card reveal">
-        <div class="exp-head"><div class="exp-role">Data Engineer — On-the-Job Training</div><div class="exp-date">Sep 2020 – Dec 2020</div></div>
-        <div class="exp-co">JobTech — Singapore</div>
-        <div class="exp-desc">Improved data quality and efficiency through dataset development and Python automation.</div>
-        <div class="exp-tags"><span class="tag">Python</span><span class="tag">Data Engineering</span><span class="tag">Automation</span></div>
-      </div>
-
-      <div class="exp-card reveal">
-        <div class="exp-head"><div class="exp-role">Software Engineer — Internship</div><div class="exp-date">Jun 2020 – Dec 2020</div></div>
-        <div class="exp-co">MCIT — Saudi Arabia</div>
-        <div class="exp-desc">Completed the Future Skills program covering software development, databases, and operating systems.</div>
-        <div class="exp-tags"><span class="tag">Software Development</span><span class="tag">Databases</span><span class="tag">Future Skills</span></div>
-      </div>
-
-    </div>
+    <div class="sh rv"><h2 data-en="Experience" data-ar="الخبرة">Experience</h2><span class="cnt">2021 — 2025</span></div>
+    <div class="gist rv"><b data-en="In short:" data-ar="باختصار:">In short:</b><span data-en="One audit house, three promotions, from vendor assessments to leading internal audits." data-ar="بيت مراجعة واحد، ثلاث ترقيات، من تقييم الموردين إلى قيادة المراجعات الداخلية.">One audit house, three promotions, from vendor assessments to leading internal audits.</span></div>
+    <div id="jobs"></div>
   </div>
 </section>
 
-  <!-- ═══════════════════════════════ CERTIFICATIONS ════════════════════ -->
-<section id="certifications" class="sec-pad">
+<!-- ═══ CORE COMPETENCIES ═══ -->
+<section id="comp">
   <div class="wrap">
-    <span class="s-label">Credentials</span>
-    <h2 class="s-title">Professional Certifications</h2>
-    <p class="s-sub">6+ industry certifications across cybersecurity, GRC, and AI</p>
-    <div class="certs-grid">
-
-      <!--
-        تعليمات لكل شهادة:
-        1. src="assets/certs/اسم-الملف.jpg"  ← ضعي مسار صورة الشهادة
-        2. data-img="assets/certs/اسم-الملف.jpg"  ← نفس المسار للـ lightbox
-        3. data-title="اسم الشهادة"  ← يظهر أسفل الـ lightbox
-      -->
-
-      <div class="cert-card reveal" onclick="openLightbox('assets/certs/CSAP.png','CompTIA CySA+')">
-        <div class="cert-img-wrap">
-          <img src="assets/certs/CSAP.png" alt="CompTIA CySA+" onerror="this.parentElement.innerHTML='<div class=\'cert-img-placeholder\'><span>📄 CompTIA CySA+</span></div>'">
-          <div class="cert-overlay">
-            <button class="cert-view-btn">🔍 View Certificate</button>
-          </div>
-        </div>
-        <div class="cert-body">
-          <div class="cert-year-badge">2024</div>
-          <div class="cert-name">CompTIA CySA+</div>
-          <div class="cert-issuer">CompTIA</div>
-          <div class="cert-tags-row"><span class="tag">Cybersecurity</span></div>
-        </div>
-      </div>
-
-      <div class="cert-card reveal" onclick="openLightbox('assets/certs/Security+.png','CompTIA Security+')">
-        <div class="cert-img-wrap">
-          <img src="assets/certs/Security+.png" alt="CompTIA Security+" onerror="this.parentElement.innerHTML='<div class=\'cert-img-placeholder\'><span>📄 CompTIA Security+</span></div>'">
-          <div class="cert-overlay">
-            <button class="cert-view-btn">🔍 View Certificate</button>
-          </div>
-        </div>
-        <div class="cert-body">
-          <div class="cert-year-badge">2023</div>
-          <div class="cert-name">CompTIA Security+</div>
-          <div class="cert-issuer">CompTIA</div>
-          <div class="cert-tags-row"><span class="tag">Cybersecurity</span></div>
-        </div>
-      </div>
-
-      <div class="cert-card reveal" onclick="openLightbox('assets/certs/GRCA.png','GRCA — OCEG')">
-        <div class="cert-img-wrap">
-          <img src="assets/certs/GRCA.png" alt="GRCA" onerror="this.parentElement.innerHTML='<div class=\'cert-img-placeholder\'><span>📄 GRCA</span></div>'">
-          <div class="cert-overlay">
-            <button class="cert-view-btn">🔍 View Certificate</button>
-          </div>
-        </div>
-        <div class="cert-body">
-          <div class="cert-year-badge teal">2023</div>
-          <div class="cert-name">GRCA</div>
-          <div class="cert-issuer">OCEG</div>
-          <div class="cert-tags-row"><span class="tag teal">GRC</span></div>
-        </div>
-      </div>
-
-      <div class="cert-card reveal" onclick="openLightbox('assets/certs/GRCP.png','GRCP — OCEG')">
-        <div class="cert-img-wrap">
-          <img src="assets/certs/GRCP.png" alt="GRCP" onerror="this.parentElement.innerHTML='<div class=\'cert-img-placeholder\'><span>📄 GRCP</span></div>'">
-          <div class="cert-overlay">
-            <button class="cert-view-btn">🔍 View Certificate</button>
-          </div>
-        </div>
-        <div class="cert-body">
-          <div class="cert-year-badge teal">2023</div>
-          <div class="cert-name">GRCP</div>
-          <div class="cert-issuer">OCEG</div>
-          <div class="cert-tags-row"><span class="tag teal">GRC</span></div>
-        </div>
-      </div>
-
-      <div class="cert-card reveal" onclick="openLightbox('assets/certs/AWS Certified AI Practitioner certificate.png','AWS Certified AI Practitioner')">
-        <div class="cert-img-wrap">
-          <img src="assets/certs/AWS Certified AI Practitioner certificate.png" alt="AWS AI Practitioner" onerror="this.parentElement.innerHTML='<div class=\'cert-img-placeholder\'><span>📄 AWS AI Practitioner</span></div>'">
-          <div class="cert-overlay">
-            <button class="cert-view-btn">🔍 View Certificate</button>
-          </div>
-        </div>
-        <div class="cert-body">
-          <div class="cert-year-badge">2024</div>
-          <div class="cert-name">AWS Certified AI Practitioner</div>
-          <div class="cert-issuer">Amazon Web Services</div>
-          <div class="cert-tags-row"><span class="tag">Generative AI</span></div>
-        </div>
-      </div>
-
-      <div class="cert-card reveal" onclick="openLightbox('assets/certs/NSE 2 Network Security Associate.png','Fortinet NSE 1 & NSE 2')">
-        <div class="cert-img-wrap">
-          <img src="assets/certs/NSE 2 Network Security Associate.png" alt="Fortinet NSE" onerror="this.parentElement.innerHTML='<div class=\'cert-img-placeholder\'><span>📄 Fortinet NSE 1 & 2</span></div>'">
-          <div class="cert-overlay">
-            <button class="cert-view-btn">🔍 View Certificate</button>
-          </div>
-        </div>
-        <div class="cert-body">
-          <div class="cert-year-badge teal">2023</div>
-          <div class="cert-name">Fortinet NSE 1 & NSE 2</div>
-          <div class="cert-issuer">Fortinet</div>
-          <div class="cert-tags-row"><span class="tag teal">Network Security</span></div>
-        </div>
-      </div>
-
-    </div>
+    <div class="sh rv"><h2 data-en="Core competencies" data-ar="الكفاءات الأساسية">Core competencies</h2><span class="cnt">4</span></div>
+    <div class="gist rv"><b data-en="In short:" data-ar="باختصار:">In short:</b><span data-en="Specialized expertise across cybersecurity, governance, audit, and AI-driven operational systems." data-ar="خبرة متخصصة في الأمن السيبراني والحوكمة والمراجعة والأنظمة التشغيلية المعتمدة على الذكاء الاصطناعي.">Specialized expertise across cybersecurity, governance, audit, and AI-driven operational systems.</span></div>
+    <div class="comp" id="comp-grid"></div>
   </div>
 </section>
-<!-- ═══════════════════════════════ ABOUT ═════════════════════════════ -->
-<section id="about" class="sec-pad">
+
+<!-- ═══ CERTIFICATIONS ═══ -->
+<section id="certs">
   <div class="wrap">
-    <span class="s-label">About</span>
-    <h2 class="s-title">ZAHRA AL SAFWAN</h2>
-    <p class="s-sub">💠 IT & Cybersecurity Auditor — Riyadh, Saudi Arabia</p>
-    <div class="about-grid">
-      <div class="hcards">
-        <div class="hcard reveal"><div class="hcard-icon">🎯</div><div class="hcard-title">Current Focus</div><div class="hcard-desc">Exploring AI-driven governance, cybersecurity compliance, and audit modernization strategies aligned with evolving regulatory and digital trust requirements.</div></div>
-        <div class="hcard reveal"><div class="hcard-icon">⚙️</div><div class="hcard-title">What I’m Building</div><div class="hcard-desc">Developing practical AI-assisted solutions for compliance review, governance workflows, evidence validation, and cybersecurity audit support.</div></div>
-        <div class="hcard reveal"><div class="hcard-icon">🧠</div><div class="hcard-title">Research Interests</div><div class="hcard-desc">Interested in AI governance, responsible AI, cybersecurity assurance, digital trust, risk-based auditing, and intelligent compliance systems.</div></div>
-        <div class="hcard reveal"><div class="hcard-icon">🚀</div><div class="hcard-title">Ongoing Initiatives</div><div class="hcard-desc">Working on AI and workflow concepts focused on audit efficiency, governance automation, and modern compliance operations.</div></div>
+    <div class="sh rv"><h2 data-en="Professional certifications" data-ar="الشهادات الاحترافية">Professional certifications</h2><span class="cnt">6</span></div>
+    <div class="gist rv"><b data-en="In short:" data-ar="باختصار:">In short:</b><span data-en="6+ industry certifications across cybersecurity, GRC and AI — each with a verification link." data-ar="أكثر من ٦ شهادات معتمدة في الأمن السيبراني والحوكمة والذكاء الاصطناعي — ولكل واحدة رابط تحقق.">6+ industry certifications across cybersecurity, GRC and AI — each with a verification link.</span></div>
+    <div class="certs" id="certGrid"></div>
+  </div>
+</section>
+
+<!-- ═══ LIBRARY ═══ -->
+<section id="library">
+  <div class="wrap">
+    <div class="sh rv"><h2 data-en="Auditor's Eye" data-ar="عين المراجع">Auditor's Eye</h2></div>
+    <div class="gist rv"><b data-en="In short:" data-ar="باختصار:">In short:</b><span data-en="Free Arabic reading on auditing AI — reading time on every guide." data-ar="قراءة عربية مجانية عن مراجعة الذكاء الاصطناعي — ووقت القراءة مبيّن على كل دليل.">Free Arabic reading on auditing AI — reading time on every guide.</span></div>
+    <div class="lib">
+      <div id="arts"></div>
+      <div class="gloss rv">
+        <h3 data-en="Audit terms, in plain language" data-ar="مصطلحات المراجعة بلغة بسيطة">Audit terms, in plain language</h3>
+        <p data-en="If a term comes up in a meeting and you'd rather not ask — open it here." data-ar="إذا مرّ بك مصطلح في اجتماع ولم تودّ السؤال عنه — تجد شرحه هنا.">If a term comes up in a meeting and you'd rather not ask — open it here.</p>
+        <div id="terms"></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ═══ CONTACT ═══ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="cta rv">
+      <div style="position:relative;z-index:2">
+        <h2 data-en="Get in touch" data-ar="للتواصل معي">Get in touch</h2>
+        <p data-en="Book an appointment directly through the calendar, or reach me on LinkedIn. Ask Zahra answers common questions instantly." data-ar="احجز موعدًا مباشرة عبر التقويم، أو تواصل معي عبر لينكدإن. و«اسأل زهراء» يجيب عن الأسئلة الشائعة فورًا.">Book an appointment directly through the calendar, or reach me on LinkedIn. Ask Zahra answers common questions instantly.</p>
+      </div>
+      <div class="acts" style="position:relative;z-index:2">
+        <a class="btn btn-p" href="https://calendar.app.google/uBv2PsG8FEtJ99Ev5" data-en="Book an appointment" data-ar="احجز موعدًا">Book an appointment</a>
+        <a class="btn btn-w" href="https://linkedin.com/in/zahra-al-safwan" data-en="LinkedIn" data-ar="لينكدإن">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
 
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 <span data-en="Zahra Al Safwan" data-ar="زهراء الصفوان">Zahra Al Safwan</span></span>
+    <span data-en="Al Khobar, Eastern Province" data-ar="الخبر، المنطقة الشرقية">Al Khobar, Eastern Province</span>
+    <span class="sp tagline">PEOPLE, TECHNOLOGY &amp; A SAFER TOMORROW</span>
+  </div>
+</footer>
 
+<!-- ═══ ASK ZAHRA ═══ -->
+<button class="fab" id="fab" type="button" aria-expanded="false" aria-controls="panel">
+  <i></i><span>Ask Zahra · <span data-en="ask me" data-ar="اسأل زهراء">ask me</span></span>
+</button>
 
-<!-- ═══════════════════════════════ LIGHTBOX ══════════════════════════ -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
-  <div class="lightbox-inner">
-    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-    <img id="lightbox-img" src="" alt="">
-    <div class="lightbox-title" id="lightbox-title"></div>
+<div class="panel" id="panel" role="dialog" aria-label="Ask Zahra">
+  <div class="p-h">
+    <span class="p-av">ZS</span>
+    <div>
+      <b>Ask Zahra</b>
+      <span data-en="Answers from this page only" data-ar="يجيب من محتوى هذه الصفحة فقط">Answers from this page only</span>
+    </div>
+    <button class="p-x" id="pX" type="button" aria-label="إغلاق">×</button>
+  </div>
+  <div class="p-b" id="pB"></div>
+  <div class="p-s" id="pS"></div>
+  <div class="p-f">
+    <input id="pIn" type="text" autocomplete="off">
+    <button id="pSend" type="button" data-en="Send" data-ar="إرسال">Send</button>
   </div>
 </div>
 
-
-
-<!-- ═══════════════════════════════ CONTACT ════════════════════════════════ -->
-<section id="cv" class="sec-alt">
-  <div class="wrap">
-    <div class="cv-box reveal">
-      <span class="s-label">Let's Connect</span>
-      <h2 class="s-title">Zahra Al Safwan</h2>
-      <p>IT & Cybersecurity Auditor · Riyadh, Saudi Arabia</p>
-      <div class="cv-divider"></div>
-      <p class="cv-desc">Interested in collaborating, discussing GRC & AI governance, or exploring opportunities? Reach out on LinkedIn or book a time that works for you.</p>
-      <div class="cv-btns">
-         <a href="https://calendar.app.google/uBv2PsG8FEtJ99Ev5" class="btn btn-teal" target="_blank">📅 Schedule a Call</a>
-        <div class="cv-or"><span>or</span></div>
-        <a href="https://linkedin.com/in/zahra-al-safwan" class="btn btn-fill" target="_blank">💼 Connect on LinkedIn</a>
-      </div>
+<div class="pal-bd" id="palBd" role="dialog" aria-modal="true" aria-label="بحث">
+  <div class="pal">
+    <div class="pal-in">
+      <svg width="17" height="17" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="4.6" stroke="currentColor" stroke-width="1.5"></circle><path d="m10.6 10.6 3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+      <input id="palIn" type="text" autocomplete="off" spellcheck="false">
+    </div>
+    <div class="pal-b" id="palB"></div>
+    <div class="pal-f">
+      <span><span class="kbd">↑↓</span> <span data-en="move" data-ar="تنقّل">move</span></span>
+      <span><span class="kbd">↵</span> <span data-en="open" data-ar="افتح">open</span></span>
+      <span><span class="kbd">esc</span> <span data-en="close" data-ar="إغلاق">close</span></span>
     </div>
   </div>
-</section>
-<!-- ═══════════════════════════════ FOOTER ════════════════════════════ -->
-<footer>
-  <p>© 2026 Zahra Al Safwan. All rights reserved.</p>
-  <span>Riyadh, Saudi Arabia</span>
-</footer>
+</div>
 
 <script>
-/* ── Lightbox ── */
-function openLightbox(src, title) {
-  document.getElementById('lightbox-img').src = src;
-  document.getElementById('lightbox-title').textContent = title;
-  document.getElementById('lightbox').classList.add('open');
-  document.body.style.overflow = 'hidden';
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const el=(t,c,x)=>{const n=document.createElement(t);if(c)n.className=c;if(x!==undefined)n.innerHTML=x;return n;};
+let L='en';
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ═══════ CONTENT ═══════ */
+const WORK=[
+{id:'evid',cat:'ai',k:'01',tags:['Aramco TPC','Gemini API','مراجعة أدلة'],
+ ar:['محلّل أدلة الالتزام','يقرأ ملف أدلة المورد ويحكم على ٢٣ ضابطًا دفعة واحدة',
+  'مراجعة ٢٣ ضابطًا من متطلبات أرامكو للأطراف الثالثة يدويًا لكل مورد، عبر ملفات أدلة طويلة وغير موحّدة.',
+  'رفع الملف مرة واحدة، تحليل الضوابط الـ٢٣، وإخراج حكم لكل ضابط مع تبريره المستند إلى الدليل ونص تعليق جاهز.',
+  'المراجع يبدأ من مسودة مبرَّرة بدل صفحة فارغة — ولا يُعتمد أي حكم قبل موافقته.'],
+ en:['Compliance evidence analyzer','Reads a vendor evidence pack and judges 23 controls in one pass',
+  'Reviewing 23 Aramco third-party controls by hand for every vendor, across long and inconsistent evidence packs.',
+  'Upload once, analyze all 23 controls, and return a verdict per control with evidence-based justification and a draft comment.',
+  'The auditor starts from a justified draft instead of a blank page — and no verdict is final without their approval.']},
+{id:'5c',cat:'audit',k:'02',tags:['5C','NCA ECC','SAMA CSF','عربي/إنجليزي'],
+ ar:['مساعد صياغة الملاحظة (5C)','يحوّل الملاحظة الخام إلى ملاحظة مراجعة مربوطة بالضابط',
+  'الملاحظات الخام تُكتب بأساليب مختلفة، وربطها بالضابط الصحيح يستهلك وقتًا أطول من الاختبار نفسه.',
+  'تحويل الملاحظة إلى صيغة 5C — معيار، حالة، سبب، أثر، إجراء تصحيحي — وربطها بالضابط عبر ثلاثة عشر إطارًا.',
+  'ملاحظات موحّدة الصياغة بالعربية والإنجليزية، وربط واضح بالضابط يسرّع مراجعة الشريك.'],
+ en:['5C finding assistant','Turns a raw observation into an audit finding mapped to a control',
+  'Raw observations get written up in different styles, and mapping each to the right control takes longer than the testing did.',
+  'Turn the observation into 5C form — criteria, condition, cause, consequence, corrective action — mapped across thirteen frameworks.',
+  'Consistent findings in Arabic and English, with a clear control reference that speeds up partner review.']},
+{id:'aigov',cat:'ai',k:'03',tags:['NIST AI RMF','EU AI Act','حوكمة'],
+ ar:['مقيّم حوكمة الذكاء الاصطناعي','يقيس النظام مقابل ستة مبادئ حوكمة ويخرج بخارطة معالجة',
+  'أنظمة الذكاء الاصطناعي دخلت نطاق المراجعة أسرع من كتابة ضوابطها، فلا معيار جاهز يُقاس عليه.',
+  'تقييم النظام مقابل ستة مبادئ: الشفافية، الإنصاف، الإشراف البشري، الخصوصية، المتانة، والمساءلة.',
+  'درجة لكل مبدأ، وأضعف محور محدد بالاسم، وخارطة معالجة مرتّبة بالأولوية.'],
+ en:['AI governance assessor','Scores a system against six governance principles and returns a roadmap',
+  'AI systems entered audit scope faster than controls were written for them, so there was no ready criterion.',
+  'Score the system against six principles: transparency, fairness, human oversight, privacy, robustness, accountability.',
+  'A score per principle, the weakest axis named, and a remediation roadmap ordered by priority.']},
+{id:'ask',cat:'ai',k:'04',tags:['RAG','إجابات مُسنَدة','عربي/إنجليزي'],
+ ar:['Ask Zahra — مساعد الموقع','يعمل في هذه الصفحة الآن — جرّبه من الزر العائم أسفل الصفحة',
+  'من يفتح ملفًا مهنيًا يبحث عن إجابة واحدة محددة، لا عن تصفّح ستة أقسام.',
+  'قاعدة معرفة محدودة بمحتوى الصفحة، وكل إجابة معها مصدرها داخل الصفحة.',
+  'إذا لم يكن الجواب موجودًا، يقولها صراحةً بدل أن يخمّن — وهذا هو المطلوب في أداة تخص المراجعة.'],
+ en:['Ask Zahra — the site assistant','Live on this page — try it from the floating button',
+  'Anyone opening a professional profile is looking for one specific answer, not a tour of six sections.',
+  'A knowledge base limited to the page content, with every answer carrying its source on the page.',
+  'If the answer is not there, it says so instead of guessing — which is the point in an audit-adjacent tool.']},
+{id:'smart',cat:'audit',k:'05',tags:['Power BI','ITGC','SoD'],
+ ar:['المراجع الذكي — تحليلات Power BI','لوحات تكشف شذوذ الصلاحيات وتعارضات الفصل بين المهام',
+  'اكتشاف تعارضات الصلاحيات في أنظمة ERP يدويًا يعني قراءة آلاف الأسطر في جداول.',
+  'لوحات Power BI تربط سجلات الصلاحيات بقواعد الفصل بين المهام وتُبرز الحالات الشاذة تلقائيًا.',
+  'وقت الفحص انخفض من أيام إلى ساعات، والمراجع يبدأ من قائمة استثناءات مرتّبة.'],
+ en:['Smart Auditor — Power BI analytics','Dashboards surfacing access anomalies and SoD conflicts',
+  'Finding entitlement conflicts in ERP by hand means reading thousands of spreadsheet rows.',
+  'Power BI dashboards join entitlement logs to segregation-of-duties rules and flag outliers automatically.',
+  'Review time dropped from days to hours, and the auditor starts from a ranked exception list.']},
+{id:'grc',cat:'audit',k:'06',tags:['GRC','تقييم مخاطر','تصميم ضوابط'],
+ ar:['SwiftTech — بناء وظيفة حوكمة والتزام','حوكمة وتقييم مخاطر وتصميم ضوابط لمنشأة كاملة',
+  'منشأة بلا إطار حوكمة واضح، والمخاطر مُدارة بالخبرة الشخصية لا بعملية موثّقة.',
+  'بناء سجل المخاطر، وتصميم الضوابط، وتحديد الملّاك، وربط كل ضابط بهدف رقابي قابل للاختبار.',
+  'وظيفة التزام قائمة بذاتها بسجل مخاطر حي وضوابط لها ملّاك ومواعيد مراجعة.'],
+ en:['SwiftTech — standing up a GRC function','Governance, risk assessment and control design for a whole organization',
+  'An organization with no clear governance framework, managing risk by individual experience.',
+  'Build the risk register, design controls, assign owners, and tie each control to a testable objective.',
+  'A standalone compliance function with a live risk register and owned controls.']},
+{id:'icu',cat:'ai',k:'07',tags:['ذكاء اصطناعي سريري','بيانات اصطناعية','إشراف بشري'],
+ ar:['مساعد توثيق العناية المركزة','ملاحظات سريرية منظّمة من بيانات اصطناعية، بموافقة الطبيب',
+  'توثيق العناية المركزة يستهلك وقت الطاقم، وأي خطأ في التوثيق له أثر مباشر على الرعاية.',
+  'تحويل المدخلات إلى ملاحظة منظّمة، مع اشتراط موافقة الطبيب على كل مخرج قبل حفظه.',
+  'نموذج يوضّح كيف تُبنى أداة سريرية دون أن تنتقل سلطة القرار من الطبيب.'],
+ en:['ICU documentation assistant','Structured clinical notes from synthetic data, physician-approved',
+  'ICU documentation consumes staff time, and documentation errors directly affect care.',
+  'Turn inputs into a structured note, requiring physician approval on every output before saving.',
+  'A model for building a clinical tool without decision authority leaving the physician.']},
+{id:'sab',cat:'venture',k:'08',tags:['مشروع','أمن وخصوصية','إشراف بشري'],
+ ar:['صبّارة AI — شريكة مؤسِّسة','شركة سعودية للأتمتة والذكاء الاصطناعي، بالحوكمة من التصميم',
+  'كثير من حلول الأتمتة تُبنى أولًا، ثم تُضاف إليها الضوابط لاحقًا عند السؤال عنها.',
+  'المشاركة في تأسيس شركة تبني وكلاء وأتمتة، مع الأمن والخصوصية والإشراف البشري من اليوم الأول.',
+  'الجانب العملي من الحوكمة: تطبيقها في منتج قائم بدل الكتابة عنها فقط.'],
+ en:['SABBARAH AI — co-founder','A Saudi AI and automation company with governance designed in',
+  'Most automation gets built first, with controls added later if someone asks.',
+  'Co-founding a company building agents and automation with security, privacy and human oversight from day one.',
+  'The practical side of governance: applied inside a live product, not just written about.']}
+];
+const CATS=[{id:'all',ar:'الكل',en:'All'},{id:'audit',ar:'مراجعة وحوكمة',en:'Audit & GRC'},
+  {id:'ai',ar:'ذكاء اصطناعي',en:'AI'},{id:'venture',ar:'مشاريع',en:'Ventures'}];
+
+const JOBS=[
+{y:'2023 — 2025',co:'RSM Saudi Arabia',
+ ar:['مراجِعة تقنية وأمن سيبراني',['قيادة مراجعات داخلية عبر المالية والعمليات والرواتب والموارد البشرية وتقنية المعلومات.','مراجعة تكاملات أنظمة أوراكل وضوابط الوصول وإدارة التغيير.','إعداد التقارير وفق إطار <b>5C</b> مقابل متطلبات NCA وSAMA وISO 27001.']],
+ en:['IT & Cybersecurity Auditor',['Leading internal audits across finance, operations, payroll, HR and IT.','Reviewing Oracle integrations, access controls and change management.','Reporting under the <b>5C</b> framework against NCA, SAMA and ISO 27001.']]},
+{y:'2022 — 2023',co:'RSM Saudi Arabia',
+ ar:['محللة أمن سيبراني أولى',['تقييمات ومراجعات لموردي أرامكو السعودية وجهات خاصة وحكومية وشبه حكومية.','إعادة تقييم الموردين بعد الحوادث الأمنية والتحقق من إغلاق الفجوات.']],
+ en:['Senior Cybersecurity Analyst',['Assessments for Saudi Aramco vendors and private, governmental and semi-governmental entities.','Re-assessing vendors after incidents and verifying gap closure.']]},
+{y:'2021 — 2022',co:'RSM Saudi Arabia',
+ ar:['محللة أمن سيبراني',['أكثر من <b>٢٠٠ تقييم</b> التزام سيبراني نيابةً عن أرامكو السعودية.','التحقق من امتثال الموردين للمتطلبات المؤسسية والتنظيمية وتوثيق الفجوات.']],
+ en:['Cybersecurity Analyst',['<b>200+</b> compliance assessments on behalf of Saudi Aramco.','Checking vendor adherence to corporate and regulatory requirements.']]},
+{y:'2020',co:'JobTech · Singapore',
+ ar:['مهندسة بيانات — تدريب على رأس العمل',['تحسين جودة البيانات وبناء مجموعات بيانات وأتمتة بلغة بايثون.']],
+ en:['Data Engineer — OJT',['Improving data quality through dataset development and Python automation.']]},
+{y:'2020',co:'MCIT · Saudi Arabia',
+ ar:['مهندسة برمجيات — تدريب',['برنامج مهارات المستقبل: تطوير البرمجيات وقواعد البيانات وأنظمة التشغيل.']],
+ en:['Software Engineer — internship',['Future Skills programme: software development, databases and operating systems.']]}
+];
+
+/* Core competencies — restored to the original site's content */
+const COMP=[
+{ic:'shield',ar:['حوكمة الأمن السيبراني والالتزام',['الحوكمة والمخاطر والالتزام (GRC)','NCA وSAMA CSF','ISO 27001 وأطر NIST','تقييم الالتزام السيبراني','تقييم المخاطر والضوابط','الالتزام التنظيمي']],
+ en:['Cybersecurity Governance & Compliance',['Governance, Risk & Compliance (GRC)','NCA & SAMA CSF','ISO 27001 & NIST Frameworks','Cybersecurity Compliance Assessment','Risk & Control Evaluation','Regulatory Compliance']]},
+{ic:'clip',ar:['المراجعة التقنية والأمن السيبراني',['المراجعة الداخلية القائمة على المخاطر','معايير IIA ومنهجيات المراجعة','الضوابط العامة لتقنية المعلومات (ITGC)','اختبار الالتزام','مراجعة الأدلة وتحليل الفجوات','توثيق المراجعة وإعداد التقارير']],
+ en:['IT & Cybersecurity Audit',['Risk-Based Internal Auditing','IIA Standards & Audit Methodologies','IT General Controls (ITGC)','Compliance Testing','Evidence Review & Gap Analysis','Audit Documentation & Reporting']]},
+{ic:'brain',ar:['حوكمة وأمن الذكاء الاصطناعي',['مفاهيم حوكمة الذكاء الاصطناعي','مبادئ الذكاء الاصطناعي المسؤول','مخاطر الذكاء الاصطناعي والإشراف','أساسيات أمن الذكاء الاصطناعي','الوعي بحوكمة الذكاء الاصطناعي (سدايا)','مسارات التزام الذكاء الاصطناعي']],
+ en:['AI Governance & Security',['AI Governance Concepts','Responsible AI Principles','AI Risk & Oversight','AI Security Fundamentals','SADAIA AI Governance Awareness','AI Compliance Workflows']]},
+{ic:'gear',ar:['الأنظمة الذكية والأتمتة',['أتمتة مسارات العمل بالذكاء الاصطناعي','أنظمة الإشراف البشري (Human-in-the-Loop)','التوليد المعزز بالاسترجاع (RAG)','هندسة الأوامر (Prompt Engineering)','مفاهيم البحث الدلالي','مراجعة الالتزام بمساعدة الذكاء الاصطناعي']],
+ en:['AI-Driven Systems & Automation',['AI Workflow Automation','Human-in-the-Loop Systems','Retrieval-Augmented Generation (RAG)','Prompt Engineering','Semantic Search Concepts','AI-Assisted Compliance Review']]}
+];
+const ICONS={
+ shield:'<svg width="19" height="19" viewBox="0 0 20 20" fill="none"><path d="M10 2 3.5 4.5v5c0 4 2.8 7 6.5 8 3.7-1 6.5-4 6.5-8v-5L10 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="m7.3 9.8 2 2 3.4-3.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+ clip:'<svg width="19" height="19" viewBox="0 0 20 20" fill="none"><path d="M6.5 3.5H4.5v14h11v-14h-2M7 2.5h6v2.5H7z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M7.5 9h5M7.5 12h5M7.5 15h3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>',
+ brain:'<svg width="19" height="19" viewBox="0 0 20 20" fill="none"><rect x="5" y="5" width="10" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 2.5v2.5M12 2.5v2.5M8 15v2.5M12 15v2.5M2.5 8h2.5M2.5 12h2.5M15 8h2.5M15 12h2.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="10" cy="10" r="1.6" fill="currentColor"/></svg>',
+ gear:'<svg width="19" height="19" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="2.6" stroke="currentColor" stroke-width="1.5"/><path d="M10 2.8v2M10 15.2v2M2.8 10h2M15.2 10h2M4.9 4.9l1.4 1.4M13.7 13.7l1.4 1.4M15.1 4.9l-1.4 1.4M6.3 13.7l-1.4 1.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>'};
+
+/* Certifications — with thumbnail previews (swap .cimg content for real scans when ready) */
+const CERTS=[
+{id:'cysa',y:'2024',cat:{ar:'أمن سيبراني',en:'Cybersecurity'},n:'CompTIA CySA+',i:'CompTIA'},
+{id:'sec',y:'2023',cat:{ar:'أمن سيبراني',en:'Cybersecurity'},n:'CompTIA Security+',i:'CompTIA'},
+{id:'grca',y:'2023',cat:{ar:'حوكمة والتزام',en:'GRC'},n:'GRCA — GRC Auditor',i:'OCEG'},
+{id:'grcp',y:'2023',cat:{ar:'حوكمة والتزام',en:'GRC'},n:'GRCP — GRC Professional',i:'OCEG'},
+{id:'aws',y:'2024',cat:{ar:'ذكاء اصطناعي',en:'AI'},n:'AWS Certified AI Practitioner',i:'Amazon Web Services'},
+{id:'nse',y:'2023',cat:{ar:'أمن شبكات',en:'Network security'},n:'Fortinet NSE 1 & NSE 2',i:'Fortinet'}];
+
+function thumb(id){
+  if(id==='cysa')return `<div class="doc">
+    <div class="d-bar" style="background:#1E4E79">CompTIA.</div>
+    <div class="d-name">ZAHRA IBRAHIM AL SAFWAN</div>
+    <div class="d-sub">has successfully completed the requirements<br>to be recognized as</div>
+    <div class="d-big">CompTIA Security Analytics Professional</div>
+    <div class="d-seal" style="right:14px;top:52px;background:#EFF1F3;border:2px solid #9AA6B0;color:#5B6B77">CSAP</div></div>`;
+  if(id==='sec')return `<div class="doc">
+    <div class="d-bar" style="background:#E2231A">CompTIA.</div>
+    <div class="d-name">ZAHRA IBRAHIM AL SAFWAN</div>
+    <div class="d-sub">has successfully completed the requirements<br>to be recognized as</div>
+    <div class="d-seal" style="right:14px;top:50px;background:#F4F5F6;border:2px solid #ACB6BE;color:#67757F;font-size:7px">CERTIFIED</div>
+    <div style="margin:7px auto 0;width:fit-content;background:#E2231A;color:#fff;font-weight:700;font-size:12px;padding:3px 12px;border-radius:3px;font-family:var(--f-lat)">Security+</div></div>`;
+  if(id==='grca'||id==='grcp'){
+    const red=id==='grca'?'#7E2A33':'#C23B3B';
+    return `<div class="frame" style="background:repeating-linear-gradient(45deg,${red} 0 2px,#F3E6E6 2px 5px)">
+      <div class="fin">
+        <div class="f-logos"><span class="grc">Gr<b>C</b><sup style="font-size:6px"> CERTIFY</sup></span><span>oceg°</span></div>
+        <div class="f-title">${id==='grca'?'Certified GRC Auditor (GRCA)':'Certified GRC Professional (GRCP)'}</div>
+        <div class="d-sub" style="margin-top:4px">OCEG and GRC Certify hereby certify that</div>
+        <div class="d-name" style="margin-top:6px;font-size:13.5px">ZAHRA AL SAFWAN</div>
+      </div></div>`;
+  }
+  if(id==='aws')return `<div class="doc" style="background:#161E2D">
+    <div style="padding:16px 16px 0;font-family:var(--f-lat)">
+      <div style="color:#fff;font-weight:700;font-size:12px">aws <span style="color:#FF9900">⬡</span> <span style="font-weight:400">certified</span></div>
+      <div style="color:#fff;font-weight:700;font-size:16px;letter-spacing:.03em;margin-top:14px">ZAHRA AL SAFWAN</div>
+      <div style="color:#8A97AB;font-size:10px;margin-top:8px">AWS Certified AI Practitioner</div>
+      <div style="height:2px;width:44px;background:#FF9900;margin-top:10px"></div>
+    </div></div>`;
+  return `<div class="doc">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;padding:10px 12px 0;font-family:var(--f-lat)">
+      <div style="font-weight:800;font-size:12px;color:#33302E">F<span style="color:#DA291C">⯃</span>RTINET<div style="font-weight:400;font-size:7px;color:#8B98A3;margin-top:2px">NSE Certification Program</div></div>
+      <div style="width:8px;height:34px;background:#DA291C"></div>
+    </div>
+    <div class="d-seal" style="right:16px;top:52px;background:#1B4FA0;border:3px solid #143C7C;color:#fff">NSE<br>2</div>
+    <div class="d-sub" style="text-align:left;padding-inline:12px;margin-top:8px">This certifies that</div>
+    <div class="d-name" style="text-align:left;padding-inline:12px;margin-top:2px;font-size:11.5px">ZAHRA AL SAFWAN</div>
+    <div class="d-sub" style="text-align:left;padding-inline:12px;margin-top:2px">has achieved <b style="color:#33424F">NSE 2 Network Security Associate</b></div></div>`;
 }
-function closeLightbox(e) {
-  if (!e || e.target === document.getElementById('lightbox') || e.target.classList.contains('lightbox-close')) {
-    document.getElementById('lightbox').classList.remove('open');
-    document.body.style.overflow = '';
+
+const ARTS=[
+{rt:'12',url:'ai-agent-audit.html',
+ ar:['كيف تراجع وكيل ذكاء اصطناعي؟','سيناريو كامل: الأدلة المطلوبة، ما الذي يجب اختباره، أين تقع المخاطر، وأمثلة ملاحظات وتوصيات.'],
+ en:['How do you audit an AI agent?','A full scenario: the evidence to request, what to test, where the risk sits, plus sample findings.']},
+{rt:'8',url:'ai-basics-for-auditors.html',ar:['أساسيات الذكاء الاصطناعي للمراجع الداخلي','ما الذي يحتاج المراجع فعلًا أن يفهمه عن النماذج — بلا رياضيات وبلا مصطلحات زائدة.'],
+ en:['AI basics for internal auditors','What an auditor actually needs to understand about models — no maths, no jargon.']},
+{rt:'10',url:'insights.html',ar:['إجراءات المراجعة واختبار الضوابط','كيف يتحول الضابط المكتوب إلى إجراء اختبار له عيّنة ودليل ونتيجة.'],
+ en:['Audit procedures and control testing','How a written control becomes a test with a sample, evidence and a result.']},
+{rt:'6',url:'insights.html',ar:['حوادث أمن الذكاء الاصطناعي بعين المراجعة','ثلاث حوادث حقيقية، والضابط الذي كان سيمنع كل واحدة منها.'],
+ en:['AI security incidents, audited','Three real incidents, and the control that would have prevented each.']},
+{rt:'4',url:'insights.html',ar:['قوائم فحص قابلة للتحميل','قوائم جاهزة لمراجعة نظام ذكاء اصطناعي ولتقييم مورد طرف ثالث.'],
+ en:['Downloadable checklists','Ready lists for reviewing an AI system and assessing a third-party vendor.']}];
+
+const TERMS=[
+{ar:['الضابط (Control)','إجراء أو قاعدة موضوعة لتقليل خطر معيّن. مثال: إلغاء صلاحيات الموظف خلال ٢٤ ساعة من إنهاء خدمته.'],
+ en:['Control','A procedure or rule that reduces a specific risk. Example: revoking access within 24 hours of offboarding.']},
+{ar:['الدليل (Evidence)','ما يثبت أن الضابط يعمل فعلًا، لا أنه مكتوب فقط. سجل بتاريخ ومصدر ومسؤول — لا لقطة شاشة بلا سياق.'],
+ en:['Evidence','What proves a control actually works — a record with a date, source and owner, not a context-free screenshot.']},
+{ar:['الملاحظة (Finding)','نتيجة اختبار أظهرت فجوة. تُكتب بصيغة 5C: المعيار، الحالة، السبب، الأثر، والإجراء التصحيحي.'],
+ en:['Finding','A test result that revealed a gap, written in 5C form: criteria, condition, cause, consequence, corrective action.']},
+{ar:['تصميم مقابل تشغيل','التصميم: هل الضابط مكتوب بشكل يمنع الخطر؟ التشغيل: هل يُنفَّذ فعلًا طوال الفترة؟ يُختبران منفصلين.'],
+ en:['Design vs operating effectiveness','Design: is it written to prevent the risk? Operation: is it actually performed all period? Tested separately.']},
+{ar:['الفصل بين المهام (SoD)','ألا يجمع شخص واحد صلاحيتين متعارضتين — مثل إنشاء المورد واعتماد الدفع له.'],
+ en:['Segregation of duties','No one person holds two conflicting permissions — like creating a vendor and approving its payment.']},
+{ar:['مخاطر الأطراف الثالثة','الخطر القادم من مورد متصل بأنظمتك. تُدار بتقييم قبل التعاقد وبنود عقدية ومتابعة بعده.'],
+ en:['Third-party risk','Risk arriving through a connected vendor. Managed by pre-contract assessment, clauses and monitoring.']},
+{ar:['مستوى النضج (Maturity)','مقياس لانتظام تطبيق الضابط: بالصدفة، أم موثّق، أم مُقاس ومُحسَّن باستمرار؟'],
+ en:['Maturity level','How consistently a control is applied: by chance, documented, or measured and improved?']},
+{ar:['الإشراف البشري (Human-in-the-loop)','القرار الحسّاس يبقى بيد إنسان مخوّل ومحدد بالاسم. النظام يجهّز ولا يعتمد.'],
+ en:['Human-in-the-loop','Sensitive decisions stay with a named, authorised human. The system prepares; it does not approve.']}];
+
+/* Ask Zahra */
+const ASK={
+ ar:{greet:'أهلًا! أنا Ask Zahra. اسألني عن خبرة زهراء أو مشاريعها أو شهاداتها — أجيب من محتوى هذه الصفحة فقط.',
+  sug:['ما خبرتها المهنية؟','ما شهاداتها؟','لماذا حوكمة الذكاء الاصطناعي؟'],ph:'اكتب سؤالك…',
+  a:[[/خبر|rsm|سنوات|ترقي|أرامكو|عمل/i,'أربع سنوات في RSM السعودية بثلاث ترقيات — من محللة أمن سيبراني إلى مراجِعة تقنية وأمن سيبراني — وأكثر من ٢٠٠ تقييم التزام لموردي أرامكو.','المصدر: قسم الخبرة'],
+     [/شهاد|cysa|security|grc|aws|fortinet|comptia/i,'ست شهادات: CompTIA CySA+ وSecurity+ وGRCP وGRCA من OCEG وAWS AI Practitioner وFortinet NSE 1 و2 — كلها بروابط تحقق في قسم الشهادات.','المصدر: قسم الشهادات'],
+     [/ذكاء|حوكم|ai|وكيل/i,'لأن أنظمة الذكاء الاصطناعي أصبحت تدخل نطاق المراجعة أسرع من كتابة ضوابطها. مشاريعها في هذا الجانب: محلّل الأدلة، ومقيّم الحوكمة، وأنا نفسي كمثال حي.','المصدر: قسم المشاريع'],
+     [/إطار|أطر|nca|sama|iso|ضابط/i,'الأطر الأساسية: NCA ECC وSAMA CSF وISO 27001 ومتطلبات أرامكو للأطراف الثالثة، ومن جانب الذكاء الاصطناعي NIST AI RMF ونظام الاتحاد الأوروبي.','المصدر: الكفاءات الأساسية'],
+     [/مشاريع|أعمال|بنت|مشروع/i,'ثمانية مشاريع في قسم المشاريع، أبرزها محلّل أدلة الالتزام ومساعد 5C ومقيّم حوكمة الذكاء الاصطناعي — كل مشروع يفتح على المشكلة والمعالجة والنتيجة.','المصدر: قسم المشاريع'],
+     [/متاح|توظيف|وظيف|فرص|تواصل|سيرة/i,'نعم، متاحة لفرص عمل — مقرّها الخبر وتعمل بالعربية والإنجليزية. يمكنك حجز موعد من قسم التواصل، أو مراسلتها عبر لينكدإن.','المصدر: قسم التواصل']],
+  none:'هذا غير مذكور في الصفحة، ولن أخمّن. جرّب سؤالًا عن الخبرة أو الشهادات أو المشاريع، أو احجز موعدًا من قسم التواصل.'},
+ en:{greet:"Hi! I'm Ask Zahra. Ask me about Zahra's experience, projects or certifications — I answer from this page only.",
+  sug:['What is her experience?','What certifications?','Why AI governance?'],ph:'Type a question…',
+  a:[[/experien|rsm|year|promot|aramco|work/i,'Four years at RSM Saudi Arabia with three promotions — cybersecurity analyst to IT & cybersecurity auditor — and 200+ Aramco vendor assessments.','Source: Experience'],
+     [/cert|cysa|security|grc|aws|fortinet|comptia/i,'Six: CompTIA CySA+ and Security+, GRCP and GRCA from OCEG, AWS AI Practitioner, and Fortinet NSE 1 & 2 — all with verification links.','Source: Certifications'],
+     [/ai|governance|agent/i,'Because AI systems started entering audit scope faster than controls were written for them. Her projects there: the evidence analyzer, the governance assessor — and me, as a live example.','Source: Work'],
+     [/framework|nca|sama|iso|control/i,'Core frameworks: NCA ECC, SAMA CSF, ISO 27001 and Aramco third-party requirements; on the AI side, NIST AI RMF and the EU AI Act.','Source: Core competencies'],
+     [/project|work|built/i,'Eight projects in the Work section — the evidence analyzer, the 5C assistant and the AI governance assessor lead. Each opens to problem, approach and result.','Source: Work'],
+     [/available|hire|job|contact|cv|resume/i,'Yes — open to opportunities, based in Al Khobar, working in Arabic and English. Book an appointment from the Contact section, or reach her on LinkedIn.','Source: Contact']],
+  none:"That isn't on this page, and I won't guess. Try experience, certifications or projects — or book an appointment from the Contact section."}
+};
+
+const SECTIONS=[['top','نظرة عامة','Overview'],['work','الأعمال','Work'],['experience','الخبرة','Experience'],
+ ['comp','الكفاءات الأساسية','Core competencies'],['certs','الشهادات الاحترافية','Certifications'],
+ ['library','عين المراجع',"Auditor's Eye"],['contact','تواصل','Contact']];
+
+/* ═══════ RENDER ═══════ */
+let cat='all';
+function renderWork(){
+  const f=$('#workFilters'); f.innerHTML='';
+  CATS.forEach(c=>{
+    const n=c.id==='all'?WORK.length:WORK.filter(w=>w.cat===c.id).length;
+    const b=el('button','chip',`${c[L]} <span style="opacity:.6">${n}</span>`);
+    b.type='button'; b.setAttribute('aria-pressed',cat===c.id);
+    b.onclick=()=>{cat=c.id;renderWork();};
+    f.appendChild(b);
+  });
+  const list=$('#workList'); list.innerHTML='';
+  const rows=WORK.filter(w=>cat==='all'||w.cat===cat);
+  $('#workCnt').textContent=rows.length;
+  rows.forEach(w=>{
+    const d=w[L],n=el('details','item'); n.id='w-'+w.id;
+    n.innerHTML=`<summary>
+      <span class="it-i">${w.k}</span>
+      <span><span class="it-t">${d[0]}</span><span class="it-s">${d[1]}</span></span>
+      <span class="it-x">+</span></summary>
+      <div class="it-b">
+        <div class="demo"><div class="demo-h"><i></i><span>${L==='ar'?'فكرة المشروع — عرض مصغّر':'The idea — mini demo'}</span></div><div class="d-body"></div></div>
+        <div class="pac">
+        <div><dt>${L==='ar'?'المشكلة':'Problem'}</dt><dd>${d[2]}</dd></div>
+        <div><dt>${L==='ar'?'المعالجة':'Approach'}</dt><dd>${d[3]}</dd></div>
+        <div class="res"><dt>${L==='ar'?'النتيجة':'Result'}</dt><dd>${d[4]}</dd></div></div>
+      <div class="tags">${w.tags.map(t=>`<span>${t}</span>`).join('')}</div></div>`;
+    n.addEventListener('toggle',()=>{if(n.open)runDemo(w.id,n.querySelector('.d-body'));});
+    list.appendChild(n);
+  });
+}
+
+/* ── mini prototypes: one small moving demo per project ── */
+let demoTimers=new WeakMap();
+function stage(box,fn,ms,calm){
+  if(calm){fn();return;}
+  const arr=demoTimers.get(box)||[];
+  arr.push(setTimeout(fn,ms)); demoTimers.set(box,arr);
+}
+function runDemo(id,box){
+  if(!box)return;
+  (demoTimers.get(box)||[]).forEach(clearTimeout); demoTimers.set(box,[]);
+  const calm=RM||document.body.classList.contains('calm');
+  box.innerHTML='';
+  const A=L==='ar';
+
+  if(id==='evid'){
+    const g=el('div','chips'); box.appendChild(g);
+    for(let i=0;i<23;i++){
+      const c=el('i',null,String(i+1)); g.appendChild(c);
+      stage(box,()=>c.classList.add(i===13?'f':(i%7===3?'w':'p')),150+i*80,calm);
+    }
+    const t=el('div','dline');
+    t.innerHTML=`<b>TPC-14</b><span>${A?'مدة حفظ سجلات الوصول أقل من ١٢ شهرًا':'Access-log retention below 12 months'}</span>`;
+    t.style.cssText='opacity:0;transition:.4s;margin-top:.55rem';
+    box.appendChild(t);
+    stage(box,()=>t.style.opacity=1,150+23*80,calm);
+  }
+
+  else if(id==='5c'){
+    const r=el('div','dline'); r.innerHTML=`<b>${A?'خام':'RAW'}</b><span>${A?'بعض المستخدمين ما زالوا بصلاحية مدير بعد النقل':'Some users still hold admin after transfer'}</span>`;
+    box.appendChild(r);
+    const t=el('div','dline'); t.innerHTML=`<b>5C</b><span class="type"></span>`; box.appendChild(t);
+    const tt=t.querySelector('.type');
+    const s5=A?'المعيار: ECC 2-3-1 · الحالة: ١٢ حسابًا فعّالًا بعد النقل · السبب: عدم ربط الموارد البشرية بإدارة الهوية · الأثر: وصول غير مصرّح · الإجراء: مراجعة الصلاحيات عند أي نقل'
+             :'Criteria: ECC 2-3-1 · Condition: 12 accounts active post-transfer · Cause: HR not linked to IAM · Consequence: unauthorised access · Action: review access on every transfer';
+    if(calm){tt.textContent=s5;}
+    else{let i=0;const arr=demoTimers.get(box);
+      const iv=setInterval(()=>{tt.textContent=s5.slice(0,++i);if(i>=s5.length)clearInterval(iv);},20);
+      arr.push(iv);demoTimers.set(box,arr);}
+  }
+
+  else if(id==='aigov'){
+    const rows=A?[['الشفافية',82],['الإنصاف',64],['الإشراف البشري',91],['الخصوصية',73],['المتانة',58],['المساءلة',69]]
+               :[['Transparency',82],['Fairness',64],['Human oversight',91],['Privacy',73],['Robustness',58],['Accountability',69]];
+    rows.forEach((r,i)=>{
+      const n=el('div','brow'); n.innerHTML=`<span>${r[0]}</span><span class="bar"><span></span></span><em>${r[1]}%</em>`;
+      box.appendChild(n);
+      const f=n.querySelector('.bar span');
+      stage(box,()=>{f.style.width=r[1]+'%';if(r[1]<60)f.style.background='linear-gradient(90deg,#8a5f14,#E8B33C)';},180+i*130,calm);
+    });
+  }
+
+  else if(id==='ask'){
+    const seq=A?[['bot','اسألني عن الخبرة أو الشهادات أو المشاريع.'],['me','ما شهاداتها؟'],['bot','ست شهادات موثّقة — التفاصيل في قسم الشهادات. ✓']]
+              :[['bot','Ask me about experience, certifications or projects.'],['me','What certifications?'],['bot','Six verified certifications — details in the Certifications section. ✓']];
+    seq.forEach((m,i)=>{
+      const n=el('div','dmsg '+m[0],m[1]); box.appendChild(n);
+      stage(box,()=>n.classList.add('in'),200+i*550,calm);
+    });
+  }
+
+  else if(id==='smart'){
+    const g=el('div','mbars'); box.appendChild(g);
+    const hs=[42,58,35,88,50,62,45];
+    hs.forEach((h,i)=>{
+      const b=el('i'); g.appendChild(b);
+      stage(box,()=>{b.style.height=h+'%'; if(i===3)b.classList.add('bad');},160+i*110,calm);
+    });
+    const n=el('div','mnote', A?'⚠ شذوذ في الصلاحيات: المستخدم رقم ٤':'⚠ Access anomaly: user #4');
+    box.appendChild(n);
+    stage(box,()=>n.classList.add('in'),160+hs.length*110+150,calm);
+  }
+
+  else if(id==='grc'){
+    const steps=A?[['📋','سجل المخاطر'],['🛡','تصميم الضوابط'],['👤','تعيين الملّاك'],['🔁','مواعيد المراجعة']]
+                :[['📋','Risk register'],['🛡','Control design'],['👤','Assign owners'],['🔁','Review dates']];
+    const w=el('div','msteps'); box.appendChild(w);
+    const nodes=steps.map((st,i)=>{
+      const n=el('div','mstep',`<i>${st[0]}</i><span>${st[1]}</span>`);
+      w.appendChild(n);
+      if(i<steps.length-1)w.appendChild(el('span','mlink'));
+      return n;
+    });
+    nodes.forEach((n,i)=>stage(box,()=>n.classList.add('on'),220+i*420,calm));
+  }
+
+  else if(id==='icu'){
+    const lines=A?['التشخيص: … · العلامات الحيوية: مستقرة','الخطة: متابعة الجرعة صباحًا','ملاحظة منظّمة جاهزة للمراجعة']
+                :['Dx: … · Vitals: stable','Plan: review dosage in the morning','Structured note ready for review'];
+    lines.forEach((t,i)=>{
+      const n=el('div','dline'); n.innerHTML=`<b>${i+1}</b><span>${t}</span>`;
+      n.style.cssText='opacity:0;transform:translateY(4px);transition:.35s';
+      box.appendChild(n);
+      stage(box,()=>{n.style.opacity=1;n.style.transform='none';},200+i*350,calm);
+    });
+    const g=el('div','gatec', A?'بانتظار اعتماد الطبيب…':'Awaiting physician approval…');
+    box.appendChild(g);
+    stage(box,()=>{g.classList.add('ok');g.textContent=A?'✓ اعتمدها الطبيب':'✓ Approved by the physician';},200+lines.length*350+500,calm);
+  }
+
+  else if(id==='sab'){
+    const steps=A?[['✉','طلب عميل'],['🤖','وكيل ذكي'],['👤','إشراف بشري'],['✓','إنجاز']]
+                :[['✉','Customer request'],['🤖','AI agent'],['👤','Human oversight'],['✓','Done']];
+    const w=el('div','msteps'); box.appendChild(w);
+    const nodes=steps.map((st,i)=>{
+      const n=el('div','mstep'+(i===2?' gate':''),`<i>${st[0]}</i><span>${st[1]}</span>`);
+      w.appendChild(n);
+      if(i<steps.length-1)w.appendChild(el('span','mlink'));
+      return n;
+    });
+    nodes.forEach((n,i)=>stage(box,()=>{
+      nodes.forEach(x=>x.classList.remove('on')); n.classList.add('on');
+      if(i===nodes.length-1)nodes.forEach(x=>x.classList.add('on'));
+    },220+i*480,calm));
   }
 }
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
-
-/* ── Active nav on scroll ── */
-window.addEventListener('scroll', () => {
-  const sections = document.querySelectorAll('section[id]');
-  const links = document.querySelectorAll('.nav-links a');
-  let cur = '';
-  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) cur = s.id; });
-  links.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + cur); });
-});
-
-/* ── Reveal on scroll ── */
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
-}, { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-/* ── Close mobile nav on link click ── */
-document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
-});
-
-/* ── Open Ask Zahra from the project card ── */
-function openAskZahra(event) {
-  if (event) event.preventDefault();
-
-  let attempts = 0;
-  const maxAttempts = 20;
-
-  const tryOpen = () => {
-    const toggle = document.querySelector(
-      '#n8n-chat .chat-window-toggle, #n8n-chat button.chat-window-toggle, #n8n-chat [class*="chat-window-toggle"]'
-    );
-
-    if (toggle) {
-      toggle.click();
-      return;
-    }
-
-    attempts += 1;
-    if (attempts < maxAttempts) {
-      setTimeout(tryOpen, 150);
-    }
-  };
-
-  tryOpen();
+function renderJobs(){
+  const c=$('#jobs'); c.innerHTML='';
+  JOBS.forEach(j=>{const d=j[L];
+    c.appendChild(el('div','job rv seen',
+      `<div class="yr">${j.y}</div><div><h4>${d[0]}</h4><div class="co">${j.co}</div>
+       <ul>${d[1].map(b=>`<li><span>${b}</span></li>`).join('')}</ul></div>`));});
+}
+function renderComp(){
+  const c=$('#comp-grid'); c.innerHTML='';
+  COMP.forEach(g=>{const d=g[L];
+    c.appendChild(el('div','cc rv seen',
+      `<div class="cc-h"><i>${ICONS[g.ic]}</i><h3>${d[0]}</h3></div>
+       <ul>${d[1].map(x=>`<li><span>${x}</span></li>`).join('')}</ul>`));});
+}
+function renderCerts(){
+  const c=$('#certGrid'); c.innerHTML='';
+  CERTS.forEach(r=>{
+    c.appendChild(el('article','cert rv seen',
+      `<div class="cimg" aria-hidden="true">${thumb(r.id)}</div>
+       <div class="cert-body">
+         <div class="cy"><b>${r.y}</b><span>${r.cat[L]}</span></div>
+         <h4>${r.n}</h4><div class="iss">${r.i}</div>
+         <a class="vf" href="#">${L==='ar'?'تحقّق من الشهادة':'Verify credential'} <span aria-hidden="true">↗</span></a>
+       </div>`));});
+}
+function renderArts(){
+  const c=$('#arts'); c.innerHTML='';
+  ARTS.forEach(a=>{const d=a[L],n=el('a','art rv seen',
+    `<div><h4>${d[0]}</h4><p>${d[1]}</p></div><span class="rt">${a.rt} ${L==='ar'?'د':'min'}</span>`);
+    n.href=a.url; c.appendChild(n);});
+}
+function renderTerms(){
+  const c=$('#terms'); c.innerHTML='';
+  TERMS.forEach((t,i)=>{const d=t[L],n=el('details','term'); n.id='t-'+i;
+    n.innerHTML=`<summary>${d[0]}</summary><p>${d[1]}</p>`; c.appendChild(n);});
 }
 
-document.getElementById('ask-zahra-project-link')?.addEventListener('click', openAskZahra);
-</script>
+/* ═══════ ASK ZAHRA ═══════ */
+function push(t,who,src){
+  const m=el('div','msg '+who,t);
+  if(src)m.appendChild(el('span','src',src));
+  $('#pB').appendChild(m); $('#pB').scrollTop=$('#pB').scrollHeight; return m;
+}
+function resetAsk(){
+  $('#pB').innerHTML=''; push(ASK[L].greet,'bot');
+  const s=$('#pS'); s.innerHTML='';
+  ASK[L].sug.forEach(q=>{const b=el('button',null,q);b.type='button';b.onclick=()=>answer(q);s.appendChild(b);});
+  $('#pIn').placeholder=ASK[L].ph;
+}
+function answer(q){
+  push(q,'me'); $('#pIn').value='';
+  const set=ASK[L],hit=set.a.find(([re])=>re.test(q));
+  const d=el('div','dots-t','<i></i><i></i><i></i>');
+  $('#pB').appendChild(d); $('#pB').scrollTop=$('#pB').scrollHeight;
+  setTimeout(()=>{d.remove(); hit?push(hit[1],'bot',hit[2]):push(set.none,'bot');},
+    RM||document.body.classList.contains('calm')?0:700);
+}
+$('#pSend').onclick=()=>{const v=$('#pIn').value.trim();if(v)answer(v);};
+$('#pIn').addEventListener('keydown',e=>{if(e.key==='Enter'){const v=e.target.value.trim();if(v)answer(v);}});
+function togglePanel(o){
+  $('#panel').classList.toggle('on',o);
+  $('#fab').style.display=o?'none':'';
+  $('#fab').setAttribute('aria-expanded',o);
+  if(o)$('#pIn').focus();
+}
+$('#fab').onclick=()=>togglePanel(true);
+$('#heroAsk').onclick=()=>togglePanel(true);
+$('#pX').onclick=()=>{togglePanel(false);$('#fab').focus();};
 
-<!-- ═════════════════════ ASK ZAHRA AI CHATBOT ═════════════════════ -->
-<div id="n8n-chat" aria-label="Ask Zahra AI assistant"></div>
-
-<script type="module">
-  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat@1.29.1/dist/chat.bundle.es.js';
-
-  createChat({
-    webhookUrl: 'https://zahraibrahim.app.n8n.cloud/webhook/47ec1cee-bdaf-4f87-8ad3-9c4071a1e14d/chat',
-    target: '#n8n-chat',
-    mode: 'window',
-    chatInputKey: 'chatInput',
-    chatSessionKey: 'sessionId',
-    loadPreviousSession: false,
-    showWelcomeScreen: false,
-    defaultLanguage: 'en',
-    enableStreaming: false,
-    metadata: {
-      source: 'zahrasafwan.github.io',
-      assistant: 'Ask Zahra'
-    },
-    initialMessages: [
-      'مرحبًا، أنا المساعد الرقمي لزهراء آل صفوان. يمكنني مساعدتك في التعرف على خبراتها المهنية وشهاداتها ومشاريعها.',
-      'Hello, I’m Zahra Al Safwan’s digital assistant. Ask me about her experience, certifications, skills, or projects.'
-    ],
-    i18n: {
-      en: {
-        title: 'Ask Zahra',
-        subtitle: 'IT Audit • Cybersecurity • GRC • AI Governance',
-        footer: '',
-        getStarted: 'Start a conversation',
-        inputPlaceholder: 'Ask about Zahra’s experience...'
-      }
-    }
+/* ═══════ PALETTE ═══════ */
+function index(){
+  const out=[];
+  SECTIONS.forEach(s=>out.push({t:L==='ar'?s[1]:s[2],s:L==='ar'?'قسم':'Section',i:'§',g:L==='ar'?'الأقسام':'Sections',to:'#'+s[0]}));
+  WORK.forEach(w=>out.push({t:w[L][0],s:w[L][1],i:w.k,g:L==='ar'?'المشاريع':'Projects',to:'#w-'+w.id,open:'w-'+w.id}));
+  JOBS.forEach(j=>out.push({t:j[L][0],s:j.co+' · '+j.y,i:'↗',g:L==='ar'?'الخبرة':'Experience',to:'#experience'}));
+  COMP.forEach(g=>g[L][1].forEach(x=>out.push({t:x,s:g[L][0],i:'✦',g:L==='ar'?'الكفاءات':'Competencies',to:'#comp'})));
+  CERTS.forEach(c=>out.push({t:c.n,s:c.i+' · '+c.y,i:'✓',g:L==='ar'?'الشهادات':'Certifications',to:'#certs'}));
+  ARTS.forEach(a=>out.push({t:a[L][0],s:a.rt+(L==='ar'?' دقائق قراءة':' min read'),i:'¶',g:L==='ar'?'عين المراجع':"Auditor's Eye",to:'#library'}));
+  TERMS.forEach((t,i)=>out.push({t:t[L][0],s:t[L][1].slice(0,70)+'…',i:'?',g:L==='ar'?'المعجم':'Glossary',to:'#t-'+i,open:'t-'+i}));
+  return out;
+}
+let IDX=[],sel=0,shown=[];
+const norm=s=>s.toLowerCase().replace(/[أإآ]/g,'ا').replace(/ة/g,'ه').replace(/[ىي]/g,'ي').replace(/[ًٌٍَُِّْ]/g,'');
+function drawPal(q){
+  const b=$('#palB'); b.innerHTML='';
+  const nq=norm(q.trim());
+  shown=nq?IDX.filter(r=>norm(r.t+' '+r.s+' '+r.g).includes(nq)).slice(0,24):IDX.slice(0,24);
+  if(!shown.length){b.appendChild(el('div','pal-none',L==='ar'?'لا توجد نتائج مطابقة. جرّب كلمة أقصر.':'Nothing matched. Try a shorter word.'));return;}
+  sel=Math.min(sel,shown.length-1);
+  let g='';
+  shown.forEach((r,i)=>{
+    if(r.g!==g){g=r.g;b.appendChild(el('div','pal-h',g));}
+    const n=el('button','pal-r'+(i===sel?' sel':''),`<i>${r.i}</i><span><b>${r.t}</b><span>${r.s}</span></span><em>${r.g}</em>`);
+    n.type='button'; n.onclick=()=>go(r); b.appendChild(n);
   });
+}
+function go(r){
+  closePal();
+  if(r.open){const t=document.getElementById(r.open); if(t)t.open=true;}
+  const t=document.querySelector(r.to);
+  if(t)setTimeout(()=>{
+    t.scrollIntoView({behavior:document.body.classList.contains('calm')?'auto':'smooth',block:'start'});
+    t.classList.add('flash'); setTimeout(()=>t.classList.remove('flash'),1200);
+  },40);
+}
+function openPal(){
+  IDX=index(); sel=0;
+  $('#palBd').classList.add('on');
+  $('#palIn').value=''; $('#palIn').placeholder=L==='ar'?'ابحث عن مشروع، شهادة، كفاءة، أو مصطلح…':'Search a project, certification, competency or term…';
+  drawPal(''); $('#palIn').focus();
+}
+function closePal(){$('#palBd').classList.remove('on');}
+$('#openPal').onclick=openPal;
+$('#palBd').onclick=e=>{if(e.target===$('#palBd'))closePal();};
+$('#palIn').addEventListener('input',e=>{sel=0;drawPal(e.target.value);});
+document.addEventListener('keydown',e=>{
+  if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();openPal();return;}
+  if(e.key==='/'&&!/input|textarea/i.test(document.activeElement.tagName)){e.preventDefault();openPal();return;}
+  if(e.key==='Escape'&&$('#panel').classList.contains('on')){togglePanel(false);return;}
+  if(!$('#palBd').classList.contains('on'))return;
+  if(e.key==='Escape')closePal();
+  if(e.key==='ArrowDown'){e.preventDefault();sel=Math.min(sel+1,shown.length-1);drawPal($('#palIn').value);$('.pal-r.sel')?.scrollIntoView({block:'nearest'});}
+  if(e.key==='ArrowUp'){e.preventDefault();sel=Math.max(sel-1,0);drawPal($('#palIn').value);$('.pal-r.sel')?.scrollIntoView({block:'nearest'});}
+  if(e.key==='Enter'&&shown[sel]){e.preventDefault();go(shown[sel]);}
+});
+
+/* ═══════ CHROME ═══════ */
+$('#calm').onclick=e=>{
+  const on=document.body.classList.toggle('calm');
+  e.currentTarget.classList.toggle('on',on);
+  e.currentTarget.setAttribute('aria-pressed',on);
+};
+$('#burger').onclick=e=>{const o=$('#nav').classList.toggle('on');e.currentTarget.setAttribute('aria-expanded',o);};
+$$('#nav a').forEach(a=>a.onclick=()=>$('#nav').classList.remove('on'));
+function setLang(n){
+  L=n;
+  document.documentElement.lang=L;
+  document.documentElement.dir=L==='ar'?'rtl':'ltr';
+  $$('[data-en]').forEach(x=>{
+    if(!x.dataset.ar)x.dataset.ar=x.innerHTML;
+    x.innerHTML=L==='ar'?x.dataset.ar:x.dataset.en;
+  });
+  $('#lang').textContent=L==='ar'?'EN':'ع';
+  renderWork();renderJobs();renderComp();renderCerts();renderArts();renderTerms();resetAsk();
+}
+$('#lang').onclick=()=>setLang(L==='ar'?'en':'ar');
+
+addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  $('#prog').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+},{passive:true});
+const spy=$$('#nav a');
+const so=new IntersectionObserver(es=>es.forEach(e=>{
+  const a=spy.find(x=>x.getAttribute('href')==='#'+e.target.id);
+  if(a&&e.isIntersecting){spy.forEach(x=>x.removeAttribute('aria-current'));a.setAttribute('aria-current','true');}
+}),{rootMargin:'-45% 0px -50% 0px'});
+['work','experience','comp','certs','library','contact'].forEach(id=>{const n=document.getElementById(id);if(n)so.observe(n);});
+const rv=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('seen');rv.unobserve(e.target);}}),{threshold:.08});
+$$('.rv').forEach(n=>rv.observe(n));
+function countUp(b){
+  const target=+b.dataset.n,suf=b.dataset.suf||'';
+  if(RM||document.body.classList.contains('calm')){b.innerHTML=target+(suf?`<em>${suf}</em>`:'');return;}
+  const t0=performance.now(),dur=1400;
+  const step=t=>{const p=Math.min(1,(t-t0)/dur),e2=1-Math.pow(1-p,3);
+    b.innerHTML=Math.round(target*e2)+(suf?`<em>${suf}</em>`:'');
+    if(p<1)requestAnimationFrame(step);};
+  requestAnimationFrame(step);
+}
+const co=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){$$('#hstats b').forEach(countUp);co.disconnect();}}),{threshold:.3});
+co.observe($('#hstats'));
+
+/* init */
+renderWork();renderJobs();renderComp();renderCerts();renderArts();renderTerms();resetAsk();
 </script>
 
-</body>
-</html>
+
+</body></html>
