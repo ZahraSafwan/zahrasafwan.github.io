@@ -195,7 +195,7 @@ body.calm *,body.calm *::before,body.calm *::after{animation:none!important;tran
     <h2 class="s rv">ابدأ من هنا</h2>
     <div class="feat rv">
       <div>
-        <span class="tagchip" style="margin-bottom:.2rem"><i></i>الدليل العملي الأول · ١٢ دقيقة قراءة</span>
+        <span class="tagchip" style="margin-bottom:.2rem"><i></i>الدليل العملي الأول · قراءة تستغرق ١٢ دقيقة</span>
         <h3>كيف تراجع وكيل الذكاء الاصطناعي (AI Agent)؟</h3>
         <p>سيناريو مبسّط، الأدلة المطلوبة، ما الذي يراجعه المراجع ويختبره، أهم المخاطر، أمثلة للملاحظات، والتوصيات المحتملة.</p>
         <a class="btn btn-p" href="ai-agent-audit.html">افتح الدليل</a>
@@ -214,7 +214,7 @@ body.calm *,body.calm *::before,body.calm *::after{animation:none!important;tran
 <section>
   <div class="wrap">
     <h2 class="s rv">المقالات</h2>
-    <div class="gist rv"><b>باختصار:</b><span>اختر مسارًا لتصفية المقالات. المسارات الحالية تركز على الذكاء الاصطناعي، وستُضاف مسارات جديدة تباعًا.</span></div>
+    <div class="gist rv"><b>باختصار:</b><span>اختر مسارًا لتصفية المقالات. اختر المسار المناسب لتصفية المقالات. وتُضاف موضوعات جديدة إلى كل مسار تدريجيًا.</span></div>
     <div class="tracks rv" id="tracks"></div>
     <div class="arts" id="arts"></div>
   </div>
@@ -275,20 +275,21 @@ const ARTS=[
  {c:'أساسيات',cat:'AI BASICS',ok:1,url:'ai-basics-for-auditors.html',rt:'٨ د',
   t:'ما الفرق بين الذكاء الاصطناعي، والتوليدي، ووكيل الذكاء الاصطناعي؟',
   p:'افهم الفرق بين الأنواع الثلاثة، ولماذا يغيّر كل نوع طريقة المراجعة والمخاطر التي تبحث عنها.'},
- {c:'مراجعة وضوابط',cat:'AI AUDIT',ok:1,url:'ai-agent-audit.html',rt:'١٢ د',
+ {c:'مراجعة ضوابط الذكاء الاصطناعي',cat:'AI AUDIT',ok:1,url:'ai-agent-audit.html',rt:'١٢ د',
   t:'كيف تراجع وكيل الذكاء الاصطناعي (AI Agent)؟',
   p:'دليل عملي من فهم العملية إلى كتابة الملاحظة والتوصية.'},
- {c:'مراجعة وضوابط',cat:'AI AUDIT',ok:0,t:'هل الـSystem Prompt ضابط رقابي كافٍ؟',
-  p:'الفرق بين التعليمات السلوكية والضوابط التقنية التي تفرض التنفيذ.'},
+ {c:'مراجعة ضوابط الذكاء الاصطناعي',cat:'AI AUDIT',ok:1,url:'system-prompt-control-audit-with-real-evidence.html',rt:'٧ دقائق',
+  t:'هل تعليمات النظام (System Prompt) ضابط رقابي كافٍ؟',
+  p:'كيف يميّز المراجع بين التعليمات السلوكية والضوابط التقنية القابلة للاختبار، مع أمثلة من أنظمة فعلية.'},
  {c:'أمن وحوادث',cat:'AI SECURITY',ok:0,t:'وجود نظام مراقبة لا يعني أن الضابط فعّال',
   p:'دروس للمراجع من تغطية المراقبة والتنبيه والاستجابة.'},
- {c:'مراجعة وضوابط',cat:'AI AUDIT',ok:0,t:'كيف تراجع صلاحيات وكيل الذكاء الاصطناعي؟',
+ {c:'مراجعة ضوابط الذكاء الاصطناعي',cat:'AI AUDIT',ok:0,t:'كيف تراجع صلاحيات وكيل الذكاء الاصطناعي؟',
   p:'كيف تتحقق من أقل قدر من الصلاحيات وحدود الوصول.'},
- {c:'مراجعة وضوابط',cat:'AI AUDIT',ok:0,t:'إذا أخطأ الوكيل، هل تستطيع إعادة بناء ما حدث؟',
+ {c:'مراجعة ضوابط الذكاء الاصطناعي',cat:'AI AUDIT',ok:0,t:'إذا أخطأ الوكيل، هل تستطيع إعادة بناء ما حدث؟',
   p:'سجل التدقيق والسجلات المطلوبة لتتبّع القرار والتنفيذ.'},
  {c:'أمن وحوادث',cat:'AI SECURITY',ok:0,t:'Prompt Injection: لماذا يهم المراجع الداخلي؟',
   p:'كيف يؤثر التلاعب بالمدخلات على قرارات الوكيل وصلاحياته.'}];
-const TRACKS=['الكل','أساسيات','مراجعة وضوابط','أمن وحوادث'];
+const TRACKS=['الكل','أساسيات','مراجعة ضوابط الذكاء الاصطناعي','أمن وحوادث'];
 let tr='الكل';
 function el(t,c,x){const n=document.createElement(t);if(c)n.className=c;if(x!==undefined)n.innerHTML=x;return n;}
 function renderArts(){
@@ -303,7 +304,7 @@ function renderArts(){
   ARTS.filter(a=>tr==='الكل'||a.c===tr).forEach(a=>{
     if(a.ok){
       const n=el('a','card art');n.href=a.url;
-      n.innerHTML=`<div class="top"><span class="cat">${a.cat}</span><span class="st ok">متاح الآن · ${a.rt}</span></div>
+      n.innerHTML=`<div class="top"><span class="cat">${a.cat}</span><span class="st ok">متاح الآن · قراءة تستغرق ${a.rt}</span></div>
         <h4>${a.t}</h4><p>${a.p}</p><span class="go">قراءة المقال ←</span>`;
       box.appendChild(n);
     }else{
