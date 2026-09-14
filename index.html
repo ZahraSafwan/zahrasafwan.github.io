@@ -189,6 +189,9 @@ html[dir="ltr"] .h1{line-height:1.04;letter-spacing:-.035em}
 .tags{display:flex;gap:.35rem;flex-wrap:wrap}
 .tags span{font-family:var(--f-mono);font-size:11px;color:var(--slate);border:1px solid var(--line);
   padding:.14rem .5rem;border-radius:6px;background:var(--cream)}
+.project-link{display:inline-flex;align-items:center;gap:.4rem;margin-top:.8rem;padding:.5rem .8rem;border-radius:9px;
+  border:1px solid rgba(0,149,129,.28);background:var(--mist);color:var(--teal-dk);font-size:13px;font-weight:700;transition:.18s}
+.project-link:hover{background:var(--mist-2);border-color:var(--teal);transform:translateY(-1px)}
 
 /* experience */
 .job{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:1.2rem 1.3rem;
@@ -656,7 +659,7 @@ const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ═══════ CONTENT ═══════ */
 const WORK=[
-{id:'sab',cat:'venture',k:'01',tags:['مشروع','أمن وخصوصية','إشراف بشري'],
+{id:'sab',cat:'venture',k:'01',url:'https://sabbarahai.com/',tags:['مشروع','أمن وخصوصية','إشراف بشري'],
  ar:['صبّارة AI — شريكة مؤسِّسة','شركة سعودية تبني وكلاء وأتمتة بالذكاء الاصطناعي مع الحوكمة والأمن والخصوصية منذ التصميم.',
   'تُبنى كثير من حلول الأتمتة للإنجاز أولًا، ثم تُضاف متطلبات الأمن والخصوصية والحوكمة في مراحل لاحقة.',
   'المشاركة في تأسيس شركة تبني وكلاء وأتمتة بالذكاء الاصطناعي، مع دمج الأمن والخصوصية والإشراف البشري ضمن التصميم منذ البداية.',
@@ -903,7 +906,8 @@ function renderWork(){
         <div><dt>${L==='ar'?'المشكلة':'Problem'}</dt><dd>${d[2]}</dd></div>
         <div><dt>${L==='ar'?'المعالجة':'Approach'}</dt><dd>${d[3]}</dd></div>
         <div class="res"><dt>${L==='ar'?'النتيجة':'Result'}</dt><dd>${d[4]}</dd></div></div>
-      <div class="tags">${w.tags.map(t=>`<span>${t}</span>`).join('')}</div></div>`;
+      <div class="tags">${w.tags.map(t=>`<span>${t}</span>`).join('')}</div>
+      ${w.url?`<a class="project-link" href="${w.url}" target="_blank" rel="noopener noreferrer">${L==='ar'?'زيارة موقع صبّارة AI':'Visit SABBARAH AI'} <span aria-hidden="true">↗</span></a>`:''}</div>`;
     n.addEventListener('toggle',()=>{if(n.open)runDemo(w.id,n.querySelector('.d-body'));});
     list.appendChild(n);
   });
