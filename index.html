@@ -427,6 +427,133 @@ body.calm *,body.calm *::before,body.calm *::after{animation:none!important;tran
   .rv{opacity:1;transform:none}
 }
 </style>
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat@1.29.1/dist/style.css" rel="stylesheet">
+
+<style id="ask-zahra-n8n-theme">
+/* Ask Zahra — match Zahra portfolio visual identity */
+#n8n-chat{
+  --chat--color-primary:#009581;
+  --chat--color-primary-shade-50:#007d6d;
+  --chat--color-primary-shade-100:#00654F;
+
+  --chat--color-secondary:#03C0A4;
+  --chat--color-secondary-shade-50:#009581;
+
+  --chat--color-white:#FFFFFF;
+  --chat--color-light:#FAFAF6;
+  --chat--color-light-shade-50:#EAF7F1;
+  --chat--color-light-shade-100:#DDF4EA;
+  --chat--color-medium:#CDEEE0;
+  --chat--color-dark:#0C2136;
+  --chat--color-disabled:#7D8E9B;
+  --chat--color-typing:#54687A;
+
+  --chat--font-family:'Tajawal','Jost',system-ui,sans-serif;
+  --chat--spacing:1rem;
+  --chat--border-radius:14px;
+  --chat--transition-duration:.18s;
+
+  --chat--window--width:400px;
+  --chat--window--height:600px;
+  --chat--window--border:1px solid rgba(12,33,54,.11);
+  --chat--window--border-radius:18px;
+  --chat--window--box-shadow:0 28px 65px -34px rgba(12,33,54,.55);
+
+  --chat--header-height:auto;
+  --chat--header--padding:1rem 1.1rem;
+  --chat--header--background:#EAF7F1;
+  --chat--header--color:#0C2136;
+  --chat--header--border-bottom:1px solid rgba(0,149,129,.18);
+  --chat--heading--font-size:1.45rem;
+  --chat--subtitle--font-size:.88rem;
+  --chat--subtitle--line-height:1.6;
+
+  --chat--body--background:#FAFAF6;
+  --chat--footer--background:#FFFFFF;
+  --chat--footer--color:#0C2136;
+
+  --chat--message--font-size:.96rem;
+  --chat--message--padding:.78rem .9rem;
+  --chat--message--border-radius:14px;
+  --chat--message-line-height:1.7;
+  --chat--message--margin-bottom:.7rem;
+
+  --chat--message--bot--background:#FFFFFF;
+  --chat--message--bot--color:#20313F;
+  --chat--message--bot--border:1px solid rgba(12,33,54,.09);
+
+  --chat--message--user--background:#009581;
+  --chat--message--user--color:#FFFFFF;
+  --chat--message--user--border:none;
+
+  --chat--textarea--height:52px;
+  --chat--input--background:#FFFFFF;
+  --chat--input--color:#20313F;
+  --chat--input--border:1px solid rgba(12,33,54,.12);
+  --chat--input--border-active:1px solid #009581;
+  --chat--input--placeholder--font-size:.92rem;
+
+  --chat--input--send--button--background:#009581;
+  --chat--input--send--button--color:#FFFFFF;
+  --chat--input--send--button--background-hover:#00654F;
+  --chat--input--send--button--color-hover:#FFFFFF;
+
+  --chat--button--background:#009581;
+  --chat--button--color:#FFFFFF;
+  --chat--button--hover--background:#00654F;
+  --chat--button--border-radius:10px;
+}
+
+/* Keep the site's existing Ask Zahra launcher; n8n supplies the window only. */
+#n8n-chat .chat-window-toggle,
+#n8n-chat button.chat-window-toggle,
+#n8n-chat [class*="chat-window-toggle"]{
+  opacity:0!important;
+  pointer-events:none!important;
+  width:1px!important;
+  height:1px!important;
+  position:fixed!important;
+  inset-inline-end:-9999px!important;
+}
+
+/* Small typography refinements inside the n8n window */
+#n8n-chat .chat-header h1,
+#n8n-chat [class*="chat-header"] h1,
+#n8n-chat [class*="header"] h1{
+  color:#0C2136!important;
+  font-size:1.45rem!important;
+  line-height:1.25!important;
+  font-weight:700!important;
+}
+
+#n8n-chat .chat-header p,
+#n8n-chat [class*="chat-header"] p,
+#n8n-chat [class*="subtitle"]{
+  color:#54687A!important;
+}
+
+@media(max-width:560px){
+  #n8n-chat{
+    --chat--window--width:calc(100vw - 20px);
+    --chat--window--height:min(620px,82vh);
+    --chat--heading--font-size:1.3rem;
+  }
+}
+</style>
+
+
+<style>
+#n8n-chat .chat-window-toggle,
+#n8n-chat button.chat-window-toggle,
+#n8n-chat [class*="chat-window-toggle"]{
+  opacity:0!important;
+  pointer-events:none!important;
+  width:1px!important;
+  height:1px!important;
+  position:fixed!important;
+  inset-inline-end:-9999px!important;
+}
+</style>
 </head>
 <body>
 
@@ -617,22 +744,7 @@ body.calm *,body.calm *::before,body.calm *::after{animation:none!important;tran
   <i></i><span>Ask Zahra · <span data-en="ask me" data-ar="اسأل زهراء">ask me</span></span>
 </button>
 
-<div class="panel" id="panel" role="dialog" aria-label="Ask Zahra">
-  <div class="p-h">
-    <span class="p-av">ZS</span>
-    <div>
-      <b>Ask Zahra</b>
-      <span data-en="Answers from this page only" data-ar="يجيب من محتوى هذه الصفحة فقط">Answers from this page only</span>
-    </div>
-    <button class="p-x" id="pX" type="button" aria-label="إغلاق">×</button>
-  </div>
-  <div class="p-b" id="pB"></div>
-  <div class="p-s" id="pS"></div>
-  <div class="p-f">
-    <input id="pIn" type="text" autocomplete="off">
-    <button id="pSend" type="button" data-en="Send" data-ar="إرسال">Send</button>
-  </div>
-</div>
+<div id="n8n-chat" aria-label="Ask Zahra AI assistant"></div>
 
 <div class="pal-bd" id="palBd" role="dialog" aria-modal="true" aria-label="بحث">
   <div class="pal">
@@ -855,28 +967,6 @@ const TERMS=[
 {ar:['الإشراف البشري (Human-in-the-loop)','القرار الحسّاس يبقى بيد إنسان مخوّل ومحدد بالاسم. النظام يجهّز ولا يعتمد.'],
  en:['Human-in-the-loop','Sensitive decisions stay with a named, authorised human. The system prepares; it does not approve.']}];
 
-/* Ask Zahra */
-const ASK={
- ar:{greet:'أهلًا! أنا Ask Zahra. اسألني عن خبرة زهراء أو مشاريعها أو شهاداتها — أجيب من محتوى هذه الصفحة فقط.',
-  sug:['ما خبرتها المهنية؟','ما شهاداتها؟','لماذا حوكمة الذكاء الاصطناعي؟'],ph:'اكتب سؤالك…',
-  a:[[/خبر|rsm|سنوات|ترقي|أرامكو|عمل/i,'أربع سنوات في RSM السعودية بثلاث ترقيات — من محللة أمن سيبراني إلى مراجِعة تقنية وأمن سيبراني — وأكثر من ٢٠٠ تقييم التزام لموردي أرامكو.','المصدر: قسم الخبرة'],
-     [/شهاد|cysa|security|grc|aws|fortinet|comptia/i,'ست شهادات: CompTIA CySA+ وSecurity+ وGRCP وGRCA من OCEG وAWS AI Practitioner وFortinet NSE 1 و2 — كلها بروابط تحقق في قسم الشهادات.','المصدر: قسم الشهادات'],
-     [/ذكاء|حوكم|ai|وكيل/i,'لأن أنظمة الذكاء الاصطناعي أصبحت تدخل نطاق المراجعة أسرع من كتابة ضوابطها. مشاريعها في هذا الجانب: محلّل الأدلة، ومقيّم الحوكمة، وأنا نفسي كمثال حي.','المصدر: قسم المشاريع'],
-     [/إطار|أطر|nca|sama|iso|ضابط/i,'الأطر الأساسية: NCA ECC وSAMA CSF وISO 27001 ومتطلبات أرامكو للأطراف الثالثة، ومن جانب الذكاء الاصطناعي NIST AI RMF ونظام الاتحاد الأوروبي.','المصدر: الكفاءات الأساسية'],
-     [/مشاريع|أعمال|بنت|مشروع/i,'ثمانية مشاريع في قسم المشاريع، أبرزها محلّل أدلة الالتزام ومساعد 5C ومقيّم حوكمة الذكاء الاصطناعي — كل مشروع يفتح على المشكلة والمعالجة والنتيجة.','المصدر: قسم المشاريع'],
-     [/متاح|توظيف|وظيف|فرص|تواصل|سيرة/i,'نعم، متاحة لفرص عمل — مقرّها الخبر وتعمل بالعربية والإنجليزية. يمكنك حجز موعد من قسم التواصل، أو مراسلتها عبر لينكدإن.','المصدر: قسم التواصل']],
-  none:'هذا غير مذكور في الصفحة، ولن أخمّن. جرّب سؤالًا عن الخبرة أو الشهادات أو المشاريع، أو احجز موعدًا من قسم التواصل.'},
- en:{greet:"Hi! I'm Ask Zahra. Ask me about Zahra's experience, projects or certifications — I answer from this page only.",
-  sug:['What is her experience?','What certifications?','Why AI governance?'],ph:'Type a question…',
-  a:[[/experien|rsm|year|promot|aramco|work/i,'Four years at RSM Saudi Arabia with three promotions — cybersecurity analyst to IT & cybersecurity auditor — and 200+ Aramco vendor assessments.','Source: Experience'],
-     [/cert|cysa|security|grc|aws|fortinet|comptia/i,'Six: CompTIA CySA+ and Security+, GRCP and GRCA from OCEG, AWS AI Practitioner, and Fortinet NSE 1 & 2 — all with verification links.','Source: Certifications'],
-     [/ai|governance|agent/i,'Because AI systems started entering audit scope faster than controls were written for them. Her projects there: the evidence analyzer, the governance assessor — and me, as a live example.','Source: Work'],
-     [/framework|nca|sama|iso|control/i,'Core frameworks: NCA ECC, SAMA CSF, ISO 27001 and Aramco third-party requirements; on the AI side, NIST AI RMF and the EU AI Act.','Source: Core competencies'],
-     [/project|work|built/i,'Eight projects in the Work section — the evidence analyzer, the 5C assistant and the AI governance assessor lead. Each opens to problem, approach and result.','Source: Work'],
-     [/available|hire|job|contact|cv|resume/i,'Yes — open to opportunities, based in Al Khobar, working in Arabic and English. Book an appointment from the Contact section, or reach her on LinkedIn.','Source: Contact']],
-  none:"That isn't on this page, and I won't guess. Try experience, certifications or projects — or book an appointment from the Contact section."}
-};
-
 const SECTIONS=[['top','نظرة عامة','Overview'],['work','الأعمال','Work'],['experience','الخبرة','Experience'],
  ['comp','الكفاءات الأساسية','Core competencies'],['certs','الشهادات الاحترافية','Certifications'],
  ['library','عين المراجع',"Auditor's Eye"],['contact','تواصل','Contact']];
@@ -1066,37 +1156,22 @@ function renderTerms(){
     n.innerHTML=`<summary>${d[0]}</summary><p>${d[1]}</p>`; c.appendChild(n);});
 }
 
-/* ═══════ ASK ZAHRA ═══════ */
-function push(t,who,src){
-  const m=el('div','msg '+who,t);
-  if(src)m.appendChild(el('span','src',src));
-  $('#pB').appendChild(m); $('#pB').scrollTop=$('#pB').scrollHeight; return m;
+/* ═══════ ASK ZAHRA — n8n AI AGENT ═══════ */
+function openAskZahra(){
+  let attempts=0;
+  const maxAttempts=30;
+  const tryOpen=()=>{
+    const toggle=document.querySelector(
+      '#n8n-chat .chat-window-toggle, #n8n-chat button.chat-window-toggle, #n8n-chat [class*="chat-window-toggle"]'
+    );
+    if(toggle){ toggle.click(); return; }
+    attempts+=1;
+    if(attempts<maxAttempts)setTimeout(tryOpen,150);
+  };
+  tryOpen();
 }
-function resetAsk(){
-  $('#pB').innerHTML=''; push(ASK[L].greet,'bot');
-  const s=$('#pS'); s.innerHTML='';
-  ASK[L].sug.forEach(q=>{const b=el('button',null,q);b.type='button';b.onclick=()=>answer(q);s.appendChild(b);});
-  $('#pIn').placeholder=ASK[L].ph;
-}
-function answer(q){
-  push(q,'me'); $('#pIn').value='';
-  const set=ASK[L],hit=set.a.find(([re])=>re.test(q));
-  const d=el('div','dots-t','<i></i><i></i><i></i>');
-  $('#pB').appendChild(d); $('#pB').scrollTop=$('#pB').scrollHeight;
-  setTimeout(()=>{d.remove(); hit?push(hit[1],'bot',hit[2]):push(set.none,'bot');},
-    RM||document.body.classList.contains('calm')?0:700);
-}
-$('#pSend').onclick=()=>{const v=$('#pIn').value.trim();if(v)answer(v);};
-$('#pIn').addEventListener('keydown',e=>{if(e.key==='Enter'){const v=e.target.value.trim();if(v)answer(v);}});
-function togglePanel(o){
-  $('#panel').classList.toggle('on',o);
-  $('#fab').style.display=o?'none':'';
-  $('#fab').setAttribute('aria-expanded',o);
-  if(o)$('#pIn').focus();
-}
-$('#fab').onclick=()=>togglePanel(true);
-$('#heroAsk').onclick=()=>togglePanel(true);
-$('#pX').onclick=()=>{togglePanel(false);$('#fab').focus();};
+$('#fab').onclick=openAskZahra;
+$('#heroAsk').onclick=openAskZahra;
 
 /* ═══════ PALETTE ═══════ */
 function index(){
@@ -1147,7 +1222,6 @@ $('#palIn').addEventListener('input',e=>{sel=0;drawPal(e.target.value);});
 document.addEventListener('keydown',e=>{
   if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();openPal();return;}
   if(e.key==='/'&&!/input|textarea/i.test(document.activeElement.tagName)){e.preventDefault();openPal();return;}
-  if(e.key==='Escape'&&$('#panel').classList.contains('on')){togglePanel(false);return;}
   if(!$('#palBd').classList.contains('on'))return;
   if(e.key==='Escape')closePal();
   if(e.key==='ArrowDown'){e.preventDefault();sel=Math.min(sel+1,shown.length-1);drawPal($('#palIn').value);$('.pal-r.sel')?.scrollIntoView({block:'nearest'});}
@@ -1172,7 +1246,7 @@ function setLang(n){
     x.innerHTML=L==='ar'?x.dataset.ar:x.dataset.en;
   });
   $('#lang').textContent=L==='ar'?'EN':'ع';
-  renderWork();renderJobs();renderComp();renderCerts();renderArts();renderTerms();resetAsk();
+  renderWork();renderJobs();renderComp();renderCerts();renderArts();renderTerms();
 }
 $('#lang').onclick=()=>setLang(L==='ar'?'en':'ar');
 
@@ -1201,8 +1275,43 @@ const co=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){$$('#h
 co.observe($('#hstats'));
 
 /* init */
-renderWork();renderJobs();renderComp();renderCerts();renderArts();renderTerms();resetAsk();
+renderWork();renderJobs();renderComp();renderCerts();renderArts();renderTerms();
 </script>
 
+
+
+<!-- ASK ZAHRA — REAL n8n AI AGENT -->
+<script type="module">
+  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat@1.29.1/dist/chat.bundle.es.js';
+
+  createChat({
+    webhookUrl: 'https://zahraibrahim.app.n8n.cloud/webhook/47ec1cee-bdaf-4f87-8ad3-9c4071a1e14d/chat',
+    target: '#n8n-chat',
+    mode: 'window',
+    chatInputKey: 'chatInput',
+    chatSessionKey: 'sessionId',
+    loadPreviousSession: false,
+    showWelcomeScreen: false,
+    defaultLanguage: 'en',
+    enableStreaming: false,
+    metadata: {
+      source: 'zahrasafwan.github.io',
+      assistant: 'Ask Zahra'
+    },
+    initialMessages: [
+      'مرحبًا، أنا المساعد الرقمي لزهراء آل صفوان. يمكنني مساعدتك في التعرف على خبراتها المهنية وشهاداتها ومشاريعها.',
+      'Hello, I’m Zahra Al Safwan’s digital assistant. Ask me about her experience, certifications, skills, or projects.'
+    ],
+    i18n: {
+      en: {
+        title: 'Ask Zahra',
+        subtitle: 'IT Audit • Cybersecurity • GRC • AI Governance',
+        footer: '',
+        getStarted: 'Start a conversation',
+        inputPlaceholder: 'Ask about Zahra’s experience...'
+      }
+    }
+  });
+</script>
 
 </body></html>
